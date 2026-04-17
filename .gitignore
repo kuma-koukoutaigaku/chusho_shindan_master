@@ -1,0 +1,26 @@
+# Python scripts (development only)
+*.py
+*.ipynb
+
+# Backup files
+back up/
+scratch/
+*.bak
+
+# Raw/source JSON (consolidated versions are in data/)
+q_0*.json
+questions_*.json
+concrete_examples.json
+examples.json
+quiz_data_sample.json
+sample_premium_questions.json
+
+# Markdown reference docs (not part of the app)
+SME_*.md
+SME_Consultant_*.md
+
+# macOS
+.DS_Store
+
+# Node
+node_modules/
