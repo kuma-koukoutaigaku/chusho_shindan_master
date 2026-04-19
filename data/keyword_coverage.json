@@ -1,0 +1,4312 @@
+{
+  "経済学・経済政策": [
+    {
+      "term": "GDP・三面等価",
+      "keywords": [
+        "GDP",
+        "国内総生産",
+        "三面等価",
+        "三面等価の原則"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "実質GDP vs 名目GDP",
+      "problem_count": 15,
+      "problem_ids": [
+        "rich_gen_243_0",
+        "rich_gen_246_3",
+        "rich_gen_247_4",
+        "qs_68bb15b838",
+        "qs_98c5a556f3"
+      ]
+    },
+    {
+      "term": "景気動向指数",
+      "keywords": [
+        "景気動向指数",
+        "一致指数",
+        "先行指数",
+        "遅行指数",
+        "CI",
+        "DI"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "景気動向指数",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_mg_20260419_148",
+        "qs_it_20260419_072",
+        "qs_it_p2_003",
+        "rich_gen_378_0",
+        "rich_gen_381_3"
+      ]
+    },
+    {
+      "term": "限界消費性向・財政乗数",
+      "keywords": [
+        "限界消費性向",
+        "財政乗数",
+        "政府支出乗数",
+        "租税乗数"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "限界消費性向",
+      "problem_count": 13,
+      "problem_ids": [
+        "rich_gen_300_0",
+        "rich_gen_303_3",
+        "rich_gen_304_4",
+        "qs_da527c824e",
+        "qs_w9v2u1p8k3"
+      ]
+    },
+    {
+      "term": "IS-LM分析",
+      "keywords": [
+        "IS-LM",
+        "IS曲線",
+        "LM曲線",
+        "IS-LM分析",
+        "IS-LMモデル"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "IS曲線",
+      "problem_count": 22,
+      "problem_ids": [
+        "qs_7950bfe3db",
+        "qs_9ef525b0ab",
+        "qs_30f17333a4",
+        "qs_71800add0e",
+        "qs_fb87e55976"
+      ]
+    },
+    {
+      "term": "AD-AS分析",
+      "keywords": [
+        "AD-AS",
+        "総需要曲線",
+        "総供給曲線",
+        "AD曲線",
+        "AS曲線"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "需要と供給",
+      "problem_count": 16,
+      "problem_ids": [
+        "rich_gen_305_0",
+        "rich_gen_308_3",
+        "rich_gen_309_4",
+        "rich_gen_310_0",
+        "rich_gen_313_3"
+      ]
+    },
+    {
+      "term": "フィリップス曲線",
+      "keywords": [
+        "フィリップス曲線"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "フィリップス曲線",
+      "problem_count": 6,
+      "problem_ids": [
+        "qs_fd1e88eb21",
+        "qs_j5y9u1x8y7",
+        "qs_z1n8p4k2w5",
+        "qs_j5v1y9t8u7",
+        "qs_eco_p3_012"
+      ]
+    },
+    {
+      "term": "需要・供給の均衡",
+      "keywords": [
+        "需要曲線",
+        "供給曲線",
+        "均衡価格"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "屈折需要曲線",
+      "problem_count": 33,
+      "problem_ids": [
+        "rich_gen_257_4",
+        "rich_gen_270_0",
+        "rich_gen_273_3",
+        "rich_gen_274_4",
+        "rich_gen_315_0"
+      ]
+    },
+    {
+      "term": "価格弾力性",
+      "keywords": [
+        "価格弾力性",
+        "需要の価格弾力性"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "需要の価格弾力性",
+      "problem_count": 13,
+      "problem_ids": [
+        "rich_gen_266_0",
+        "rich_gen_269_3",
+        "qs_26dd1e0616",
+        "qs_z1u9x4y2m3",
+        "qs_x1u9y4z2w8"
+      ]
+    },
+    {
+      "term": "消費者余剰・生産者余剰",
+      "keywords": [
+        "消費者余剰",
+        "生産者余剰",
+        "総余剰"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "消費者余剰",
+      "problem_count": 11,
+      "problem_ids": [
+        "rich_gen_253_0",
+        "rich_gen_256_3",
+        "rich_gen_257_4",
+        "qs_4a288483fe",
+        "qs_ff61c2b7d2"
+      ]
+    },
+    {
+      "term": "無差別曲線",
+      "keywords": [
+        "無差別曲線",
+        "効用関数"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "無差別曲線",
+      "problem_count": 13,
+      "problem_ids": [
+        "qs_4394cd343e",
+        "qs_3ab0087d2f",
+        "qs_e498570996",
+        "qs_73442cc357",
+        "qs_a3m8n2z4q1"
+      ]
+    },
+    {
+      "term": "予算制約線",
+      "keywords": [
+        "予算制約線",
+        "予算制約"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "予算制約線",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_A_第14問"
+      ]
+    },
+    {
+      "term": "限界費用・平均費用",
+      "keywords": [
+        "限界費用",
+        "平均費用",
+        "MC",
+        "AC"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "限界費用 (MC)",
+      "problem_count": 26,
+      "problem_ids": [
+        "gen_a_4",
+        "gen_e_7",
+        "rich_gen_248_0",
+        "rich_gen_251_3",
+        "rich_gen_252_4"
+      ]
+    },
+    {
+      "term": "完全競争市場",
+      "keywords": [
+        "完全競争",
+        "完全競争市場"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "完全競争市場",
+      "problem_count": 25,
+      "problem_ids": [
+        "rich_gen_248_0",
+        "rich_gen_251_3",
+        "rich_gen_252_4",
+        "rich_gen_275_0",
+        "rich_gen_278_3"
+      ]
+    },
+    {
+      "term": "独占市場・独占利潤",
+      "keywords": [
+        "独占市場",
+        "独占企業",
+        "独占利潤"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "独占市場",
+      "problem_count": 15,
+      "problem_ids": [
+        "rich_gen_275_0",
+        "rich_gen_278_3",
+        "rich_gen_279_4",
+        "rich_gen_320_0",
+        "rich_gen_323_3"
+      ]
+    },
+    {
+      "term": "外部性・外部不経済",
+      "keywords": [
+        "外部経済",
+        "外部不経済",
+        "外部性"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "外部性（外部経済・外部不経済）",
+      "problem_count": 10,
+      "problem_ids": [
+        "qs_mg_20260419_197",
+        "rich_gen_262_0",
+        "rich_gen_265_3",
+        "qs_1fb9336370",
+        "qs_9bd87de45d"
+      ]
+    },
+    {
+      "term": "ゲーム理論・ナッシュ均衡",
+      "keywords": [
+        "ゲーム理論",
+        "ナッシュ均衡",
+        "囚人のジレンマ",
+        "支配戦略"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ゲーム理論",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_mg_20260419_252",
+        "qs_de2e525d2c",
+        "qs_378ce26c29",
+        "qs_25c7b36036",
+        "qs_g4f2w3x1y7"
+      ]
+    },
+    {
+      "term": "比較優位",
+      "keywords": [
+        "比較優位",
+        "リカード"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "比較優位",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_a2ca04cfb9",
+        "qs_a7v2b1n8d4",
+        "qs_m1v9z4f6j8",
+        "qs_r2n8m4k1w5"
+      ]
+    },
+    {
+      "term": "為替・購買力平価",
+      "keywords": [
+        "為替",
+        "購買力平価",
+        "PPP"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "購買力平価 (PPP)",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_v5t9f4w1z8"
+      ]
+    },
+    {
+      "term": "代替効果・所得効果",
+      "keywords": [
+        "代替効果",
+        "所得効果",
+        "スルツキー分解"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "代替効果",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_3ab0087d2f",
+        "qs_a7fce0dc80",
+        "qs_73442cc357",
+        "qs_g9f4f2w3x1",
+        "qs_eco_p4_003"
+      ]
+    },
+    {
+      "term": "寡占・クールノー",
+      "keywords": [
+        "クールノー",
+        "ベルトラン",
+        "シュタッケルベルク"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_b9p1q4x3z7"
+      ]
+    },
+    {
+      "term": "公共財",
+      "keywords": [
+        "公共財",
+        "非排除性",
+        "非競合性"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "公共財",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_506aff8d0a",
+        "qs_a6w2q4n9z7",
+        "qs_j7y4u1x8y2",
+        "qs_g4f2w3x1y7"
+      ]
+    },
+    {
+      "term": "情報の非対称性",
+      "keywords": [
+        "情報の非対称",
+        "逆選択",
+        "モラルハザード",
+        "シグナリング"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "逆選択",
+      "problem_count": 8,
+      "problem_ids": [
+        "qs_a3541327bb",
+        "qs_c9m1k2n8q4",
+        "qs_v5r1y9t8u2",
+        "qs_k9p2w8f4x3",
+        "qs_v5r1y9t3u7"
+      ]
+    },
+    {
+      "term": "恒常所得仮説",
+      "keywords": [
+        "恒常所得",
+        "恒常所得仮説"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_a6j2q4n8z1"
+      ]
+    },
+    {
+      "term": "ライフサイクル仮説",
+      "keywords": [
+        "ライフサイクル仮説"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R6_C_第23問"
+      ]
+    },
+    {
+      "term": "クラウディングアウト",
+      "keywords": [
+        "クラウディングアウト"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_A_第10問-設問2"
+      ]
+    },
+    {
+      "term": "流動性のわな",
+      "keywords": [
+        "流動性のわな",
+        "流動性のワナ"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "流動性のわな",
+      "problem_count": 8,
+      "problem_ids": [
+        "qs_9ef525b0ab",
+        "qs_71800add0e",
+        "qs_a0284157dc",
+        "qs_q2t7r4n1w5",
+        "qs_a2j6q8n4z1"
+      ]
+    },
+    {
+      "term": "公開市場操作",
+      "keywords": [
+        "公開市場操作",
+        "買いオペ",
+        "売りオペ"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "買いオペレーション",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_aee7cdb28c",
+        "qs_fb87e55976",
+        "qs_2a97366f3e",
+        "qs_eco_p3_016"
+      ]
+    },
+    {
+      "term": "貨幣乗数・信用創造",
+      "keywords": [
+        "貨幣乗数",
+        "信用創造",
+        "預金準備率"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "貨幣乗数",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_m2p7x5r9j1",
+        "qs_r2d9f6t1w5",
+        "qs_eco_p3_020"
+      ]
+    },
+    {
+      "term": "失業率・雇用統計",
+      "keywords": [
+        "失業率",
+        "有効求人倍率",
+        "完全失業率"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "失業率 (摩擦的・構造的・循環的失業)",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_j5y9u1x8y7",
+        "qs_z1n8p4k2w5",
+        "qs_eco_p3_013"
+      ]
+    },
+    {
+      "term": "GDPデフレーター",
+      "keywords": [
+        "GDPデフレーター"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "GDPデフレーター",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_98c5a556f3",
+        "qs_d88dbe2d6e",
+        "qs_f35dd9e53b",
+        "qs_z8r1n4q9m7",
+        "qs_eco_p3_004"
+      ]
+    },
+    {
+      "term": "消費者物価指数",
+      "keywords": [
+        "消費者物価指数",
+        "CPI"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "物価指数",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_d88dbe2d6e"
+      ]
+    },
+    {
+      "term": "国際収支・経常収支",
+      "keywords": [
+        "国際収支",
+        "経常収支",
+        "貿易収支"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "経常収支 と 資本収支",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_p8v4w2z9f1",
+        "qs_g9f4d2w1x7",
+        "qs_r4k7j1v9w2",
+        "qs_g9f2d1w4x7",
+        "qs_j5v1y9t8u7"
+      ]
+    },
+    {
+      "term": "規模の経済・範囲の経済",
+      "keywords": [
+        "規模の経済",
+        "範囲の経済"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "規模の経済",
+      "problem_count": 15,
+      "problem_ids": [
+        "qs_b99a11c223",
+        "qs_c6d7e8f9g0",
+        "qs_mg_20260419_166",
+        "qs_mg_20260419_221",
+        "qs_mg_20260419_287"
+      ]
+    },
+    {
+      "term": "死荷重",
+      "keywords": [
+        "死荷重",
+        "死重",
+        "余剰損失"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "余剰",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_ff61c2b7d2",
+        "qs_a8v2b4n1d9",
+        "qs_x1v9f4d2w3",
+        "R7_A_第18問-設問1"
+      ]
+    },
+    {
+      "term": "ギッフェン財・下級財",
+      "keywords": [
+        "ギッフェン財",
+        "下級財",
+        "上級財"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "ギッフェン財",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_3ab0087d2f",
+        "qs_73442cc357"
+      ]
+    },
+    {
+      "term": "マンデル=フレミング",
+      "keywords": [
+        "マンデル",
+        "フレミング",
+        "マンデル=フレミング"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "マンデル・フレミング・モデル",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_m2n4w8f1z9"
+      ]
+    },
+    {
+      "term": "ピグー税・コース定理",
+      "keywords": [
+        "ピグー税",
+        "コースの定理"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "コースの定理",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_1fb9336370",
+        "qs_9bd87de45d",
+        "qs_g7h1w5z9q4"
+      ]
+    }
+  ],
+  "財務・会計": [
+    {
+      "term": "仕訳・簿記基礎",
+      "keywords": [
+        "仕訳",
+        "勘定科目",
+        "借方",
+        "貸方"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "借方 (かりかた) と 貸方 (かしかた)",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "貸借対照表(BS)",
+      "keywords": [
+        "貸借対照表",
+        "BS",
+        "B/S"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "B/S (貸借対照表)",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_mg_20260419_293",
+        "gen_e_88",
+        "qs_7276066a4a",
+        "qs_f1a2b3c4d5",
+        "qs_i6j7k8l9m0"
+      ]
+    },
+    {
+      "term": "損益計算書(PL)",
+      "keywords": [
+        "損益計算書",
+        "PL",
+        "P/L",
+        "売上総利益",
+        "営業利益",
+        "経常利益"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "P/L (損益計算書)",
+      "problem_count": 21,
+      "problem_ids": [
+        "qs_mg_20260419_274",
+        "gen_a_89",
+        "gen_e_92",
+        "qs_36809c64d7",
+        "qs_52203e5652"
+      ]
+    },
+    {
+      "term": "キャッシュフロー計算書",
+      "keywords": [
+        "キャッシュフロー計算書",
+        "CF計算書",
+        "営業CF",
+        "投資CF",
+        "財務CF"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "C/F (キャッシュフロー計算書)",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_B_第21問"
+      ]
+    },
+    {
+      "term": "減価償却(定額法)",
+      "keywords": [
+        "定額法",
+        "減価償却",
+        "減価償却費"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "減価償却",
+      "problem_count": 10,
+      "problem_ids": [
+        "qs_1b6e885ff9",
+        "qs_be09e1d324",
+        "R7_B_第5問",
+        "R7_B_第9問",
+        "R7_B_第18問"
+      ]
+    },
+    {
+      "term": "耐用年数・残存価額",
+      "keywords": [
+        "耐用年数",
+        "残存価額"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 4,
+      "problem_ids": [
+        "R7_B_第5問",
+        "R7_B_第9問",
+        "R7_B_第14問",
+        "R7_B_第18問"
+      ]
+    },
+    {
+      "term": "売掛金・買掛金・手形",
+      "keywords": [
+        "売掛金",
+        "買掛金",
+        "受取手形",
+        "支払手形"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 2,
+      "problem_ids": [
+        "gen_a_105",
+        "gen_e_108"
+      ]
+    },
+    {
+      "term": "ROE・ROA",
+      "keywords": [
+        "ROE",
+        "ROA",
+        "自己資本利益率",
+        "総資本利益率"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ROE (自己資本利益率)",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_u1v2w3x4y5"
+      ]
+    },
+    {
+      "term": "流動比率・当座比率",
+      "keywords": [
+        "流動比率",
+        "当座比率"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "流動比率",
+      "problem_count": 6,
+      "problem_ids": [
+        "gen_a_101",
+        "gen_e_104",
+        "qs_095306b1fa",
+        "qs_fb454e0b9c",
+        "qs_z1a2b3c4d5"
+      ]
+    },
+    {
+      "term": "自己資本比率",
+      "keywords": [
+        "自己資本比率"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "自己資本比率",
+      "problem_count": 7,
+      "problem_ids": [
+        "gen_a_101",
+        "gen_e_104",
+        "qs_s6t7u8v9w0",
+        "R7_G_第4問-設問1",
+        "R7_G_第4問-設問2"
+      ]
+    },
+    {
+      "term": "CVP分析・損益分岐点",
+      "keywords": [
+        "CVP",
+        "損益分岐点",
+        "安全余裕率",
+        "限界利益率"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "CVP分析 (損益分岐点分析)",
+      "problem_count": 14,
+      "problem_ids": [
+        "gen_a_121",
+        "gen_e_124",
+        "qs_3819e21ac9",
+        "qs_52203e5652",
+        "qs_1b6e885ff9"
+      ]
+    },
+    {
+      "term": "NPV法",
+      "keywords": [
+        "NPV",
+        "正味現在価値"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "NPV (正味現在価値)",
+      "problem_count": 6,
+      "problem_ids": [
+        "gen_a_179",
+        "gen_e_182",
+        "qs_7a2ce1bd0c",
+        "qs_t1u2v3w4k7",
+        "R7_B_第17問"
+      ]
+    },
+    {
+      "term": "IRR法",
+      "keywords": [
+        "IRR",
+        "内部収益率"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "内部収益率 (IRR) 法",
+      "problem_count": 4,
+      "problem_ids": [
+        "gen_a_183",
+        "gen_e_186",
+        "qs_i6j7k8l9n3",
+        "R7_B_第19問"
+      ]
+    },
+    {
+      "term": "回収期間法",
+      "keywords": [
+        "回収期間法"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "回収期間法",
+      "problem_count": 5,
+      "problem_ids": [
+        "gen_a_175",
+        "gen_e_178",
+        "qs_o6p7q8r9w2",
+        "qs_x1y2z3a4p5",
+        "R7_B_第19問"
+      ]
+    },
+    {
+      "term": "現在価値・割引計算",
+      "keywords": [
+        "現在価値",
+        "割引率",
+        "複利現価係数",
+        "年金現価係数"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "現在価値 (PV) と将来価値 (FV)",
+      "problem_count": 10,
+      "problem_ids": [
+        "qs_mg_20260419_209",
+        "gen_a_179",
+        "gen_e_182",
+        "qs_7a2ce1bd0c",
+        "qs_t1u2v3w4k7"
+      ]
+    },
+    {
+      "term": "WACC・資本コスト",
+      "keywords": [
+        "WACC",
+        "加重平均資本コスト",
+        "資本コスト"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "資本コスト (WACC)",
+      "problem_count": 17,
+      "problem_ids": [
+        "gen_a_4",
+        "gen_e_7",
+        "gen_a_16",
+        "gen_a_44",
+        "gen_e_47"
+      ]
+    },
+    {
+      "term": "ポートフォリオ理論",
+      "keywords": [
+        "ポートフォリオ",
+        "期待収益率",
+        "標準偏差",
+        "分散投資"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "PPM (プロダクト・ポートフォリオ・マネジメント)",
+      "problem_count": 21,
+      "problem_ids": [
+        "qs_04cc5bb531",
+        "qs_mg_20260419_267",
+        "qs_n88a11b332",
+        "qs_z1a2b3c4d5",
+        "rich_gen_0_0"
+      ]
+    },
+    {
+      "term": "CAPM・ベータ",
+      "keywords": [
+        "CAPM",
+        "ベータ",
+        "資本資産価格モデル"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "CAPM",
+      "problem_count": 6,
+      "problem_ids": [
+        "gen_a_8",
+        "qs_1566a5b5dc",
+        "qs_k3l2m3v4p1",
+        "qs_i6j7k8l9n8",
+        "R7_B_第15問"
+      ]
+    },
+    {
+      "term": "法人税・実効税率",
+      "keywords": [
+        "法人税",
+        "実効税率",
+        "法人税等"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 5,
+      "problem_ids": [
+        "gen_a_89",
+        "gen_e_92",
+        "R7_B_第9問",
+        "R7_B_第16問",
+        "R7_B_第18問"
+      ]
+    },
+    {
+      "term": "税効果会計",
+      "keywords": [
+        "税効果会計",
+        "繰延税金資産",
+        "繰延税金負債"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_B_第9問"
+      ]
+    },
+    {
+      "term": "定率法",
+      "keywords": [
+        "定率法"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "引当金",
+      "keywords": [
+        "引当金",
+        "貸倒引当金",
+        "退職給付引当金"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "引当金 (貸倒引当金など)",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_B_第1問"
+      ]
+    },
+    {
+      "term": "のれん",
+      "keywords": [
+        "のれん",
+        "負ののれん"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "のれん (営業権)",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "連結財務諸表",
+      "keywords": [
+        "連結財務諸表",
+        "連結決算"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 2,
+      "problem_ids": [
+        "R7_B_第2問",
+        "R7_B_第10問"
+      ]
+    },
+    {
+      "term": "持分法",
+      "keywords": [
+        "持分法"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "棚卸資産評価",
+      "keywords": [
+        "先入先出法",
+        "移動平均法",
+        "総平均法"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "棚卸資産の評価 (先入先出法・平均法)",
+      "problem_count": 6,
+      "problem_ids": [
+        "rich_gen_280_0",
+        "rich_gen_283_3",
+        "rich_gen_284_4",
+        "R7_B_第7問",
+        "R7_B_第11問"
+      ]
+    },
+    {
+      "term": "個別原価計算",
+      "keywords": [
+        "個別原価計算"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "総合原価計算",
+      "keywords": [
+        "総合原価計算"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "標準原価計算",
+      "keywords": [
+        "標準原価",
+        "差異分析"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "標準原価計算と差異分析",
+      "problem_count": 8,
+      "problem_ids": [
+        "gen_a_141",
+        "gen_e_144",
+        "qs_998bf43bdf",
+        "qs_z1a2b3c4f5",
+        "qs_y6z7a8b9m1"
+      ]
+    },
+    {
+      "term": "直接原価計算",
+      "keywords": [
+        "直接原価計算",
+        "変動原価計算"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "直接原価計算",
+      "problem_count": 4,
+      "problem_ids": [
+        "gen_e_132",
+        "qs_ae103cfd92",
+        "qs_u1v2w3y4y9",
+        "qs_n1o2p3q4m1"
+      ]
+    },
+    {
+      "term": "MM理論",
+      "keywords": [
+        "MM理論",
+        "モジリアーニ"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "MM理論",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_j1k2l3m4v9",
+        "qs_s6t7u8v9n8"
+      ]
+    },
+    {
+      "term": "配当割引モデル(DDM)",
+      "keywords": [
+        "配当割引",
+        "DDM"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_B_第16問"
+      ]
+    },
+    {
+      "term": "フリーキャッシュフロー",
+      "keywords": [
+        "フリーキャッシュフロー",
+        "FCF"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "FCF (フリーキャッシュフロー)",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "PER・PBR・EPS",
+      "keywords": [
+        "PER",
+        "PBR",
+        "EPS",
+        "株価収益率"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "PERT / アローダイアグラム",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_m6n7o8p9m9"
+      ]
+    },
+    {
+      "term": "オプション(コール/プット)",
+      "keywords": [
+        "コールオプション",
+        "プットオプション",
+        "オプション取引"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "オプション取引",
+      "problem_count": 3,
+      "problem_ids": [
+        "gen_e_76",
+        "qs_t1u2v3w4k9",
+        "qs_y6z7a8b9m4"
+      ]
+    },
+    {
+      "term": "先物・スワップ",
+      "keywords": [
+        "先物取引",
+        "スワップ取引"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "先物取引",
+      "problem_count": 3,
+      "problem_ids": [
+        "gen_a_69",
+        "R7_B_第23問",
+        "R7_B_第24問"
+      ]
+    },
+    {
+      "term": "売上高利益率",
+      "keywords": [
+        "売上高営業利益率",
+        "売上高経常利益率"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "売上高利益率",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_36809c64d7",
+        "qs_f6g7h8i9j0",
+        "qs_k1l2m3n4o5",
+        "qs_h1i2j3k4l5",
+        "R7_G_第4問-設問1"
+      ]
+    },
+    {
+      "term": "資本回転率",
+      "keywords": [
+        "総資本回転率",
+        "棚卸資産回転率"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "総資本回転率",
+      "problem_count": 5,
+      "problem_ids": [
+        "gen_a_105",
+        "gen_e_108",
+        "qs_db397f93d0",
+        "qs_o6p7q8r9s0",
+        "R7_G_第11問"
+      ]
+    }
+  ],
+  "企業経営理論": [
+    {
+      "term": "ポーター5フォース",
+      "keywords": [
+        "ポーター",
+        "5フォース",
+        "ファイブフォース",
+        "業界構造分析"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ポーターの3つの基本戦略",
+      "problem_count": 20,
+      "problem_ids": [
+        "qs_eb58c58480",
+        "qs_j1k2l3m4n5",
+        "qs_mg_20260419_104",
+        "qs_mg_20260419_195",
+        "qs_mg_20260419_251"
+      ]
+    },
+    {
+      "term": "3つの基本戦略",
+      "keywords": [
+        "コストリーダーシップ",
+        "差別化戦略",
+        "集中戦略"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "コストリーダーシップ戦略",
+      "problem_count": 8,
+      "problem_ids": [
+        "qs_eb58c58480",
+        "qs_mg_20260419_117",
+        "qs_o6p7q8r9s0",
+        "qs_t99d11a221",
+        "rich_gen_41_0"
+      ]
+    },
+    {
+      "term": "バリューチェーン",
+      "keywords": [
+        "バリューチェーン",
+        "価値連鎖"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_mg_20260419_251"
+      ]
+    },
+    {
+      "term": "SWOT分析",
+      "keywords": [
+        "SWOT"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "SWOT分析",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_d18ef7433b",
+        "qs_k1l2m3n4o5",
+        "qs_m22d11e550",
+        "R7_C_第32問-設問1"
+      ]
+    },
+    {
+      "term": "PPM",
+      "keywords": [
+        "PPM",
+        "BCG",
+        "花形",
+        "金のなる木",
+        "問題児",
+        "負け犬"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "PPM",
+      "problem_count": 9,
+      "problem_ids": [
+        "qs_04cc5bb531",
+        "qs_e6f7g8h9i0",
+        "qs_h99a44b115",
+        "qs_mg_20260419_135",
+        "qs_n88a11b332"
+      ]
+    },
+    {
+      "term": "アンゾフの成長マトリクス",
+      "keywords": [
+        "アンゾフ",
+        "市場浸透",
+        "新製品開発",
+        "市場開拓",
+        "多角化"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "アンゾフの成長ベクトル",
+      "problem_count": 15,
+      "problem_ids": [
+        "qs_9997e2c93a",
+        "qs_a33ee44d88",
+        "qs_c11d44e556",
+        "qs_c80f6692e4",
+        "qs_e089c37ad5"
+      ]
+    },
+    {
+      "term": "コアコンピタンス",
+      "keywords": [
+        "コアコンピタンス",
+        "ハメル",
+        "プラハラード"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_mg_20260419_165",
+        "R7_C_第4問"
+      ]
+    },
+    {
+      "term": "VRIO分析",
+      "keywords": [
+        "VRIO",
+        "リソースベースト"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "VRIO分析 (ブリオ分析)",
+      "problem_count": 8,
+      "problem_ids": [
+        "qs_d1e2f3g4h5",
+        "qs_mg_20260419_222",
+        "qs_mg_20260419_31",
+        "qs_t1u2v3w4x5",
+        "rich_gen_120_4"
+      ]
+    },
+    {
+      "term": "マーケティングミックス(4P)",
+      "keywords": [
+        "マーケティングミックス",
+        "4P",
+        "プロダクト",
+        "プライス",
+        "プレース",
+        "プロモーション"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "マーケティング",
+      "problem_count": 24,
+      "problem_ids": [
+        "qs_04cc5bb531",
+        "qs_i88a22b992",
+        "qs_mg_20260419_116",
+        "qs_mg_20260419_241",
+        "qs_mg_20260419_287"
+      ]
+    },
+    {
+      "term": "STP",
+      "keywords": [
+        "セグメンテーション",
+        "ターゲティング",
+        "ポジショニング"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "STP分析 (Segmentation, Targeting, Positioning)",
+      "problem_count": 13,
+      "problem_ids": [
+        "qs_b77c22e3a1",
+        "qs_c99d11f4b2",
+        "qs_ed9d8b69ef",
+        "qs_mg_20260419_269",
+        "qs_r22e88a332"
+      ]
+    },
+    {
+      "term": "製品ライフサイクル",
+      "keywords": [
+        "製品ライフサイクル",
+        "PLC",
+        "導入期",
+        "成長期",
+        "成熟期",
+        "衰退期"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "プロダクト・ライフサイクル (PLC)",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_e88f44c552",
+        "qs_h99a44b115",
+        "qs_mg_20260419_108",
+        "qs_mg_20260419_216",
+        "qs_mg_20260419_227"
+      ]
+    },
+    {
+      "term": "ブランド戦略",
+      "keywords": [
+        "ブランド",
+        "ブランドエクイティ",
+        "ブランド拡張"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ブランド",
+      "problem_count": 39,
+      "problem_ids": [
+        "qs_b99a11c223",
+        "qs_c6d7e8f9g0",
+        "qs_d11e22a334",
+        "qs_e88f44c552",
+        "qs_h66d11e550"
+      ]
+    },
+    {
+      "term": "マズロー欲求段階説",
+      "keywords": [
+        "マズロー",
+        "欲求段階"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "マズローの欲求5段階説",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_55cc99ff11",
+        "qs_88f44a9b11",
+        "qs_mg_20260419_259",
+        "qs_o44c33d559",
+        "R6_C_第18問"
+      ]
+    },
+    {
+      "term": "ハーズバーグ二要因理論",
+      "keywords": [
+        "ハーズバーグ",
+        "動機付け要因",
+        "衛生要因",
+        "二要因"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ハーズバーグの2要因理論",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_55d11e2f84",
+        "qs_c2a7e06e84",
+        "qs_o44c33d559"
+      ]
+    },
+    {
+      "term": "マグレガーX理論Y理論",
+      "keywords": [
+        "マグレガー",
+        "X理論",
+        "Y理論"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "マグレガーのX理論・Y理論",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_77b33c6d22",
+        "qs_mg_20260419_120"
+      ]
+    },
+    {
+      "term": "PM理論",
+      "keywords": [
+        "PM理論",
+        "三隅"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "PM理論",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_66b55c88d9"
+      ]
+    },
+    {
+      "term": "機能別組織・事業部制",
+      "keywords": [
+        "機能別組織",
+        "事業部制"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "機能別組織",
+      "problem_count": 12,
+      "problem_ids": [
+        "qs_11bb22cc33",
+        "qs_22d55b8e91",
+        "qs_77bb44aa00",
+        "qs_mg_20260419_229",
+        "rich_gen_51_0"
+      ]
+    },
+    {
+      "term": "マトリックス組織",
+      "keywords": [
+        "マトリックス組織"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "マトリックス組織",
+      "problem_count": 9,
+      "problem_ids": [
+        "qs_44f88c9a32",
+        "qs_60ac806a0b",
+        "qs_mg_20260419_230",
+        "rich_gen_21_0",
+        "rich_gen_24_3"
+      ]
+    },
+    {
+      "term": "破壊的イノベーション",
+      "keywords": [
+        "破壊的イノベーション",
+        "クリステンセン",
+        "イノベーターのジレンマ"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "破壊的イノベーション",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_mg_20260419_223",
+        "qs_1566a5b5dc",
+        "R7_C_第10問"
+      ]
+    },
+    {
+      "term": "両利きの経営",
+      "keywords": [
+        "両利きの経営",
+        "両利き"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_mg_20260419_163"
+      ]
+    },
+    {
+      "term": "オープンイノベーション",
+      "keywords": [
+        "オープンイノベーション"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "コンティンジェンシー理論",
+      "keywords": [
+        "コンティンジェンシー",
+        "状況適応"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "SL理論 (状況適応型リーダーシップ)",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_mg_20260419_127",
+        "qs_mg_20260419_155",
+        "qs_mg_20260419_290"
+      ]
+    },
+    {
+      "term": "バーンズ&ストーカー",
+      "keywords": [
+        "バーンズ",
+        "ストーカー",
+        "機械的組織",
+        "有機的組織"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_mg_20260419_155",
+        "qs_mg_20260419_343",
+        "R7_C_第15問",
+        "R6_C_第9問",
+        "R7_D_第10問"
+      ]
+    },
+    {
+      "term": "官僚制・ウェーバー",
+      "keywords": [
+        "官僚制",
+        "ウェーバー"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_mg_20260419_141",
+        "qs_mg_20260419_282"
+      ]
+    },
+    {
+      "term": "組織文化・シャイン",
+      "keywords": [
+        "組織文化",
+        "シャイン"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "組織文化",
+      "problem_count": 11,
+      "problem_ids": [
+        "qs_ff11ee22aa",
+        "qs_mg_20260419_134",
+        "qs_mg_20260419_293",
+        "qs_mg_20260419_298",
+        "qs_mg_20260419_315"
+      ]
+    },
+    {
+      "term": "学習組織",
+      "keywords": [
+        "学習組織",
+        "センゲ"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "チャンドラー",
+      "keywords": [
+        "チャンドラー",
+        "組織は戦略に従う"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "ストラテジー（戦略）",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_mg_20260419_283"
+      ]
+    },
+    {
+      "term": "ブルーム期待理論",
+      "keywords": [
+        "ブルーム",
+        "期待理論"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "期待理論",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_11e22f33b5",
+        "qs_15fb66a1ef",
+        "qs_mg_20260419_291"
+      ]
+    },
+    {
+      "term": "ロック目標設定理論",
+      "keywords": [
+        "ロック",
+        "目標設定理論"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "排他制御 (ロック)",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_mg_20260419_191",
+        "qs_mg_20260419_260",
+        "qs_it_20260419_085"
+      ]
+    },
+    {
+      "term": "アダムス公平理論",
+      "keywords": [
+        "アダムス",
+        "公平理論"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "公平理論",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_22bb66cc88",
+        "qs_mg_20260419_236",
+        "qs_o44c33d559"
+      ]
+    },
+    {
+      "term": "職務特性モデル",
+      "keywords": [
+        "職務特性モデル",
+        "ハックマン",
+        "オールダム"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_mg_20260419_171",
+        "qs_mg_20260419_292"
+      ]
+    },
+    {
+      "term": "SL理論",
+      "keywords": [
+        "SL理論",
+        "ハーシー",
+        "ブランチャード"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "SL理論 (状況適応型リーダーシップ)",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_99d11a2f01",
+        "qs_mg_20260419_289"
+      ]
+    },
+    {
+      "term": "変革型リーダーシップ",
+      "keywords": [
+        "変革型リーダーシップ"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R6_C_第17問"
+      ]
+    },
+    {
+      "term": "マネジリアル・グリッド",
+      "keywords": [
+        "マネジリアルグリッド",
+        "マネジリアル・グリッド"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "多角化・シナジー",
+      "keywords": [
+        "多角化",
+        "シナジー"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "アンゾフの成長ベクトル",
+      "problem_count": 10,
+      "problem_ids": [
+        "qs_a33ee44d88",
+        "qs_c11d44e556",
+        "qs_mg_20260419_151",
+        "qs_mg_20260419_154",
+        "qs_mg_20260419_215"
+      ]
+    },
+    {
+      "term": "M&A・戦略的提携",
+      "keywords": [
+        "M&A",
+        "戦略的提携",
+        "アライアンス"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "M&A (合併・買収)",
+      "problem_count": 1,
+      "problem_ids": [
+        "R6_C_第11問"
+      ]
+    },
+    {
+      "term": "ブルーオーシャン戦略",
+      "keywords": [
+        "ブルーオーシャン"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_mg_20260419_164",
+        "qs_mg_20260419_225",
+        "qs_mg_20260419_286"
+      ]
+    },
+    {
+      "term": "消費者行動・購買意思決定",
+      "keywords": [
+        "購買意思決定",
+        "消費者行動"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "購買意思決定の役割",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_j11b33c559",
+        "qs_mg_20260419_299",
+        "qs_s77f11c551",
+        "R7_C_第31問",
+        "R7_C_第36問"
+      ]
+    },
+    {
+      "term": "サービスマーケティング(7P)",
+      "keywords": [
+        "サービスマーケティング",
+        "7P"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "サービス（付帯機能）",
+      "problem_count": 8,
+      "problem_ids": [
+        "qs_l66a55b112",
+        "qs_mg_20260419_242",
+        "rich_gen_101_0",
+        "rich_gen_104_3",
+        "rich_gen_105_4"
+      ]
+    },
+    {
+      "term": "働き方改革",
+      "keywords": [
+        "働き方改革"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_mg_20260419_150",
+        "qs_mg_20260419_157",
+        "qs_mg_20260419_160"
+      ]
+    }
+  ],
+  "運営管理": [
+    {
+      "term": "生産方式(受注/見込)",
+      "keywords": [
+        "受注生産",
+        "見込生産"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "見込み生産と受注生産",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_D_第16問"
+      ]
+    },
+    {
+      "term": "ライン生産・セル生産",
+      "keywords": [
+        "ライン生産",
+        "セル生産",
+        "U字ライン"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ライン生産方式",
+      "problem_count": 2,
+      "problem_ids": [
+        "R7_D_第14問",
+        "R7_D_第21問"
+      ]
+    },
+    {
+      "term": "PERT・CPM",
+      "keywords": [
+        "PERT",
+        "CPM",
+        "クリティカルパス"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "PERT / アローダイアグラム",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_D_第7問"
+      ]
+    },
+    {
+      "term": "ガントチャート",
+      "keywords": [
+        "ガントチャート"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "QC七つ道具",
+      "keywords": [
+        "QC七つ道具",
+        "パレート図",
+        "特性要因図",
+        "ヒストグラム",
+        "散布図",
+        "管理図",
+        "チェックシート",
+        "層別"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "パレート図",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_D_第5問"
+      ]
+    },
+    {
+      "term": "管理図",
+      "keywords": [
+        "管理図",
+        "Xbar-R",
+        "管理限界"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "EOQ・経済発注量",
+      "keywords": [
+        "EOQ",
+        "経済発注量"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "経済的発注量 (EOQ)",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_ops_p4_011"
+      ]
+    },
+    {
+      "term": "発注方式",
+      "keywords": [
+        "定期発注",
+        "定量発注",
+        "発注点方式"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "定量発注方式 / 定期発注方式",
+      "problem_count": 6,
+      "problem_ids": [
+        "rich_gen_258_0",
+        "rich_gen_261_3",
+        "qs_4ebb698454",
+        "qs_ops_p4_010",
+        "qs_ops_p4_011"
+      ]
+    },
+    {
+      "term": "安全在庫",
+      "keywords": [
+        "安全在庫"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "安全在庫",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_D_第32問"
+      ]
+    },
+    {
+      "term": "ABC分析",
+      "keywords": [
+        "ABC分析"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ABC分析",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "JIT・かんばん方式",
+      "keywords": [
+        "JIT",
+        "ジャストインタイム",
+        "かんばん方式"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "トヨタ生産方式 (JIT / 自働化)",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_453baaf57c",
+        "qs_746aa7468b",
+        "qs_ops_p3_013",
+        "rich_gen_398_0",
+        "rich_gen_401_3"
+      ]
+    },
+    {
+      "term": "MRP",
+      "keywords": [
+        "MRP",
+        "資材所要量計画"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "工程分析",
+      "keywords": [
+        "工程分析",
+        "製品工程分析"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "工程分析",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "標準時間・レイティング",
+      "keywords": [
+        "標準時間",
+        "レイティング"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "標準時間",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_998bf43bdf",
+        "qs_c7bddfa130",
+        "qs_02cca3e14d",
+        "qs_ops_p3_008",
+        "qs_ops_p3_019"
+      ]
+    },
+    {
+      "term": "動作研究",
+      "keywords": [
+        "動作研究",
+        "サーブリッグ"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "サーブリッグ分析",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_ee23e1fb4e",
+        "qs_ops_p3_007"
+      ]
+    },
+    {
+      "term": "POSシステム",
+      "keywords": [
+        "POS",
+        "POSシステム"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "POSシステム",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_ops_p4_014",
+        "rich_gen_408_0",
+        "rich_gen_411_3",
+        "rich_gen_412_4",
+        "R7_D_第38問"
+      ]
+    },
+    {
+      "term": "マーチャンダイジング",
+      "keywords": [
+        "マーチャンダイジング",
+        "VMD"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "MD（マーチャンダイジング）",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_mg_20260419_303",
+        "R7_D_第30問"
+      ]
+    },
+    {
+      "term": "商圏分析・ハフモデル",
+      "keywords": [
+        "ハフモデル",
+        "ライリーの法則",
+        "商圏分析"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ハフモデル",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_ops_p4_003",
+        "R7_D_第24問"
+      ]
+    },
+    {
+      "term": "小売業態",
+      "keywords": [
+        "GMS",
+        "コンビニエンスストア",
+        "ドラッグストア",
+        "専門店",
+        "百貨店",
+        "SM"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 6,
+      "problem_ids": [
+        "rich_gen_100_4",
+        "rich_gen_237_4",
+        "qs_g7h1w5z9q4",
+        "rich_gen_388_0",
+        "rich_gen_391_3"
+      ]
+    },
+    {
+      "term": "大店立地法・都市計画法",
+      "keywords": [
+        "大規模小売店舗立地法",
+        "大店立地法",
+        "都市計画法"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "大規模小売店舗立地法 (大店立地法)",
+      "problem_count": 9,
+      "problem_ids": [
+        "rich_gen_198_0",
+        "rich_gen_201_3",
+        "rich_gen_202_4",
+        "qs_b683b5e08f",
+        "qs_ops_p4_001"
+      ]
+    },
+    {
+      "term": "ロット生産",
+      "keywords": [
+        "ロット生産",
+        "段取り"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "ロット生産",
+      "problem_count": 7,
+      "problem_ids": [
+        "rich_gen_208_0",
+        "rich_gen_211_3",
+        "rich_gen_212_4",
+        "rich_gen_218_0",
+        "rich_gen_221_3"
+      ]
+    },
+    {
+      "term": "ラインバランシング",
+      "keywords": [
+        "ラインバランシング",
+        "サイクルタイム"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "タクトタイム vs サイクルタイム",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_D_第14問"
+      ]
+    },
+    {
+      "term": "時間研究",
+      "keywords": [
+        "時間研究",
+        "PTS法",
+        "WF法",
+        "MTM法"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "時間研究",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_ops_p3_008"
+      ]
+    },
+    {
+      "term": "稼働分析",
+      "keywords": [
+        "稼働分析",
+        "ワークサンプリング"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "稼働分析",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_ops_p3_009"
+      ]
+    },
+    {
+      "term": "抜取検査・OC曲線",
+      "keywords": [
+        "抜取検査",
+        "OC曲線",
+        "生産者危険",
+        "消費者危険"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "工程能力指数",
+      "keywords": [
+        "工程能力指数",
+        "Cp",
+        "Cpk"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_D_第8問"
+      ]
+    },
+    {
+      "term": "TQM・QCサークル",
+      "keywords": [
+        "TQM",
+        "QCサークル"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "ISO9001/14001",
+      "keywords": [
+        "ISO9001",
+        "ISO14001"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "新QC七つ道具",
+      "keywords": [
+        "新QC七つ道具",
+        "親和図",
+        "連関図",
+        "系統図",
+        "マトリックス図"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "親和図法",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_ops_p3_012",
+        "R7_D_第5問"
+      ]
+    },
+    {
+      "term": "TPM・予防保全",
+      "keywords": [
+        "TPM",
+        "予防保全",
+        "事後保全",
+        "予知保全"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "予防保全",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_ops_p3_015",
+        "R7_D_第11問"
+      ]
+    },
+    {
+      "term": "MTBF・MTTR",
+      "keywords": [
+        "MTBF",
+        "MTTR"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_D_第11問"
+      ]
+    },
+    {
+      "term": "制約理論(TOC)",
+      "keywords": [
+        "制約理論",
+        "TOC"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_D_第3問"
+      ]
+    },
+    {
+      "term": "SCM",
+      "keywords": [
+        "SCM",
+        "サプライチェーン"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "SCM (サプライチェーン・マネジメント)",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_it_20260419_061",
+        "gen_a_1091",
+        "gen_e_1094",
+        "qs_pol_p3_012",
+        "R7_D_第16問"
+      ]
+    },
+    {
+      "term": "3PL",
+      "keywords": [
+        "3PL"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "3PL (サードパーティ・ロジスティクス)",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_mg_20260419_274"
+      ]
+    },
+    {
+      "term": "物流ABC",
+      "keywords": [
+        "物流ABC"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_D_第37問"
+      ]
+    },
+    {
+      "term": "JANコード",
+      "keywords": [
+        "JANコード",
+        "バーコード"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "JANコード (標準タイプ・短縮タイプ)",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_ops_p4_019",
+        "rich_gen_403_0",
+        "rich_gen_406_3",
+        "rich_gen_407_4"
+      ]
+    },
+    {
+      "term": "RFID",
+      "keywords": [
+        "RFID",
+        "ICタグ"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "RFID (無線ICタグ)",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_F_第3問"
+      ]
+    },
+    {
+      "term": "陳列・売場レイアウト",
+      "keywords": [
+        "陳列",
+        "売場レイアウト"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "EC・電子商取引",
+      "keywords": [
+        "EC",
+        "電子商取引"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_mg_20260419_148",
+        "qs_pol_p3_013",
+        "R7_D_第23問"
+      ]
+    }
+  ],
+  "経営法務": [
+    {
+      "term": "株式会社の機関設計",
+      "keywords": [
+        "機関設計",
+        "取締役会",
+        "監査役会",
+        "監査等委員会"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "株式会社の機関設計",
+      "problem_count": 9,
+      "problem_ids": [
+        "qs_e10feeb60f",
+        "qs_1b678f977b",
+        "qs_leg_p4_003",
+        "qs_leg_p4_020",
+        "R7_B_第2問"
+      ]
+    },
+    {
+      "term": "取締役・取締役会",
+      "keywords": [
+        "取締役",
+        "取締役会",
+        "代表取締役"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "取締役会設置義務",
+      "problem_count": 9,
+      "problem_ids": [
+        "qs_e10feeb60f",
+        "qs_leg_p4_020",
+        "R7_B_第2問",
+        "R7_E_第1問",
+        "R7_E_第2問"
+      ]
+    },
+    {
+      "term": "監査役",
+      "keywords": [
+        "監査役"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "監査役",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_1b678f977b"
+      ]
+    },
+    {
+      "term": "株主総会",
+      "keywords": [
+        "株主総会",
+        "普通決議",
+        "特別決議"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "株主総会",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_x1y2z3a4b5",
+        "qs_628e512c4b",
+        "qs_leg_p4_002",
+        "R7_B_第2問",
+        "R7_E_第1問"
+      ]
+    },
+    {
+      "term": "種類株式",
+      "keywords": [
+        "種類株式",
+        "優先株式",
+        "議決権制限株式"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "株式",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "譲渡制限株式",
+      "keywords": [
+        "譲渡制限"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "株式譲渡制限",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_leg_p4_003",
+        "R7_E_第4問"
+      ]
+    },
+    {
+      "term": "合併(吸収/新設)",
+      "keywords": [
+        "吸収合併",
+        "新設合併"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "M&A (合併・買収)",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "会社分割",
+      "keywords": [
+        "会社分割",
+        "吸収分割",
+        "新設分割"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "会社分割",
+      "problem_count": 2,
+      "problem_ids": [
+        "R7_E_第6問-設問1",
+        "R7_E_第6問-設問2"
+      ]
+    },
+    {
+      "term": "株式交換・株式移転",
+      "keywords": [
+        "株式交換",
+        "株式移転"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "株式",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "事業譲渡",
+      "keywords": [
+        "事業譲渡"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 2,
+      "problem_ids": [
+        "R7_E_第6問-設問1",
+        "R7_E_第6問-設問2"
+      ]
+    },
+    {
+      "term": "特許法",
+      "keywords": [
+        "特許法",
+        "特許権",
+        "特許出願"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "特許権",
+      "problem_count": 4,
+      "problem_ids": [
+        "rich_gen_335_0",
+        "rich_gen_338_3",
+        "qs_leg_p3_001",
+        "qs_leg_p3_012"
+      ]
+    },
+    {
+      "term": "特許要件(新規性等)",
+      "keywords": [
+        "新規性",
+        "進歩性",
+        "産業上利用可能性"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "新規性",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_leg_p3_002"
+      ]
+    },
+    {
+      "term": "実用新案",
+      "keywords": [
+        "実用新案"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "実用新案権",
+      "problem_count": 5,
+      "problem_ids": [
+        "rich_gen_335_0",
+        "rich_gen_338_3",
+        "qs_leg_p3_002",
+        "qs_leg_p3_003",
+        "R7_E_第13問"
+      ]
+    },
+    {
+      "term": "意匠法",
+      "keywords": [
+        "意匠法",
+        "意匠権",
+        "意匠登録"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "意匠権",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_leg_p3_004",
+        "qs_leg_p3_010",
+        "R7_E_第12問",
+        "R7_E_第13問"
+      ]
+    },
+    {
+      "term": "商標法",
+      "keywords": [
+        "商標法",
+        "商標権",
+        "商標登録"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "商標権",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_0635298f6e",
+        "qs_leg_p3_006",
+        "R7_E_第12問",
+        "R7_E_第16問"
+      ]
+    },
+    {
+      "term": "著作権法",
+      "keywords": [
+        "著作権法",
+        "著作権",
+        "著作者人格権"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "著作権",
+      "problem_count": 6,
+      "problem_ids": [
+        "rich_gen_349_0",
+        "rich_gen_352_4",
+        "qs_leg_p3_008",
+        "qs_leg_p3_017",
+        "R7_E_第14問"
+      ]
+    },
+    {
+      "term": "不正競争防止法",
+      "keywords": [
+        "不正競争防止法"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "不正競争防止法",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_leg_p3_010",
+        "qs_leg_p3_011",
+        "qs_leg_p3_020",
+        "R7_E_第11問"
+      ]
+    },
+    {
+      "term": "契約(成立・効力)",
+      "keywords": [
+        "契約の成立",
+        "契約の効力",
+        "申込み",
+        "承諾"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "契約の成立 (申込みと承諾)",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_a823a0dcc9",
+        "R6_C_第24問",
+        "R6_C_第25問"
+      ]
+    },
+    {
+      "term": "債務不履行",
+      "keywords": [
+        "債務不履行",
+        "損害賠償"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "債務不履行",
+      "problem_count": 9,
+      "problem_ids": [
+        "qs_1c285f6ec7",
+        "qs_2525104bb4",
+        "qs_leg_p3_019",
+        "qs_leg_p4_005",
+        "qs_leg_p4_014"
+      ]
+    },
+    {
+      "term": "合同会社",
+      "keywords": [
+        "合同会社",
+        "合名会社",
+        "合資会社",
+        "持分会社"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "株式会社・合同会社 / 合名会社・合資会社",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_E_第5問"
+      ]
+    },
+    {
+      "term": "発起設立・募集設立",
+      "keywords": [
+        "発起設立",
+        "募集設立"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "発起設立",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_6734152be9"
+      ]
+    },
+    {
+      "term": "新株発行",
+      "keywords": [
+        "新株発行",
+        "有利発行"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_B_第6問"
+      ]
+    },
+    {
+      "term": "社債・新株予約権",
+      "keywords": [
+        "社債",
+        "新株予約権"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "新株予約権",
+      "problem_count": 1,
+      "problem_ids": [
+        "R6_C_第5問"
+      ]
+    },
+    {
+      "term": "自己株式",
+      "keywords": [
+        "自己株式"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "自己株式 (金庫株)",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "剰余金配当",
+      "keywords": [
+        "剰余金の配当",
+        "分配可能額"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "職務発明",
+      "keywords": [
+        "職務発明"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "職務発明",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_leg_p3_015",
+        "R7_E_第9問"
+      ]
+    },
+    {
+      "term": "契約不適合責任",
+      "keywords": [
+        "契約不適合責任",
+        "瑕疵担保"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "契約不適合責任",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_leg_p4_005"
+      ]
+    },
+    {
+      "term": "保証・連帯保証",
+      "keywords": [
+        "保証",
+        "連帯保証"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "連帯保証",
+      "problem_count": 8,
+      "problem_ids": [
+        "qs_x2n8m4k1p9",
+        "gen_a_1135",
+        "gen_e_1138",
+        "gen_a_1139",
+        "gen_e_1142"
+      ]
+    },
+    {
+      "term": "消滅時効",
+      "keywords": [
+        "消滅時効"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "消滅時効",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_leg_p4_008",
+        "R7_E_第22問"
+      ]
+    },
+    {
+      "term": "不法行為",
+      "keywords": [
+        "不法行為"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "不法行為責任",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_3117b7f466"
+      ]
+    },
+    {
+      "term": "代理・無権代理",
+      "keywords": [
+        "代理",
+        "無権代理",
+        "表見代理"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "表見代理 (ひょうけんだいり)",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "独占禁止法",
+      "keywords": [
+        "独占禁止法",
+        "カルテル"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "独占禁止法",
+      "problem_count": 5,
+      "problem_ids": [
+        "rich_gen_325_0",
+        "rich_gen_328_3",
+        "rich_gen_329_4",
+        "qs_b9p1q4x3z7",
+        "qs_leg_p4_009"
+      ]
+    },
+    {
+      "term": "下請法",
+      "keywords": [
+        "下請法",
+        "下請代金支払遅延等防止法"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "下請代金支払遅延等防止法",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_leg_p4_010",
+        "R7_E_第7問"
+      ]
+    },
+    {
+      "term": "破産法",
+      "keywords": [
+        "破産法"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "民事再生法",
+      "keywords": [
+        "民事再生"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "会社更生法",
+      "keywords": [
+        "会社更生"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "個人情報保護法",
+      "keywords": [
+        "個人情報保護法"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "個人情報保護法",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_it_20260419_079",
+        "R7_C_第31問"
+      ]
+    },
+    {
+      "term": "消費者契約法",
+      "keywords": [
+        "消費者契約法"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "営業秘密・限定提供データ",
+      "keywords": [
+        "営業秘密",
+        "限定提供データ"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "営業秘密",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_leg_p3_011",
+        "R7_E_第11問"
+      ]
+    }
+  ],
+  "経営情報システム": [
+    {
+      "term": "CPU・メモリ",
+      "keywords": [
+        "CPU",
+        "プロセッサ",
+        "RAM",
+        "ROM",
+        "キャッシュメモリ"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "CPU (中央処理装置)",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_mg_20260419_330",
+        "qs_e7228843e8",
+        "qs_it_p2_001"
+      ]
+    },
+    {
+      "term": "補助記憶装置",
+      "keywords": [
+        "HDD",
+        "SSD",
+        "補助記憶"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_e7228843e8",
+        "qs_it_20260419_074"
+      ]
+    },
+    {
+      "term": "OS・ミドルウェア",
+      "keywords": [
+        "OS",
+        "オペレーティングシステム",
+        "ミドルウェア"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "OS (基本ソフトウェア)",
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_ops_p4_014",
+        "qs_da7afe1ce3",
+        "qs_it_p2_002",
+        "qs_it_p2_004"
+      ]
+    },
+    {
+      "term": "関係データベース",
+      "keywords": [
+        "関係データベース",
+        "RDB",
+        "リレーショナル"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "リレーショナルデータベース (RDB)",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_it_p2_003"
+      ]
+    },
+    {
+      "term": "SQL",
+      "keywords": [
+        "SQL",
+        "SELECT",
+        "JOIN"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "SQL",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_it_20260419_073",
+        "qs_it_p2_019",
+        "R7_F_第12問"
+      ]
+    },
+    {
+      "term": "正規化",
+      "keywords": [
+        "正規化",
+        "第1正規形",
+        "第2正規形",
+        "第3正規形"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "正規化",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_F_第11問"
+      ]
+    },
+    {
+      "term": "主キー・外部キー",
+      "keywords": [
+        "主キー",
+        "外部キー"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "主キー",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "トランザクション・ACID",
+      "keywords": [
+        "トランザクション",
+        "ACID",
+        "コミット",
+        "ロールバック"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ACID特性",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_mg_20260419_118",
+        "qs_it_20260419_072",
+        "qs_it_p2_003",
+        "R7_C_第18問",
+        "R7_F_第16問"
+      ]
+    },
+    {
+      "term": "TCP/IP・プロトコル",
+      "keywords": [
+        "TCP/IP",
+        "TCP",
+        "UDP",
+        "プロトコル"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "OSI基本参照モデルとTCP/IP",
+      "problem_count": 6,
+      "problem_ids": [
+        "qs_it_20260419_081",
+        "rich_gen_393_0",
+        "rich_gen_396_3",
+        "rich_gen_397_4",
+        "R7_F_第4問"
+      ]
+    },
+    {
+      "term": "IPアドレス",
+      "keywords": [
+        "IPアドレス",
+        "サブネット",
+        "IPv4",
+        "IPv6"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "IPアドレス",
+      "problem_count": 7,
+      "problem_ids": [
+        "qs_it_20260419_068",
+        "qs_it_p2_004",
+        "qs_it_p2_005",
+        "rich_gen_393_0",
+        "rich_gen_396_3"
+      ]
+    },
+    {
+      "term": "LAN・WAN",
+      "keywords": [
+        "LAN",
+        "WAN",
+        "無線LAN",
+        "Wi-Fi"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "LAN と WAN",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_21b2c3fb42"
+      ]
+    },
+    {
+      "term": "暗号化(共通鍵/公開鍵)",
+      "keywords": [
+        "共通鍵暗号",
+        "公開鍵暗号",
+        "暗号化"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "共通鍵暗号方式",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_83b1a5c3bb",
+        "qs_it_p2_010",
+        "qs_it_p2_011"
+      ]
+    },
+    {
+      "term": "認証・デジタル署名",
+      "keywords": [
+        "認証",
+        "デジタル署名",
+        "電子署名"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "情報セキュリティの基本 (暗号化・認証・ファイアウォール)",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_it_20260419_066",
+        "qs_it_p2_012"
+      ]
+    },
+    {
+      "term": "ウォーターフォール/アジャイル",
+      "keywords": [
+        "ウォーターフォール",
+        "アジャイル",
+        "スクラム"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ウォーターフォールモデル",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_it_20260419_070",
+        "qs_it_p2_006",
+        "qs_it_p2_007",
+        "R7_F_第13問",
+        "R7_F_第18問"
+      ]
+    },
+    {
+      "term": "ERP",
+      "keywords": [
+        "ERP"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ERP",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_it_20260419_059",
+        "qs_it_p2_015"
+      ]
+    },
+    {
+      "term": "CRM・SFA",
+      "keywords": [
+        "CRM",
+        "SFA"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "CRM (顧客関係管理)",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_mg_20260419_276",
+        "qs_it_20260419_060",
+        "qs_it_20260419_062"
+      ]
+    },
+    {
+      "term": "AI・機械学習",
+      "keywords": [
+        "機械学習",
+        "深層学習",
+        "ディープラーニング",
+        "ニューラルネットワーク"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "AI (機械学習・ディープラーニング)",
+      "problem_count": 2,
+      "problem_ids": [
+        "R7_F_第20問",
+        "R7_F_第25問"
+      ]
+    },
+    {
+      "term": "NoSQL",
+      "keywords": [
+        "NoSQL"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "SQL",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_it_20260419_073",
+        "qs_it_p2_019"
+      ]
+    },
+    {
+      "term": "データウェアハウス",
+      "keywords": [
+        "データウェアハウス",
+        "データマート"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_F_第16問"
+      ]
+    },
+    {
+      "term": "OLTP・OLAP",
+      "keywords": [
+        "OLTP",
+        "OLAP"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_F_第16問"
+      ]
+    },
+    {
+      "term": "OSI参照モデル",
+      "keywords": [
+        "OSI参照",
+        "OSI7層"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "OS (基本ソフトウェア)",
+      "problem_count": 3,
+      "problem_ids": [
+        "rich_gen_393_0",
+        "rich_gen_396_3",
+        "rich_gen_397_4"
+      ]
+    },
+    {
+      "term": "DNS・DHCP",
+      "keywords": [
+        "DNS",
+        "DHCP"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "DNS",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_it_20260419_068",
+        "R7_F_第5問"
+      ]
+    },
+    {
+      "term": "HTTP/HTTPS",
+      "keywords": [
+        "HTTP",
+        "HTTPS"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "トヨタ生産方式 (JIT / 自働化)",
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_F_第4問"
+      ]
+    },
+    {
+      "term": "VPN",
+      "keywords": [
+        "VPN"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_it_20260419_069"
+      ]
+    },
+    {
+      "term": "PKI・認証局",
+      "keywords": [
+        "PKI",
+        "認証局"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "情報セキュリティの基本 (暗号化・認証・ファイアウォール)",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "SSL/TLS",
+      "keywords": [
+        "SSL",
+        "TLS"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_it_20260419_081"
+      ]
+    },
+    {
+      "term": "ファイアウォール",
+      "keywords": [
+        "ファイアウォール"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "情報セキュリティの基本 (暗号化・認証・ファイアウォール)",
+      "problem_count": 3,
+      "problem_ids": [
+        "rich_gen_383_0",
+        "rich_gen_386_3",
+        "rich_gen_387_4"
+      ]
+    },
+    {
+      "term": "マルウェア・ランサムウェア",
+      "keywords": [
+        "マルウェア",
+        "ランサムウェア"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "主なサイバー攻撃の種類",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_it_20260419_067",
+        "rich_gen_383_0",
+        "rich_gen_386_3",
+        "rich_gen_387_4",
+        "R7_F_第19問"
+      ]
+    },
+    {
+      "term": "ISMS",
+      "keywords": [
+        "ISMS",
+        "ISO27001"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "ISMS",
+      "problem_count": 3,
+      "problem_ids": [
+        "rich_gen_388_0",
+        "rich_gen_391_3",
+        "rich_gen_392_4"
+      ]
+    },
+    {
+      "term": "情報セキュリティ3要素",
+      "keywords": [
+        "機密性",
+        "完全性",
+        "可用性"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "IoT",
+      "keywords": [
+        "IoT"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "IoT (モノのインターネット)",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_it_20260419_076"
+      ]
+    },
+    {
+      "term": "ビッグデータ",
+      "keywords": [
+        "ビッグデータ"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "ビッグデータ",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_mg_20260419_331"
+      ]
+    },
+    {
+      "term": "生成AI・LLM",
+      "keywords": [
+        "生成AI",
+        "LLM",
+        "ChatGPT"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "AI (機械学習・ディープラーニング)",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_it_20260419_083",
+        "R7_F_第20問"
+      ]
+    },
+    {
+      "term": "クラウド(IaaS/PaaS/SaaS)",
+      "keywords": [
+        "IaaS",
+        "PaaS",
+        "SaaS"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "SaaS / PaaS / IaaS",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_e43fdca633",
+        "qs_it_20260419_063",
+        "qs_it_p2_014"
+      ]
+    },
+    {
+      "term": "コンテナ・Docker",
+      "keywords": [
+        "Docker",
+        "Kubernetes",
+        "コンテナ"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_ops_p4_019",
+        "R7_D_第34問",
+        "R7_D_第35問",
+        "R7_F_第2問"
+      ]
+    },
+    {
+      "term": "UML",
+      "keywords": [
+        "UML",
+        "ユースケース図",
+        "クラス図"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "テスト(単体/結合)",
+      "keywords": [
+        "単体テスト",
+        "結合テスト",
+        "総合テスト"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 4,
+      "problem_ids": [
+        "qs_it_p2_008",
+        "rich_gen_368_0",
+        "rich_gen_371_3",
+        "rich_gen_372_4"
+      ]
+    },
+    {
+      "term": "PMBOK・WBS",
+      "keywords": [
+        "PMBOK",
+        "WBS"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "MBO (目標管理制度)",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "DX",
+      "keywords": [
+        "DX",
+        "デジタルトランスフォーメーション"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "DX",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_it_20260419_078",
+        "qs_pol_p3_009",
+        "R7_F_第22問"
+      ]
+    },
+    {
+      "term": "RPA",
+      "keywords": [
+        "RPA"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "ブロックチェーン",
+      "keywords": [
+        "ブロックチェーン"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "R7_F_第6問"
+      ]
+    },
+    {
+      "term": "ゼロトラスト",
+      "keywords": [
+        "ゼロトラスト"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_it_20260419_065"
+      ]
+    }
+  ],
+  "中小企業経営・中小企業政策": [
+    {
+      "term": "中小企業の定義",
+      "keywords": [
+        "中小企業の定義",
+        "資本金",
+        "従業員数"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "中小企業の定義",
+      "problem_count": 9,
+      "problem_ids": [
+        "rich_gen_299_4",
+        "qs_12eb0994a6",
+        "qs_375261a736",
+        "qs_pol_p3_001",
+        "qs_pol_p3_002"
+      ]
+    },
+    {
+      "term": "中小企業基本法",
+      "keywords": [
+        "中小企業基本法"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "中小企業基本法（中小企業の定義）",
+      "problem_count": 15,
+      "problem_ids": [
+        "gen_a_1047",
+        "gen_e_1050",
+        "qs_d4bd58cb88",
+        "qs_375261a736",
+        "qs_0a936ef8f6"
+      ]
+    },
+    {
+      "term": "中小企業白書",
+      "keywords": [
+        "中小企業白書"
+      ],
+      "rank": "SS",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_pol_p3_009",
+        "R7_G_第4問-設問1",
+        "R7_G_第5問",
+        "R7_G_第16問-設問1",
+        "R7_G_第16問-設問2"
+      ]
+    },
+    {
+      "term": "開業率・廃業率",
+      "keywords": [
+        "開業率",
+        "廃業率"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "開廃業率",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_0e88354c27",
+        "qs_pol_p3_006"
+      ]
+    },
+    {
+      "term": "日本政策金融公庫",
+      "keywords": [
+        "日本政策金融公庫",
+        "政策金融公庫"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "日本政策金融公庫",
+      "problem_count": 5,
+      "problem_ids": [
+        "gen_a_1127",
+        "gen_e_1130",
+        "R7_G_第18問",
+        "R7_G_第20問-設問1",
+        "R7_G_第20問-設問2"
+      ]
+    },
+    {
+      "term": "信用保証協会",
+      "keywords": [
+        "信用保証協会"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "信用保証協会",
+      "problem_count": 3,
+      "problem_ids": [
+        "gen_a_1139",
+        "gen_e_1142",
+        "qs_46edf88e35"
+      ]
+    },
+    {
+      "term": "セーフティネット保証",
+      "keywords": [
+        "セーフティネット保証"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "セーフティネット保証",
+      "problem_count": 3,
+      "problem_ids": [
+        "gen_a_1135",
+        "gen_e_1138",
+        "R7_G_第26問-設問2"
+      ]
+    },
+    {
+      "term": "経営革新計画",
+      "keywords": [
+        "経営革新計画"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "経営革新計画",
+      "problem_count": 6,
+      "problem_ids": [
+        "gen_a_1143",
+        "gen_e_1146",
+        "R7_G_第22問-設問1",
+        "R7_G_第22問-設問2",
+        "R7_G_第29問-設問1"
+      ]
+    },
+    {
+      "term": "経営力向上計画",
+      "keywords": [
+        "経営力向上計画"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "経営力向上計画",
+      "problem_count": 3,
+      "problem_ids": [
+        "gen_a_1143",
+        "gen_e_1146",
+        "R7_G_第28問"
+      ]
+    },
+    {
+      "term": "事業承継税制",
+      "keywords": [
+        "事業承継税制"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "事業承継税制",
+      "problem_count": 5,
+      "problem_ids": [
+        "gen_e_1154",
+        "qs_c1f0d45c1d",
+        "qs_pol_p3_007",
+        "R7_G_第30問-設問1",
+        "R7_G_第30問-設問2"
+      ]
+    },
+    {
+      "term": "商工会・商工会議所",
+      "keywords": [
+        "商工会",
+        "商工会議所"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "商工会と商工会議所の違い",
+      "problem_count": 5,
+      "problem_ids": [
+        "rich_gen_106_0",
+        "rich_gen_109_3",
+        "gen_e_1122",
+        "gen_e_1126",
+        "qs_bcfa74df98"
+      ]
+    },
+    {
+      "term": "ものづくり補助金",
+      "keywords": [
+        "ものづくり補助金"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ものづくり補助金",
+      "problem_count": 4,
+      "problem_ids": [
+        "rich_gen_194_0",
+        "rich_gen_197_4",
+        "qs_g9t3n8p2x5",
+        "gen_a_1159"
+      ]
+    },
+    {
+      "term": "IT導入補助金",
+      "keywords": [
+        "IT導入補助金"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "IT導入補助金",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_g9t3n8p2x5",
+        "qs_0f1fa22b81"
+      ]
+    },
+    {
+      "term": "小規模事業者持続化補助金",
+      "keywords": [
+        "持続化補助金"
+      ],
+      "rank": "SS",
+      "has_example": true,
+      "example_term": "ものづくり・商業・サービス生産性向上促進補助金（ものづくり補助金）",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_g9t3n8p2x5",
+        "gen_a_1163",
+        "qs_d8c71f79e8"
+      ]
+    },
+    {
+      "term": "小規模企業振興基本法",
+      "keywords": [
+        "小規模企業振興基本法",
+        "小規模基本法"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "小規模企業振興基本法",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_0a936ef8f6"
+      ]
+    },
+    {
+      "term": "中小企業等経営強化法",
+      "keywords": [
+        "経営強化法",
+        "中小企業等経営強化法"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "経営強化法",
+      "problem_count": 5,
+      "problem_ids": [
+        "qs_73350dabc5",
+        "R7_G_第22問-設問1",
+        "R7_G_第22問-設問2",
+        "R7_G_第28問",
+        "R7_G_第29問-設問1"
+      ]
+    },
+    {
+      "term": "マル経融資",
+      "keywords": [
+        "マル経"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "マル経融資",
+      "problem_count": 2,
+      "problem_ids": [
+        "gen_e_1122",
+        "qs_bcfa74df98"
+      ]
+    },
+    {
+      "term": "商工中金",
+      "keywords": [
+        "商工組合中央金庫",
+        "商工中金"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "商工組合中央金庫 (商工中金)",
+      "problem_count": 2,
+      "problem_ids": [
+        "gen_a_1131",
+        "gen_e_1134"
+      ]
+    },
+    {
+      "term": "事業再構築補助金",
+      "keywords": [
+        "事業再構築補助金"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "事業再構築補助金",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_g9t3n8p2x5",
+        "R7_G_第22問-設問1"
+      ]
+    },
+    {
+      "term": "創業支援",
+      "keywords": [
+        "創業支援",
+        "認定特定創業支援"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 4,
+      "problem_ids": [
+        "gen_a_1115",
+        "gen_e_1118",
+        "gen_a_1127",
+        "gen_e_1130"
+      ]
+    },
+    {
+      "term": "産業競争力強化法",
+      "keywords": [
+        "産業競争力強化法"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "先端設備等導入計画",
+      "keywords": [
+        "先端設備"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "先端設備等導入計画",
+      "problem_count": 1,
+      "problem_ids": [
+        "gen_a_1147"
+      ]
+    },
+    {
+      "term": "事業承継ガイドライン",
+      "keywords": [
+        "事業承継ガイドライン"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "M&A (合併・買収)",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_pol_p3_007"
+      ]
+    },
+    {
+      "term": "経営承継円滑化法",
+      "keywords": [
+        "経営承継円滑化法"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "よろず支援拠点",
+      "keywords": [
+        "よろず支援拠点"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "認定支援機関",
+      "keywords": [
+        "認定支援機関",
+        "認定経営革新等支援機関"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "経営革新等支援機関（認定支援機関）",
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "中小機構",
+      "keywords": [
+        "中小企業基盤整備機構",
+        "中小機構"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "独立行政法人 中小企業基盤整備機構 (中小機構)",
+      "problem_count": 3,
+      "problem_ids": [
+        "gen_a_1115",
+        "gen_e_1118",
+        "qs_09a38ce6e5"
+      ]
+    },
+    {
+      "term": "下請代金支払遅延等防止法",
+      "keywords": [
+        "下請代金支払遅延等防止法",
+        "下請法"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "下請代金支払遅延等防止法",
+      "problem_count": 2,
+      "problem_ids": [
+        "qs_leg_p4_010",
+        "R7_E_第7問"
+      ]
+    },
+    {
+      "term": "下請中小企業振興法",
+      "keywords": [
+        "下請中小企業振興法"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "中退共・小規模共済",
+      "keywords": [
+        "中小企業退職金共済",
+        "中退共",
+        "小規模企業共済"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "小規模企業共済",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_b987256ec6"
+      ]
+    },
+    {
+      "term": "経営セーフティ共済",
+      "keywords": [
+        "経営セーフティ共済",
+        "倒産防止共済"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "中小企業倒産防止共済",
+      "problem_count": 3,
+      "problem_ids": [
+        "qs_157b6e923d",
+        "R7_G_第23問-設問1",
+        "R7_G_第23問-設問2"
+      ]
+    },
+    {
+      "term": "JETRO",
+      "keywords": [
+        "ジェトロ",
+        "JETRO"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "JETRO (日本貿易振興機構)",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_ec5da4eb55"
+      ]
+    },
+    {
+      "term": "地域資源活用",
+      "keywords": [
+        "地域資源"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "農商工連携",
+      "keywords": [
+        "農商工連携"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    },
+    {
+      "term": "中心市街地活性化",
+      "keywords": [
+        "中心市街地活性化"
+      ],
+      "rank": "A",
+      "has_example": true,
+      "example_term": "中心市街地活性化法",
+      "problem_count": 1,
+      "problem_ids": [
+        "qs_ee83271c50"
+      ]
+    },
+    {
+      "term": "商店街振興",
+      "keywords": [
+        "商店街振興"
+      ],
+      "rank": "A",
+      "has_example": false,
+      "example_term": null,
+      "problem_count": 0,
+      "problem_ids": []
+    }
+  ]
+}
