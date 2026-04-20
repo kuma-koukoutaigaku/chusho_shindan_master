@@ -1528,36 +1528,22 @@ function showQuestion() {
  });
  currentQ._enrichedTerms = enrichedTerms;
 
- // L3（記述問題）の場合は選択肢を隠して記述エリアを表示
- const writingArea = document.getElementById('kwWritingArea');
- const choicesDiv  = document.getElementById('choices');
- if (currentQ._kwLevel === 3) {
-   choicesDiv.style.display = 'none';
-   writingArea.style.display = '';
-   document.getElementById('kwTermInput').value = '';
-   document.getElementById('kwReasonInput').value = '';
-   document.getElementById('kwL3CharCount').textContent = '0 / 30字';
-   document.getElementById('kwL3Result').style.display = 'none';
-   document.getElementById('kwL3Result').innerHTML = '';
-   document.getElementById('kwL3SubmitBtn').disabled = false;
-   document.getElementById('nextBtn').disabled = true;
- } else {
-   writingArea.style.display = 'none';
-   choicesDiv.style.display = '';
-   // Choices
-   const labels = ['A','B','C','D','E'];
-   let choicesHtml = currentQ.choices.map((c, i) =>
-    `<button class="choice-btn" onclick="selectChoice(${i})">
-    <span class="choice-label">${labels[i]}</span>
-    <span>${c.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}</span>
-   </button>`
-   ).join('');
-   choicesHtml += `<button class="choice-btn skip-btn" onclick="skipQuestion()" style="margin-top:15px; border-color:#ccc; background:#f9f9f9;">
-    <span class="choice-label" style="background:#ccc; color:#fff">？</span>
-    <span style="color:#666">わからない（解説を見てスキップ）</span>
-   </button>`;
-   choicesDiv.innerHTML = choicesHtml;
- }
+ // 記述エリアは常に非表示（L3廃止）
+ document.getElementById('kwWritingArea').style.display = 'none';
+
+ // Choices
+ const labels = ['A','B','C','D','E'];
+ let choicesHtml = currentQ.choices.map((c, i) =>
+  `<button class="choice-btn" onclick="selectChoice(${i})">
+  <span class="choice-label">${labels[i]}</span>
+  <span>${c.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}</span>
+ </button>`
+ ).join('');
+ choicesHtml += `<button class="choice-btn skip-btn" onclick="skipQuestion()" style="margin-top:15px; border-color:#ccc; background:#f9f9f9;">
+  <span class="choice-label" style="background:#ccc; color:#fff">？</span>
+  <span style="color:#666">わからない（解説を見てスキップ）</span>
+ </button>`;
+ document.getElementById('choices').innerHTML = choicesHtml;
 
  // Reset panels
  document.getElementById('termPopupBackdrop').classList.remove('show');
@@ -3030,27 +3016,8 @@ function startKeywordDrill(subject) {
     if (term.metaphor) why += `\n\n身近な例え：${term.metaphor}`;
     if (term.case)     why += `\n\n中小企業の事例：${term.case}`;
 
-    // --- L3: 事例記述問題（caseがある用語のみ、3問に1回）---
-    if (term.case && (i % 3 === 2)) {
-      return {
-        id: 'kw_' + term.term,
-        subject: term.subject || '基礎キーワード',
-        section: rankLabel ? `${rankLabel} 応用問題` : '応用問題',
-        _kwRank: rank,
-        _kwLevel: 3,
-        text: `次の事例を読み、当てはまる概念名とその理由を答えよ。\n\n【事例】${term.case}`,
-        choices: [],
-        correct: -1,
-        why,
-        _kwModelAnswer: { term: term.term, reason: `${term.oneliner.replace(/\*\*/g,'').substring(0,40)}` },
-        terms: { [term.term]: term.oneliner },
-        _kwTerm: term.term
-      };
-    }
-
-    // --- L2: 事例から概念名を4択（caseがある用語のみ、3問に1回）---
-    if (term.case && (i % 3 === 1)) {
-      // 同科目の紛らわしい概念名を誤答に
+    // --- L2: 事例→概念名を4択（caseがある用語、偶数番目）---
+    if (term.case && (i % 2 === 1)) {
       const sameSubjTerms = allOneliners.filter(e => e.term !== term.term && e.subject === term.subject);
       const otherTerms    = allOneliners.filter(e => e.term !== term.term && e.subject !== term.subject);
       const wrongNames = [...sameSubjTerms.sort(() => Math.random()-0.5), ...otherTerms.sort(() => Math.random()-0.5)]
@@ -3060,9 +3027,8 @@ function startKeywordDrill(subject) {
       return {
         id: 'kw_' + term.term + '_l2',
         subject: term.subject || '基礎キーワード',
-        section: rankLabel ? `${rankLabel} 識別問題` : '識別問題',
+        section: rankLabel ? `${rankLabel} 事例問題` : '事例問題',
         _kwRank: rank,
-        _kwLevel: 2,
         text: `次の事例に当てはまる概念として最も適切なものはどれか？\n\n【事例】${term.case}`,
         choices,
         correct: correctIdx,
@@ -3072,7 +3038,7 @@ function startKeywordDrill(subject) {
       };
     }
 
-    // --- L1: 説明文から用語名を4択（デフォルト）---
+    // --- L1: 用語→説明文を4択（デフォルト）---
     const sameSubj = allOneliners.filter(e => e.term !== term.term && e.subject === term.subject);
     const others   = allOneliners.filter(e => e.term !== term.term && e.subject !== term.subject);
     const wrongPool = [...sameSubj.sort(() => Math.random() - 0.5), ...others.sort(() => Math.random() - 0.5)];
@@ -3084,7 +3050,6 @@ function startKeywordDrill(subject) {
       subject: term.subject || '基礎キーワード',
       section: rankLabel ? `${rankLabel} 定義問題` : '定義問題',
       _kwRank: rank,
-      _kwLevel: 1,
       text: `次のうち、「${term.term}」の説明として最も適切なものはどれか？`,
       choices,
       correct: correctIdx,
