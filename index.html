@@ -719,6 +719,28 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 
  <div class="choices" id="choices"></div>
 
+ <!-- L3 記述回答エリア（基礎キーワードドリルのL3問題専用） -->
+ <div id="kwWritingArea" style="display:none; margin-top:8px;">
+   <div style="font-size:13px; color:var(--text-secondary); margin-bottom:6px; font-weight:600;">概念名（用語）</div>
+   <input id="kwTermInput" type="text" placeholder="例：範囲の経済" autocomplete="off"
+     style="width:100%; padding:10px 12px; border:1.5px solid var(--border); border-radius:8px; font-size:15px; outline:none; box-sizing:border-box; -webkit-appearance:none;">
+   <div style="font-size:13px; color:var(--text-secondary); margin:10px 0 6px; font-weight:600;">理由（30字以内）</div>
+   <textarea id="kwReasonInput" rows="3" placeholder="例：既存の経営資源を複数事業で共用できるため"
+     style="width:100%; padding:10px 12px; border:1.5px solid var(--border); border-radius:8px; font-size:14px; outline:none; box-sizing:border-box; resize:vertical; -webkit-appearance:none;"></textarea>
+   <div id="kwL3CharCount" style="font-size:11px; color:var(--text-muted); text-align:right; margin-top:2px;">0 / 30字</div>
+   <div style="margin-top:10px; display:flex; gap:8px;">
+     <button onclick="submitL3Answer()" id="kwL3SubmitBtn"
+       style="flex:1; padding:12px; background:var(--primary); color:#fff; border:none; border-radius:8px; font-size:14px; font-weight:600; cursor:pointer;">
+       AI採点する
+     </button>
+     <button onclick="showL3ModelAnswer()"
+       style="flex:1; padding:12px; background:#fff; color:var(--primary); border:2px solid var(--primary); border-radius:8px; font-size:14px; font-weight:600; cursor:pointer;">
+       模範解答を見る
+     </button>
+   </div>
+   <div id="kwL3Result" style="margin-top:12px; font-size:13px; line-height:1.7; display:none; padding:14px; border-radius:10px;"></div>
+ </div>
+
  <div class="term-popup-backdrop" id="termPopupBackdrop" onclick="dismissTermPopup(event)">
   <div class="term-popup" id="termPopup" onclick="event.stopPropagation()">
    <div class="term-popup-title" id="termTitle"></div>
@@ -1506,19 +1528,36 @@ function showQuestion() {
  });
  currentQ._enrichedTerms = enrichedTerms;
 
- // Choices
- const labels = ['A','B','C','D','E'];
- let choicesHtml = currentQ.choices.map((c, i) =>
-  `<button class="choice-btn" onclick="selectChoice(${i})">
-  <span class="choice-label">${labels[i]}</span>
-  <span>${c.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}</span>
- </button>`
- ).join('');
- choicesHtml += `<button class="choice-btn skip-btn" onclick="skipQuestion()" style="margin-top:15px; border-color:#ccc; background:#f9f9f9;">
-  <span class="choice-label" style="background:#ccc; color:#fff">？</span>
-  <span style="color:#666">わからない（解説を見てスキップ）</span>
- </button>`;
- document.getElementById('choices').innerHTML = choicesHtml;
+ // L3（記述問題）の場合は選択肢を隠して記述エリアを表示
+ const writingArea = document.getElementById('kwWritingArea');
+ const choicesDiv  = document.getElementById('choices');
+ if (currentQ._kwLevel === 3) {
+   choicesDiv.style.display = 'none';
+   writingArea.style.display = '';
+   document.getElementById('kwTermInput').value = '';
+   document.getElementById('kwReasonInput').value = '';
+   document.getElementById('kwL3CharCount').textContent = '0 / 30字';
+   document.getElementById('kwL3Result').style.display = 'none';
+   document.getElementById('kwL3Result').innerHTML = '';
+   document.getElementById('kwL3SubmitBtn').disabled = false;
+   document.getElementById('nextBtn').disabled = true;
+ } else {
+   writingArea.style.display = 'none';
+   choicesDiv.style.display = '';
+   // Choices
+   const labels = ['A','B','C','D','E'];
+   let choicesHtml = currentQ.choices.map((c, i) =>
+    `<button class="choice-btn" onclick="selectChoice(${i})">
+    <span class="choice-label">${labels[i]}</span>
+    <span>${c.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}</span>
+   </button>`
+   ).join('');
+   choicesHtml += `<button class="choice-btn skip-btn" onclick="skipQuestion()" style="margin-top:15px; border-color:#ccc; background:#f9f9f9;">
+    <span class="choice-label" style="background:#ccc; color:#fff">？</span>
+    <span style="color:#666">わからない（解説を見てスキップ）</span>
+   </button>`;
+   choicesDiv.innerHTML = choicesHtml;
+ }
 
  // Reset panels
  document.getElementById('termPopupBackdrop').classList.remove('show');
@@ -2984,27 +3023,68 @@ function startKeywordDrill(subject) {
   // 全用語のonelinersを誤答プールに使用
   const allOneliners = concreteExamples.filter(e => e.oneliner);
 
-  filteredQ = selected.map(term => {
-    // 正解以外から3つランダム選択（同科目優先）
-    const sameSubj = allOneliners.filter(e => e.term !== term.term && e.subject === term.subject);
-    const others   = allOneliners.filter(e => e.term !== term.term && e.subject !== term.subject);
-    const wrongPool = [...sameSubj.sort(() => Math.random() - 0.5), ...others.sort(() => Math.random() - 0.5)];
-    const wrongs = wrongPool.slice(0, 3).map(e => e.oneliner);
-
-    const choices = [...wrongs, term.oneliner].sort(() => Math.random() - 0.5);
-    const correctIdx = choices.indexOf(term.oneliner);
-
+  filteredQ = selected.map((term, i) => {
+    const rank = window.kwRankMap?.[term.term] || '';
+    const rankLabel = rank === 'SS' ? 'SS級' : rank === 'A' ? 'A級' : rank === 'B' ? 'B級' : rank === 'C' ? 'C級' : '';
     let why = `【${term.term}】${term.oneliner}`;
     if (term.metaphor) why += `\n\n身近な例え：${term.metaphor}`;
     if (term.case)     why += `\n\n中小企業の事例：${term.case}`;
 
-    const rank = window.kwRankMap?.[term.term] || '';
-    const rankLabel = rank === 'SS' ? 'SS級' : rank === 'A' ? 'A級' : rank === 'B' ? 'B級' : rank === 'C' ? 'C級' : '';
+    // --- L3: 事例記述問題（caseがある用語のみ、3問に1回）---
+    if (term.case && (i % 3 === 2)) {
+      return {
+        id: 'kw_' + term.term,
+        subject: term.subject || '基礎キーワード',
+        section: rankLabel ? `${rankLabel} 応用問題` : '応用問題',
+        _kwRank: rank,
+        _kwLevel: 3,
+        text: `次の事例を読み、当てはまる概念名とその理由を答えよ。\n\n【事例】${term.case}`,
+        choices: [],
+        correct: -1,
+        why,
+        _kwModelAnswer: { term: term.term, reason: `${term.oneliner.replace(/\*\*/g,'').substring(0,40)}` },
+        terms: { [term.term]: term.oneliner },
+        _kwTerm: term.term
+      };
+    }
+
+    // --- L2: 事例から概念名を4択（caseがある用語のみ、3問に1回）---
+    if (term.case && (i % 3 === 1)) {
+      // 同科目の紛らわしい概念名を誤答に
+      const sameSubjTerms = allOneliners.filter(e => e.term !== term.term && e.subject === term.subject);
+      const otherTerms    = allOneliners.filter(e => e.term !== term.term && e.subject !== term.subject);
+      const wrongNames = [...sameSubjTerms.sort(() => Math.random()-0.5), ...otherTerms.sort(() => Math.random()-0.5)]
+                          .slice(0, 3).map(e => e.term);
+      const choices = [...wrongNames, term.term].sort(() => Math.random() - 0.5);
+      const correctIdx = choices.indexOf(term.term);
+      return {
+        id: 'kw_' + term.term + '_l2',
+        subject: term.subject || '基礎キーワード',
+        section: rankLabel ? `${rankLabel} 識別問題` : '識別問題',
+        _kwRank: rank,
+        _kwLevel: 2,
+        text: `次の事例に当てはまる概念として最も適切なものはどれか？\n\n【事例】${term.case}`,
+        choices,
+        correct: correctIdx,
+        why,
+        terms: { [term.term]: term.oneliner },
+        _kwTerm: term.term
+      };
+    }
+
+    // --- L1: 説明文から用語名を4択（デフォルト）---
+    const sameSubj = allOneliners.filter(e => e.term !== term.term && e.subject === term.subject);
+    const others   = allOneliners.filter(e => e.term !== term.term && e.subject !== term.subject);
+    const wrongPool = [...sameSubj.sort(() => Math.random() - 0.5), ...others.sort(() => Math.random() - 0.5)];
+    const wrongs = wrongPool.slice(0, 3).map(e => e.oneliner);
+    const choices = [...wrongs, term.oneliner].sort(() => Math.random() - 0.5);
+    const correctIdx = choices.indexOf(term.oneliner);
     return {
-      id: 'kw_' + term.term,
+      id: 'kw_' + term.term + '_l1',
       subject: term.subject || '基礎キーワード',
-      section: rankLabel ? `${rankLabel} 用語ドリル` : '用語理解ドリル',
+      section: rankLabel ? `${rankLabel} 定義問題` : '定義問題',
       _kwRank: rank,
+      _kwLevel: 1,
       text: `次のうち、「${term.term}」の説明として最も適切なものはどれか？`,
       choices,
       correct: correctIdx,
@@ -3019,6 +3099,111 @@ function startKeywordDrill(subject) {
   idx = 0; score = 0;
   showQuizScreen();
   showQuestion();
+}
+
+// ===== L3記述問題 採点・模範解答 =====
+
+// 字数カウンター（HTMLからonInput呼び出し）
+document.addEventListener('DOMContentLoaded', () => {
+  const ta = document.getElementById('kwReasonInput');
+  if (ta) ta.addEventListener('input', () => {
+    const len = ta.value.length;
+    const el = document.getElementById('kwL3CharCount');
+    if (el) el.textContent = `${len} / 30字`;
+    if (len > 30) el.style.color = '#e53e3e';
+    else el.style.color = 'var(--text-muted)';
+  });
+});
+
+async function submitL3Answer() {
+  if (answered) return;
+  const termInput   = document.getElementById('kwTermInput').value.trim();
+  const reasonInput = document.getElementById('kwReasonInput').value.trim();
+  if (!termInput && !reasonInput) { alert('概念名または理由を入力してください'); return; }
+
+  document.getElementById('kwL3SubmitBtn').disabled = true;
+  document.getElementById('kwL3SubmitBtn').textContent = '採点中...';
+
+  const model   = currentQ._kwModelAnswer;
+  const termData = (currentQ.terms && currentQ.terms[model.term])
+    ? currentQ.terms[model.term] : model.term;
+
+  const prompt = `あなたは中小企業診断士1次試験の採点者です。
+模範解答：概念名「${model.term}」、理由「${model.reason}」
+受験者の回答：概念名「${termInput}」、理由「${reasonInput}」
+
+以下の形式でJSON（日本語）で採点してください：
+{
+  "termScore": 0か1,
+  "reasonScore": 0〜2（0:不正解/的外れ, 1:部分点, 2:正解・的確）,
+  "termComment": "概念名への一言コメント",
+  "reasonComment": "理由への一言コメント",
+  "total": 0〜3,
+  "advice": "20字以内のアドバイス"
+}
+JSONのみ返してください。`;
+
+  const resultEl = document.getElementById('kwL3Result');
+  resultEl.style.display = '';
+
+  try {
+    const res = await callGemini(prompt, 'あなたは中小企業診断士試験の採点官です。指示された形式のJSONのみを返してください。');
+    const jsonStr = res.replace(/```json\n?|\n?```/g, '').trim();
+    const data = JSON.parse(jsonStr);
+    const total = (data.total !== undefined) ? data.total : (data.termScore + data.reasonScore);
+    const pct = Math.round(total / 3 * 100);
+    const color = pct >= 67 ? '#d4edda' : pct >= 33 ? '#fff3cd' : '#f8d7da';
+    const border = pct >= 67 ? '#28a745' : pct >= 33 ? '#ffc107' : '#dc3545';
+    const label = pct >= 67 ? '正解' : pct >= 33 ? '部分点' : '不正解';
+
+    resultEl.style.background = color;
+    resultEl.style.border = `1.5px solid ${border}`;
+    resultEl.style.borderRadius = '10px';
+    resultEl.style.padding = '14px';
+    resultEl.innerHTML = `
+      <div style="font-weight:700; font-size:15px; margin-bottom:8px; color:${border};">${label}（${total}/3点）</div>
+      <div style="margin-bottom:6px;"><b>概念名：</b>${data.termComment || (data.termScore===1?'正解':'不正解')}</div>
+      <div style="margin-bottom:6px;"><b>理由：</b>${data.reasonComment || ''}</div>
+      ${data.advice ? `<div style="margin-top:8px; font-size:12px; color:#555;"><b>アドバイス：</b>${data.advice}</div>` : ''}
+    `;
+    answered = true;
+    if (total >= 2) {
+      score++;
+      if (currentQ._kwTerm) { kwMastered.add(currentQ._kwTerm); localStorage.setItem('sme_kw_mastered', JSON.stringify([...kwMastered])); }
+    } else {
+      if (currentQ._kwTerm) { kwMastered.delete(currentQ._kwTerm); localStorage.setItem('sme_kw_mastered', JSON.stringify([...kwMastered])); }
+    }
+    showExplanation();
+    document.getElementById('nextBtn').disabled = false;
+  } catch(e) {
+    resultEl.style.background = '#f8d7da';
+    resultEl.style.border = '1.5px solid #dc3545';
+    resultEl.style.padding = '14px';
+    resultEl.innerHTML = `<b>採点エラー：</b>AIが応答しませんでした。模範解答を確認してください。`;
+    document.getElementById('kwL3SubmitBtn').textContent = 'AI採点する';
+    document.getElementById('kwL3SubmitBtn').disabled = false;
+  }
+}
+
+function showL3ModelAnswer() {
+  const model = currentQ._kwModelAnswer;
+  if (!model) return;
+  const resultEl = document.getElementById('kwL3Result');
+  resultEl.style.display = '';
+  resultEl.style.background = '#e8f4f8';
+  resultEl.style.border = '1.5px solid #3b82f6';
+  resultEl.style.borderRadius = '10px';
+  resultEl.style.padding = '14px';
+  resultEl.innerHTML = `
+    <div style="font-weight:700; font-size:14px; margin-bottom:8px; color:#1d4ed8;">模範解答</div>
+    <div style="margin-bottom:6px;"><b>概念名：</b>${model.term}</div>
+    <div><b>理由のポイント：</b>${model.reason}</div>
+  `;
+  answered = true;
+  if (!wrongList.includes(currentQ.id)) wrongList.push(currentQ.id);
+  if (currentQ._kwTerm) { kwMastered.delete(currentQ._kwTerm); localStorage.setItem('sme_kw_mastered', JSON.stringify([...kwMastered])); }
+  showExplanation();
+  document.getElementById('nextBtn').disabled = false;
 }
 
 // ===== 用語相関図（関連用語インデックス）=====
