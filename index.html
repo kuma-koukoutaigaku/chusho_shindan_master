@@ -2984,9 +2984,16 @@ function renderKwSubjectGrid() {
 function startKeywordDrill(subject) {
   // SS・A級の頻出用語のみに絞る（ランク不明は除外）
   const HIGH_RANKS = new Set(['SS', 'A']);
+  // oneliner品質フィルター：25字未満・「以下の〜」「次の〜」で終わる途中切れを除外
+  const isGoodOneliner = e => {
+    const s = e.oneliner || '';
+    if (s.length < 25) return false;
+    if (/以下の.{0,10}$|次の.{0,10}$/.test(s)) return false;
+    return true;
+  };
   const allPool = subject === '全科目'
-    ? concreteExamples.filter(e => e.oneliner)
-    : concreteExamples.filter(e => e.subject === subject && e.oneliner);
+    ? concreteExamples.filter(e => e.oneliner && isGoodOneliner(e))
+    : concreteExamples.filter(e => e.subject === subject && e.oneliner && isGoodOneliner(e));
   const pool = allPool.filter(e => HIGH_RANKS.has(window.kwRankMap?.[e.term]))
                       .sort((a,b) => {
                         // SS優先
