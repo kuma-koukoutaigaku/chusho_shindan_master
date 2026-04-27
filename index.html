@@ -810,11 +810,7 @@ window.addEventListener("unhandledrejection", function(e) {
 
  <div class="subject-grid" id="subjectGrid"></div>
 
- <h2 style="font-size: 1.1rem; color: var(--text); margin: 1.2rem 0 0.5rem; display: flex; align-items: center; gap: 8px;">
-   🏝️ テーマ別クイズ（島ごと）
- </h2>
- <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">マップの各島に対応する問題を解けます</div>
- <div id="islandQuizSection"></div>
+
 
  <h2 style="font-size: 1.1rem; color: var(--text); margin: 1.2rem 0 0.5rem; display: flex; align-items: center; gap: 8px;">
    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></svg>
@@ -1526,8 +1522,21 @@ function renderHome() {
  subjects.forEach(s =>{
   const count = allQuestions.filter(q =>q.subject === s).length;
   const icon = subjectIcons[s] || '';
-  grid.appendChild(createSubjectCard(icon, s, `${count}問`, () =>startQuiz(s)));
+  // 科目カード（クリックで展開、島ボタン表示）
+  const wrapper = document.createElement('div');
+  wrapper.id = `subjectWrap_${s}`;
+  const card = createSubjectCard(icon, s, `${count}問`, () => toggleSubjectIslands(s));
+  wrapper.appendChild(card);
+  const islandDiv = document.createElement('div');
+  islandDiv.id = `islands_${s}`;
+  islandDiv.className = 'hidden';
+  islandDiv.style.cssText = 'padding:0 0 8px;';
+  // 全問題ボタン
+  islandDiv.innerHTML = `<button onclick="startQuiz('${s}')" style="display:flex;align-items:center;gap:8px;width:100%;padding:10px 14px;margin:4px 0;background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">📝 全${count}問からランダム出題</button><div id="islandBtns_${s}" style="margin-top:4px;"><div style='text-align:center;padding:6px;font-size:11px;color:var(--text-muted);'>島を読込中...</div></div>`;
+  wrapper.appendChild(islandDiv);
+  grid.appendChild(wrapper);
  });
+ loadAndRenderIslands();
 
  // 3500問ドリルセクション
  if (questions3500.length > 0) {
@@ -2155,6 +2164,25 @@ function showResult() {
   correct: score
  });
  localStorage.setItem('sme_history', JSON.stringify(hist));
+
+ // カレンダーのタスク自動完了
+ if (calPlan && currentSubject.startsWith('🏝️ ')) {
+  const islandName = currentSubject.replace('🏝️ ', '');
+  const today = _toDateStr(new Date());
+  if (calPlan.days && calPlan.days[today]) {
+   const dayData = calPlan.days[today];
+   // 当日のタスク(新規or復習)に該当島を含むユニットがあれば完了にする
+   const targetUnit = STUDY_UNITS.find(u => u.title.includes(islandName) || (u.sub && u.sub.includes(islandName)));
+   if (targetUnit) {
+    if (dayData.newUnits.includes(targetUnit.id) || dayData.reviews.includes(targetUnit.id)) {
+     dayData.done = true;
+     localStorage.setItem('sme_cal_plan', JSON.stringify(calPlan));
+     // 学習計画画面のカレンダーが裏でレンダリングされていれば更新
+     if (typeof renderCalendar === 'function') renderCalendar();
+    }
+   }
+  }
+ }
 
  // AIセッションレビューを自動実行
  showAISessionReview();
@@ -3840,10 +3868,11 @@ function generateCalPlan(startDate) {
     for (let d = 0; d < unit.days; d++) {
       const key = _toDateStr(cursor);
       if (!plan.days[key]) plan.days[key] = { newUnits: [], reviews: [], done: false };
-      if (d === 0) plan.days[key].newUnits.push(uid);
+      plan.days[key].newUnits.push(uid); // 全日に配置する
       cursor = _addDays(cursor, 1);
     }
-    // 復習スケジュール
+    // 復習スケジュール (エビングハウスの忘却曲線に基づく最適間隔)
+    const REVIEW_INTERVALS = [1, 3, 7, 14, 30];
     REVIEW_INTERVALS.forEach(interval => {
       const revDate = _addDays(cursor, interval - 1);
       const rk = _toDateStr(revDate);
@@ -4090,7 +4119,6 @@ async function loadIslandData() {
         byParent[p].nodes.push(n);
         (n.searchKeywords || []).forEach(k => byParent[p].keywords.add(k));
       }
-      // Get island labels from root nodes
       for (const n of (data.nodes || [])) {
         if (!n.parent && byParent[n.id]) {
           byParent[n.id].label = (n.label || '').replace(/[\n\r]/g, ' ');
@@ -4111,57 +4139,48 @@ async function loadIslandData() {
   return islands;
 }
 
-async function renderIslandSection() {
-  const el = document.getElementById('islandQuizSection');
-  if (!el) return;
-  el.innerHTML = '<div style="text-align:center;padding:12px;"><div class="spinner"></div></div>';
-  
+function toggleSubjectIslands(subject) {
+  const el = document.getElementById(`islands_${subject}`);
+  if (el) el.classList.toggle('hidden');
+}
+
+async function loadAndRenderIslands() {
   const islands = await loadIslandData();
-  // Group by chapter
-  const byChapter = {};
+  const bySubject = {};
   islands.forEach(isl => {
-    if (!byChapter[isl.chapter]) byChapter[isl.chapter] = [];
-    byChapter[isl.chapter].push(isl);
+    if (!bySubject[isl.subject]) bySubject[isl.subject] = {};
+    if (!bySubject[isl.subject][isl.chapter]) bySubject[isl.subject][isl.chapter] = [];
+    bySubject[isl.subject][isl.chapter].push(isl);
   });
 
-  let html = '';
-  for (const [chapter, isls] of Object.entries(byChapter)) {
-    html += `<div style="margin-bottom:12px;">
-      <div onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('span').textContent=this.nextElementSibling.classList.contains('hidden')?'▶':'▼'" 
-           style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-size:13px;font-weight:700;color:var(--text);">
-        <span>▼</span> ${chapter}
-        <span style="margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;">${isls.length}島</span>
-      </div>
-      <div style="padding:6px 0 0;">`;
-    
-    isls.forEach(isl => {
-      const hasQ = isl.questionCount > 0;
-      html += `<button onclick="${hasQ ? `startIslandQuiz('${isl.id}')` : ''}" 
-        style="display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:11px 14px;margin-bottom:4px;
-        background:${hasQ ? 'var(--card)' : '#f8f8fc'};border:1px solid var(--border);border-radius:8px;
-        cursor:${hasQ ? 'pointer' : 'default'};font-size:13px;opacity:${hasQ ? '1' : '0.5'};">
-        <span style="font-size:16px;">🏝️</span>
-        <span style="flex:1;font-weight:600;color:var(--text);">${isl.label}</span>
-        <span style="font-size:11px;color:var(--text-muted);">${isl.nodeCount}概念</span>
-        <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;
-          background:${isl.questionCount >= 5 ? '#00B89422' : isl.questionCount > 0 ? '#FDCB6E33' : '#DFE6E922'};
-          color:${isl.questionCount >= 5 ? '#00B894' : isl.questionCount > 0 ? '#E17055' : '#999'};">${isl.questionCount}問</span>
-      </button>`;
-    });
-    html += '</div></div>';
+  for (const [subject, chapters] of Object.entries(bySubject)) {
+    const container = document.getElementById(`islandBtns_${subject}`);
+    if (!container) continue;
+    let html = '';
+    for (const [chapter, isls] of Object.entries(chapters)) {
+      html += `<div style="font-size:11px;font-weight:700;color:var(--text-muted);padding:8px 4px 4px;">📖 ${chapter}</div>`;
+      isls.forEach(isl => {
+        const hasQ = isl.questionCount > 0;
+        html += `<button onclick="${hasQ ? `startIslandQuiz('${isl.id}')` : ''}" 
+          style="display:flex;align-items:center;gap:8px;width:100%;text-align:left;padding:9px 12px;margin-bottom:3px;
+          background:${hasQ ? '#fff' : '#f8f8fc'};border:1px solid var(--border);border-radius:8px;
+          cursor:${hasQ ? 'pointer' : 'default'};font-size:12px;opacity:${hasQ ? '1' : '0.45'};">
+          <span style="flex:1;font-weight:600;color:var(--text);">🏝️ ${isl.label}</span>
+          <span style="font-size:10px;color:${isl.questionCount >= 5 ? '#00B894' : isl.questionCount > 0 ? '#E17055' : '#999'};font-weight:700;">${isl.questionCount}問</span>
+        </button>`;
+      });
+    }
+    container.innerHTML = html || '<div style="font-size:11px;color:var(--text-muted);padding:8px;">この科目のマップはまだありません</div>';
   }
-  el.innerHTML = html;
 }
 
 function startIslandQuiz(islandId) {
   if (!_islandCache) return;
   const island = _islandCache.find(i => i.id === islandId);
   if (!island) return;
-  
   const kwSet = new Set(island.keywords);
   const pool = allQuestions.filter(q => (q.mapTags||[]).some(t => kwSet.has(t)));
   if (pool.length === 0) { alert('この島に対応する問題がまだありません。'); return; }
-  
   mode3500 = false;
   currentSubject = `🏝️ ${island.label}`;
   currentPool = smartSort(pool);
@@ -4170,10 +4189,6 @@ function startIslandQuiz(islandId) {
   showQuizScreen();
   showQuestion();
 }
-
-// ホーム表示時に島セクションをレンダリング
-const _origGoHome = typeof goHome === 'function' ? goHome : null;
-
 </script>
 
 <!-- ============================
