@@ -125,6 +125,18 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .explain-label { font-size: 12px; font-weight: 600; color: var(--primary); margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
 .explain-text { font-size: 14px; line-height: 1.8; color: var(--text); }
 
+/* ===== マイメモ ===== */
+.my-note-section { margin-top: 16px; padding-top: 14px; border-top: 1.5px dashed #D0D8FF; }
+.my-note-label { font-size: 11px; font-weight: 700; color: #7B8CDE; margin-bottom: 8px; display:flex; align-items:center; gap:5px; }
+.my-note-display { background: #FFFDE7; border-left: 3px solid #FFD600; border-radius: 0 6px 6px 0; padding: 10px 12px; font-size: 13px; line-height: 1.75; color: #4A3F00; white-space: pre-wrap; }
+.my-note-add-btn { font-size: 12px; color: #7B8CDE; background: none; border: 1.5px dashed #B0BCFF; border-radius: 6px; padding: 6px 12px; cursor: pointer; width: 100%; text-align: left; }
+.my-note-edit-btn { font-size: 11px; color: #7B8CDE; background: none; border: none; cursor: pointer; margin-top: 6px; padding: 0; }
+.my-note-textarea { width: 100%; min-height: 90px; border: 1.5px solid #B0BCFF; border-radius: 6px; padding: 8px; font-size: 13px; font-family: inherit; line-height: 1.7; resize: vertical; box-sizing: border-box; outline: none; }
+.my-note-textarea:focus { border-color: var(--primary); }
+.my-note-actions { display: flex; gap: 8px; margin-top: 8px; }
+.my-note-save { background: var(--primary); color: white; border: none; border-radius: 6px; padding: 7px 16px; font-size: 13px; font-weight: 700; cursor: pointer; }
+.my-note-cancel { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 7px 12px; font-size: 13px; cursor: pointer; color: var(--text-secondary); }
+
 /* ===== Term Popup (Modal Overlay) ===== */
 .term-popup-backdrop {
  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -656,9 +668,104 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .btm-nav-inner.seven .nav-item { padding: 5px 0; }
 .btm-nav-inner.seven .nav-label { font-size: 9px; }
 .btm-nav-inner.seven .nav-item svg { width: 20px; height: 20px; }
+
+/* ===== 学習モード ===== */
+.learn-subject-card {
+  background: var(--card); border-radius: var(--radius); padding: 18px 20px;
+  margin-bottom: 12px; box-shadow: var(--shadow); border: 1px solid var(--border);
+  cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 16px;
+}
+.learn-subject-card:active { transform: scale(0.98); }
+.learn-subject-icon { font-size: 32px; width: 48px; text-align: center; flex-shrink: 0; }
+.learn-subject-info { flex: 1; }
+.learn-subject-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.learn-subject-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
+.learn-progress-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+.learn-progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--primary-light)); border-radius: 3px; transition: width 0.5s; }
+
+.learn-chapter-item {
+  background: var(--card); border-radius: var(--radius-sm); padding: 16px 18px;
+  margin-bottom: 10px; box-shadow: var(--shadow); border: 1px solid var(--border);
+  cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.2s;
+}
+.learn-chapter-item:active { transform: scale(0.98); }
+.learn-chapter-item.locked { opacity: 0.5; cursor: default; }
+.learn-lv-badge {
+  padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700;
+  white-space: nowrap; flex-shrink: 0;
+}
+.lv-none { background: #F0F0F8; color: #999; }
+.lv-1 { background: #E8F5E9; color: #2E7D32; }
+.lv-2 { background: #FFF3E0; color: #E65100; }
+.lv-3 { background: #E3F2FD; color: #1565C0; }
+.lv-done { background: linear-gradient(135deg,#6C5CE7,#A29BFE); color: #fff; }
+
+.learn-node-card {
+  background: var(--card); border-radius: var(--radius); padding: 20px;
+  margin-bottom: 14px; box-shadow: var(--shadow); border: 1px solid var(--border);
+}
+.learn-node-title {
+  font-size: 15px; font-weight: 700; color: var(--primary-dark);
+  margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid var(--primary-bg);
+}
+.learn-node-body { font-size: 13px; line-height: 1.8; color: var(--text); }
+.learn-node-body h3 { font-size: 13px; font-weight: 700; color: var(--primary); margin: 12px 0 6px; }
+.learn-node-body ul { padding-left: 16px; margin: 6px 0; }
+.learn-node-body li { margin-bottom: 4px; }
+.learn-node-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 8px 0; }
+.learn-node-body td, .learn-node-body th { border: 1px solid var(--border); padding: 6px 8px; }
+.learn-node-body th { background: var(--primary-bg); font-weight: 600; }
+
+.learn-start-btn {
+  display: block; width: 100%; padding: 16px; margin: 20px 0;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: #fff; font-size: 16px; font-weight: 700; border: none;
+  border-radius: var(--radius); cursor: pointer; text-align: center;
+  box-shadow: 0 4px 16px rgba(108,92,231,0.3); transition: all 0.2s;
+}
+.learn-start-btn:active { transform: scale(0.98); }
+
+.learn-back-btn {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 14px; color: var(--primary); font-weight: 600;
+  background: none; border: none; cursor: pointer; padding: 0; margin-bottom: 16px;
+}
+
+.learn-quiz-header {
+  background: linear-gradient(135deg, #6C5CE7, #A29BFE);
+  padding: 16px 20px; margin: 0 -16px; margin-bottom: 16px;
+  display: flex; align-items: center; justify-content: space-between; color: #fff;
+}
+.learn-lv-indicator {
+  font-size: 12px; font-weight: 700; padding: 4px 12px;
+  background: rgba(255,255,255,0.2); border-radius: 12px;
+}
+.learn-done-card {
+  background: var(--card); border-radius: var(--radius); padding: 32px 24px;
+  text-align: center; box-shadow: var(--shadow); margin-top: 24px;
+}
+.learn-done-emoji { font-size: 48px; margin-bottom: 16px; }
+.learn-done-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.learn-done-sub { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
 </style><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
+<script>
+window.onerror = function(msg, url, lineNo, columnNo, error) {
+    var errorDiv = document.createElement("div");
+    errorDiv.style = "position:fixed;top:70px;left:0;width:100%;background:red;color:white;padding:10px;z-index:99999;";
+    errorDiv.innerText = "JSエラー: " + msg + " (" + lineNo + "行目)";
+    document.body.appendChild(errorDiv);
+    return false;
+};
+window.addEventListener("unhandledrejection", function(e) {
+    var errorDiv = document.createElement("div");
+    errorDiv.style = "position:fixed;top:120px;left:0;width:100%;background:orange;color:white;padding:10px;z-index:99999;word-break:break-all;";
+    errorDiv.innerText = "非同期エラー: " + (e.reason && e.reason.stack ? e.reason.stack : e.reason);
+    document.body.appendChild(errorDiv);
+});
+</script>
 
 <div id="app">
 <!-- Header -->
@@ -666,7 +773,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
  <div class="app-title" id="headerTitle">診断士マスター</div>
  <div style="display:flex;align-items:center;gap:8px;">
   <div class="app-counter" id="headerCounter"></div>
-  <button class="header-search-btn" onclick="showGlobalSearch()" title="検索">
+<button class="header-search-btn" onclick="showGlobalSearch()" title="検索">
    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
   </button>
  </div>
@@ -684,7 +791,12 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
  </div>
  <div class="home-stats">
   <div class="home-stat"><div class="home-stat-val" id="totalQ">0</div><div class="home-stat-label">収録問題数</div></div>
-  <div class="home-stat"><div class="home-stat-val" id="totalSubj">7</div><div class="home-stat-label">科目数</div></div>
+  <div class="home-stat" onclick="showLearnHome()" style="cursor:pointer;background:linear-gradient(135deg,#6C5CE7,#a29bfe);border:none;">
+    <div style="display:flex;align-items:center;justify-content:center;margin-bottom:6px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" width="28" height="28"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+    </div>
+    <div class="home-stat-label" style="color:rgba(255,255,255,0.9);font-weight:600;">学習モード</div>
+  </div>
  </div>
  <!-- AIおすすめ学習 -->
  <div id="aiRecommendCard" style="margin-bottom:16px; padding:16px; background:linear-gradient(135deg,#F0EEFF,#E8F8F5); border-radius:16px; border:1.5px solid var(--primary-light); display:none;">
@@ -951,6 +1063,20 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
     </div>
   </div>
 
+<!-- 学習モード -->
+<div id="learnScreen" class="hidden" style="padding:0 0 100px;">
+  <!-- サブ画面1: 科目選択 -->
+  <div id="learnSubjectView"></div>
+  <!-- サブ画面2: チャプター選択 -->
+  <div id="learnChapterView" class="hidden"></div>
+  <!-- サブ画面3: 学習コンテンツ（解説を読む） -->
+  <div id="learnStudyView" class="hidden"></div>
+  <!-- サブ画面4: クイズ -->
+  <div id="learnQuizView" class="hidden"></div>
+  <!-- サブ画面5: 完了 -->
+  <div id="learnDoneView" class="hidden"></div>
+</div>
+
   <!-- Loading Screen -->
 <div id="loadingScreen" class="loading-screen">
  <div class="spinner"></div>
@@ -960,7 +1086,7 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 
 <!-- Bottom Nav -->
 <div class="btm-nav">
-<div class="btm-nav-inner">
+<div class="btm-nav-inner seven">
  <button class="nav-item active" id="navHome" onclick="goHome()">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
   <span class="nav-label">ホーム</span>
@@ -986,10 +1112,39 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/><line x1="9" y1="15" x2="12" y2="15"/></svg>
   <span class="nav-label">用語</span>
  </button>
+ <button class="nav-item" id="navLearn" onclick="showLearnHome()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
+    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+  </svg>
+  <span class="nav-label">学習</span>
+ </button>
 </div>
 </div>
 
 <script>
+// ===== localStorage が使えない環境（data:URL等）はメモリ内代替を使う =====
+(function() {
+  try { localStorage.getItem('_'); } catch(e) {
+    const _m = {};
+    Object.defineProperty(window, 'localStorage', { get: () => ({
+      getItem:    k    => Object.prototype.hasOwnProperty.call(_m, k) ? _m[k] : null,
+      setItem:    (k,v)=> { _m[k] = String(v); },
+      removeItem: k    => { delete _m[k]; },
+      clear:      ()   => { Object.keys(_m).forEach(k => delete _m[k]); },
+      key:        i    => Object.keys(_m)[i] ?? null,
+      get length()     { return Object.keys(_m).length; }
+    })});
+  }
+})();
+
+// ===== iframeで動作中はスマホ版チャットを非表示 =====
+if (window.parent !== window) {
+  const style = document.createElement('style');
+  style.textContent = '.fab-chat-btn, #chatOverlay, #floatingChatPanel { display: none !important; }';
+  document.head.appendChild(style);
+}
+
 // ===== State =====
 let allQuestions = [];
 let filteredQ = [];
@@ -999,10 +1154,18 @@ let currentSubject = "全科目";
 let bookmarks = JSON.parse(localStorage.getItem('sme_bookmarks2') || '[]');
 let wrongList = JSON.parse(localStorage.getItem('sme_wrong2') || '[]');
 let stats = JSON.parse(localStorage.getItem('sme_stats') || '{}');
+let myNotes = JSON.parse(localStorage.getItem('sme_notes') || '{}');
 let dailyActivity = JSON.parse(localStorage.getItem('sme_daily') || '{}'); // {"2026-04-17": {attempts: N, corrects: N}}
 let currentScreen = 'home';
 let radarChartInstance = null;
 let activityChartInstance = null;
+
+// ===== 3500問データ設定 =====
+const FILES_3500 = [
+  'data/3500/q_3500_01_econ.json'
+];
+let questions3500 = [];
+let mode3500 = false; // 3500問モードフラグ
 
 function todayKey() {
   const d = new Date();
@@ -1115,7 +1278,7 @@ function saveGeminiKeys(keys) {
   localStorage.setItem('sme_gemini_keys', JSON.stringify(keys));
 }
 let GEMINI_KEYS = loadGeminiKeys();
-const GEMINI_MODEL = "gemini-2.5-flash";
+const GEMINI_MODEL = "gemini-1.5-flash";
 let geminiKeyIdx = 0;
 
 const SME_SYSTEM_PROMPT = `あなたは「中小企業診断士コーチ」です。以下のルールを必ず守ってください。
@@ -1185,18 +1348,20 @@ async function initApp() {
     if (loadingMsg) loadingMsg.textContent = `データ読み込み中: ${file}...`;
     try {
       const resp = await fetch(file + cb);
-      if (!resp.ok) throw new Error(`Fetch failed: ${file}`);
+      if (!resp.ok) throw new Error(`HTTPエラー! ステータス: ${resp.status} (${file})`);
       const data = await resp.json();
+      if (!data) throw new Error(`ファイルが空、または無効なデータです: ${file}`);
+      
       if (file.includes('examples.json')) {
         concreteExamples = data;
       } else {
-        allQuestions.push(...data);
+        allQuestions.push(...(Array.isArray(data) ? data : (data.questions || [])));
       }
     } catch (e) {
-      console.error(e);
-      if (window.location.protocol === 'file:') {
-        if (loadingMsg) loadingMsg.innerHTML = '<span style="color:var(--danger)">【制限エラー】ローカルファイルとして開いているため、データを読み込めません。<br>GitHub Pagesにアップロードするか、ローカルサーバーを使用してください。</span>';
-        return;
+      console.error("データ読み込み失敗:", e);
+      // 詳細を画面に表示（Script error. を回避するため）
+      if (loadingMsg) {
+          loadingMsg.innerHTML += `<br><span style="color:var(--danger);font-size:12px;">【エラー】${file}: ${e.message}</span>`;
       }
     }
   }
@@ -1217,8 +1382,30 @@ async function initApp() {
     });
   } catch(e) {}
 
-  // Normalize subject names (merging variations)
+  // Normalize subject names (merging variations) for allQuestions
   allQuestions.forEach(q => {
+    if (q.subject.includes("財務")) q.subject = "財務・会計";
+    if (q.subject.includes("運営")) q.subject = "運営管理";
+    if (q.subject.includes("政策") || q.subject.includes("中小")) q.subject = "中小企業政策";
+    if (q.subject.includes("情報") || q.subject.includes("IT")) q.subject = "経営情報システム";
+    if (q.subject.includes("法務")) q.subject = "経営法務";
+  });
+
+  // Load 3500 questions data
+  questions3500 = [];
+  for (const file of FILES_3500) {
+    if (loadingMsg) loadingMsg.textContent = `3500問データ読み込み中: ${file}...`;
+    try {
+      const resp = await fetch(file + cb);
+      if (resp.ok) {
+        const data = await resp.json();
+        questions3500.push(...(Array.isArray(data) ? data : (data.questions || [])));
+      }
+    } catch(e) { console.warn('3500 data load failed', file, e); }
+  }
+
+  // Normalize subject names for questions3500
+  questions3500.forEach(q => {
     if (q.subject.includes("財務")) q.subject = "財務・会計";
     if (q.subject.includes("運営")) q.subject = "運営管理";
     if (q.subject.includes("政策") || q.subject.includes("中小")) q.subject = "中小企業政策";
@@ -1295,6 +1482,7 @@ function renderHome() {
   const a = document.getElementById('analysisScreen'); if(a) a.classList.add('hidden');
   document.getElementById('termListScreen')?.classList.add('hidden');
   document.getElementById('keywordScreen')?.classList.add('hidden');
+  document.getElementById('learnScreen')?.classList.add('hidden');
  document.getElementById('progressWrap').style.display = 'none';
  document.getElementById('headerTitle').textContent = ' 診断士マスター';
  document.getElementById('headerCounter').textContent = '';
@@ -1317,7 +1505,7 @@ function renderHome() {
      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" width="22" height="22"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
    </div>
    <div class="subject-info">
-     <div class="subject-name" style="color:var(--primary-dark);">📖 基礎キーワード</div>
+     <div class="subject-name" style="color:var(--primary-dark);">基礎キーワード</div>
      <div class="subject-count">${kwTotal}語の定義4択ドリル ／ ${kwM}語習得済み</div>
    </div>
    <div class="subject-arrow" style="color:var(--primary);">›</div>
@@ -1337,6 +1525,25 @@ function renderHome() {
   const icon = subjectIcons[s] || '';
   grid.appendChild(createSubjectCard(icon, s, `${count}問`, () =>startQuiz(s)));
  });
+
+ // 3500問ドリルセクション
+ if (questions3500.length > 0) {
+  const title3500 = document.createElement('div');
+  title3500.style.cssText = 'font-size:14px; font-weight:700; color:var(--text-secondary); margin: 24px 0 12px; padding-left: 8px; border-left: 4px solid var(--primary);';
+  title3500.textContent = '新・完全対策 3500問ドリル';
+  grid.appendChild(title3500);
+
+  const all3500Card = createSubjectCard(svgIcon('<circle cx="12" cy="12" r="10"/><path d="M16 8l-4 4-4-4"/>'), '3500問：全科目チャレンジ', `${questions3500.length}問`, () => startAll3500());
+  all3500Card.style.background = 'linear-gradient(135deg, #fff, #f8faff)';
+  grid.appendChild(all3500Card);
+
+  const subjects3500 = [...new Set(questions3500.map(q => q.subject))];
+  subjects3500.forEach(s => {
+   const count = questions3500.filter(q => q.subject === s).length;
+   const icon = subjectIcons[s] || '';
+   grid.appendChild(createSubjectCard(icon, `3500問：${s}`, `${count}問`, () => start3500Quiz(s)));
+  });
+ }
 
  // 過去問カードの描画
  const pastGrid = document.getElementById('pastYearGrid');
@@ -1403,12 +1610,29 @@ const SESSION_SIZE = 10;
 let currentPool = []; // セッション間で保持するプール
 
 function startQuiz(subject) {
+ mode3500 = false;
  currentSubject = subject;
  let pool;
  if (subject === '全科目') {
-  pool = [...allQuestions];
+  pool = allQuestions.filter(q => q.source !== "3500問"); // 安全策
  } else {
-  pool = allQuestions.filter(q => q.subject === subject);
+  pool = allQuestions.filter(q => q.subject === subject && q.source !== "3500問");
+ }
+ currentPool = smartSort(pool);
+ filteredQ = currentPool.slice(0, SESSION_SIZE);
+ idx = 0; score = 0;
+ showQuizScreen();
+ showQuestion();
+}
+
+function start3500Quiz(subject) {
+ mode3500 = true;
+ currentSubject = subject;
+ let pool;
+ if (subject === '全科目') {
+  pool = [...questions3500];
+ } else {
+  pool = questions3500.filter(q => q.subject === subject);
  }
  currentPool = smartSort(pool);
  filteredQ = currentPool.slice(0, SESSION_SIZE);
@@ -1418,6 +1642,7 @@ function startQuiz(subject) {
 }
 
 function startPastExam(year) {
+ mode3500 = false;
  currentSubject = year;
  currentPool = smartSort(allQuestions.filter(q => q.year === year));
  filteredQ = currentPool.slice(0, SESSION_SIZE);
@@ -1427,10 +1652,13 @@ function startPastExam(year) {
 }
 
 function startAll() { startQuiz('全科目'); }
+function startAll3500() { start3500Quiz('全科目'); }
 
 function startBookmarked() {
- const pool = smartSort(allQuestions.filter(q =>bookmarks.includes(q.id)));
+ const combined = [...allQuestions, ...questions3500];
+ const pool = smartSort(combined.filter(q => bookmarks.includes(q.id)));
  if (pool.length === 0) { alert('ブックマークされた問題がありません'); return; }
+ mode3500 = false; // 特殊モード
  currentPool = pool;
  filteredQ = currentPool.slice(0, SESSION_SIZE);
  idx = 0; score = 0; currentSubject = 'ブックマーク';
@@ -1439,8 +1667,10 @@ function startBookmarked() {
 }
 
 function startWrongOnly() {
- const pool = smartSort(allQuestions.filter(q =>wrongList.includes(q.id)));
+ const combined = [...allQuestions, ...questions3500];
+ const pool = smartSort(combined.filter(q => wrongList.includes(q.id)));
  if (pool.length === 0) { alert('復習対象の問題がありません。\nまずは問題を解いてみましょう！'); return; }
+ mode3500 = false; // 特殊モード
  currentPool = pool;
  filteredQ = currentPool.slice(0, SESSION_SIZE);
  idx = 0; score = 0; currentSubject = '復習モード';
@@ -1475,10 +1705,11 @@ function showQuizScreen() {
 }
 
 function renderPills() {
- const subjects = ['全科目', ...new Set(allQuestions.map(q =>q.subject))];
+ const pool = mode3500 ? questions3500 : allQuestions.filter(q => q.source !== "3500問");
+ const subjects = ['全科目', ...new Set(pool.map(q =>q.subject))];
  const el = document.getElementById('subjectPills');
  el.innerHTML = subjects.map(s =>
-  `<button class="pill ${s===currentSubject?'active':''}" onclick="startQuiz('${s}')">${s}</button>`
+  `<button class="pill ${s===currentSubject?'active':''}" onclick="${mode3500 ? 'start3500Quiz' : 'startQuiz'}('${s}')">${s}</button>`
  ).join('');
 }
 
@@ -1743,7 +1974,45 @@ function showExplanation() {
     aiFollowUp.innerHTML = '';
   }
 
+  // === NEW: マップ連携用ボタン ===
+  let mapLinkBtn = document.getElementById('mapLinkBtnContainer');
+  if(!mapLinkBtn) {
+      mapLinkBtn = document.createElement('div');
+      mapLinkBtn.id = 'mapLinkBtnContainer';
+      mapLinkBtn.style.marginTop = '20px';
+      document.getElementById('explainPanel').appendChild(mapLinkBtn);
+  }
+  
+  if (window.parent && window.parent !== window) {
+      // 検索ワードの優先度： 1. mapTags(新付与) 2. 正解の単語(_kwTerm) 3. 用語辞書のキー 4. 科目名
+      let keywordToSearch = "";
+      if (currentQ.mapTags && currentQ.mapTags.length > 0) {
+          keywordToSearch = currentQ.mapTags[0];
+      } else {
+          keywordToSearch = currentQ._kwTerm || (currentQ.terms && Object.keys(currentQ.terms).length > 0 ? Object.keys(currentQ.terms)[0] : currentQ.subject);
+      }
+      
+      // カッコとその中身を除去した「裸の単語」も検討（MBO (目標管理制度) -> MBO）
+      const nakedKeyword = keywordToSearch.replace(/[（(].*[）)]/g, '').trim();
+      
+      // 科目名をマップ統合アプリが受け取れる形式に正規化
+      let subj = currentQ.subject || '';
+      if (subj.includes("戦略")) subj = "経営戦略";
+      if (subj.includes("組織")) subj = "組織論";
+      if (subj.includes("マーケ")) subj = "マーケティング";
+
+      mapLinkBtn.innerHTML = `<button onclick="window.parent.postMessage({ type: 'jump_to_map', keyword: '${nakedKeyword}', fullKeyword: '${keywordToSearch}', subject: '${subj}' }, '*')" style="width:100%; padding: 14px; background: white; border: 2px solid var(--primary); color: var(--primary); border-radius: 8px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        マップで学習ガイドを確認する
+      </button>`;
+  } else {
+      mapLinkBtn.innerHTML = '';
+  }
+
   document.getElementById('explainPanel').classList.add('show');
+
+  // マイメモ表示
+  renderNoteSection(currentQ.id);
  }
 
  document.getElementById('nextBtn').disabled = false;
@@ -1774,6 +2043,61 @@ function nextQuestion() {
   requestAnimationFrame(scrollToTop);
   setTimeout(scrollToTop, 50);
   setTimeout(scrollToTop, 150);
+}
+
+// ===== マイメモ =====
+function renderNoteSection(qId) {
+  let container = document.getElementById('myNoteSection');
+  if (!container) {
+    container = document.createElement('div');
+    container.id = 'myNoteSection';
+    container.className = 'my-note-section';
+    document.getElementById('explainPanel').appendChild(container);
+  }
+  const note = myNotes[qId];
+  if (note) {
+    container.innerHTML = `
+      <div class="my-note-label">📝 マイメモ</div>
+      <div class="my-note-display">${note.replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/\n/g,'<br>')}</div>
+      <button class="my-note-edit-btn" onclick="startEditNote('${qId}')">✏️ 編集する</button>`;
+  } else {
+    container.innerHTML = `
+      <div class="my-note-label">📝 マイメモ</div>
+      <button class="my-note-add-btn" onclick="startEditNote('${qId}')">＋ この問題にメモ・補足解説を追加する</button>`;
+  }
+}
+
+function startEditNote(qId) {
+  const container = document.getElementById('myNoteSection');
+  if (!container) return;
+  const existing = (myNotes[qId] || '').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  container.innerHTML = `
+    <div class="my-note-label">📝 マイメモを編集</div>
+    <textarea id="myNoteTextarea" class="my-note-textarea" placeholder="解説の補足・覚え方・気づきなど、自由に書いてください">${existing}</textarea>
+    <div class="my-note-actions">
+      <button class="my-note-save" onclick="saveNote('${qId}')">保存</button>
+      <button class="my-note-cancel" onclick="renderNoteSection('${qId}')">キャンセル</button>
+      ${myNotes[qId] ? `<button class="my-note-cancel" style="margin-left:auto;color:#E53935;" onclick="deleteNote('${qId}')">削除</button>` : ''}
+    </div>`;
+  document.getElementById('myNoteTextarea').focus();
+}
+
+function saveNote(qId) {
+  const text = document.getElementById('myNoteTextarea').value.trim();
+  if (text) {
+    myNotes[qId] = text;
+  } else {
+    delete myNotes[qId];
+  }
+  localStorage.setItem('sme_notes', JSON.stringify(myNotes));
+  renderNoteSection(qId);
+}
+
+function deleteNote(qId) {
+  if (!confirm('このメモを削除しますか？')) return;
+  delete myNotes[qId];
+  localStorage.setItem('sme_notes', JSON.stringify(myNotes));
+  renderNoteSection(qId);
 }
 
 // ===== Bookmark =====
@@ -2073,10 +2397,10 @@ function showAnalysis() {
    readinessLabel = 'まずは各科目3問以上挑戦しよう';
    readinessAdvice = '全7科目で最低3問ずつ回答すると、正確な合格達成度が計算できるようになります。';
  } else if (belowKissetsu >= 2) {
-   readinessLabel = '⚠️ 足切りリスクが複数。まずは40%超を最優先';
+   readinessLabel = '【警告】足切りリスクが複数。まずは40%超を最優先';
    readinessAdvice = `正答率40%未満の科目が${belowKissetsu}つあります。この科目が1つでもあると、他がどれだけ高くても不合格です。苦手科目から優先して取り組みましょう。`;
  } else if (belowKissetsu === 1) {
-   readinessLabel = '⚠️ 足切りリスク1科目。ここを最優先に強化';
+   readinessLabel = '【警告】足切りリスク1科目。ここを最優先に強化';
    readinessAdvice = '足切りリスクの科目を40%以上に引き上げるのが最優先。他の科目の点数より、この1科目を伸ばす方が合格に近づきます。';
  } else if (readiness < 50) {
    readinessLabel = '基礎固めフェーズ。全科目をまんべんなく';
@@ -2085,7 +2409,7 @@ function showAnalysis() {
    readinessLabel = '合格圏に近い。得意科目で稼ぐフェーズ';
    readinessAdvice = '足切りはクリア済み。あと一歩です。得意科目で70%超を狙い、総合60%を安定させましょう。';
  } else {
-   readinessLabel = '✨ 合格圏内。仕上げと維持を';
+   readinessLabel = '合格圏内。仕上げと維持を';
    readinessAdvice = '合格圏に到達。直前期は新しい教材を増やさず、既出論点の復習で精度を上げましょう。';
  }
 
@@ -2107,7 +2431,7 @@ function showAnalysis() {
    const isBad = pct !== null && pct < 60;
    const cls = pct === null ? '' : pct >= 60 ? 'good' : pct >= 40 ? 'warn' : 'bad';
    const badge = pct === null ? '<span style="font-size:11px;color:#999">未挑戦</span>'
-               : isKissetsu ? '<span class="an-pass-badge fail" style="background:#FF4444;color:#fff">❗足切りリスク</span>'
+               : isKissetsu ? '<span class="an-pass-badge fail" style="background:#FF4444;color:#fff">足切りリスク</span>'
                : isBad ? '<span class="an-pass-badge fail">要強化</span>'
                : '<span class="an-pass-badge pass">合格圏</span>';
    const pctStr = pct !== null ? pct+'%' : '--';
@@ -2275,7 +2599,7 @@ async function runAIAnalysis() {
  const btn = document.getElementById('aiAnalyzeBtn');
  const content = document.getElementById('aiReportContent');
  btn.disabled = true;
- btn.textContent = '✨ AIが分析中...';
+ btn.textContent = 'AIが分析中...';
  content.innerHTML = '<div style="color:var(--text-muted);">データを読み込み、Gemini 2.5 Flashが分析中です。少々お待ちください...</div>';
 
  const SUBJECTS = ['企業経営理論','財務・会計','運営管理','経済学','経営法務','経営情報システム','中小企業政策'];
@@ -2396,7 +2720,7 @@ function jumpToQuestion(qid) {
 }
 
 function resetAnalysis() {
- if (!confirm('⚠️ 本当に学習履歴をすべてリセットしますか？\n\n以下のデータがすべて消えます:\n・科目別正答率\n・苦手問題リスト\n・合格達成度スコア\n・7日間の学習量\n\n※消す前に自動でバックアップを取ります。\n　「同期」画面の「バックアップから復元」で戻せます。')) return;
+ if (!confirm('本当に学習履歴をすべてリセットしますか？\n\n以下のデータがすべて消えます:\n・科目別正答率\n・苦手問題リスト\n・合格達成度スコア\n・7日間の学習量\n\n※消す前に自動でバックアップを取ります。\n　「同期」画面の「バックアップから復元」で戻せます。')) return;
  // 消す前に自動バックアップ
  autoBackup('pre-reset');
  localStorage.removeItem('sme_history');
@@ -2641,12 +2965,13 @@ function renderBackupList() {
 
 function exportSync() {
  const data = {
-  v: 3,
+  v: 4,
   bookmarks: bookmarks,
   wrongList: wrongList,
   stats: stats,
   dailyActivity: dailyActivity,
   history: JSON.parse(localStorage.getItem('sme_history') || '[]'),
+  notes: myNotes,
   exportedAt: new Date().toISOString()
  };
  const encoded = btoa(unescape(encodeURIComponent(JSON.stringify(data))));
@@ -2705,13 +3030,22 @@ function importSync() {
     localStorage.setItem('sme_daily', JSON.stringify(dailyActivity));
   }
 
+  // Merge notes（テキストがある方を採用）
+  if (json.notes && typeof json.notes === 'object') {
+    Object.keys(json.notes).forEach(qId => {
+      if (json.notes[qId]) myNotes[qId] = json.notes[qId];
+    });
+    localStorage.setItem('sme_notes', JSON.stringify(myNotes));
+  }
+
   bookmarks = newBookmarks;
   wrongList = newWrong;
   localStorage.setItem('sme_bookmarks2', JSON.stringify(bookmarks));
   localStorage.setItem('sme_wrong2', JSON.stringify(wrongList));
   localStorage.setItem('sme_history', JSON.stringify(newHist));
 
-  showSyncStatus(`同期完了！ ブックマーク${bookmarks.length}件 / 復習${wrongList.length}件 / 統計${Object.keys(stats).length}問 / 履歴${newHist.length}件`, 'ok');
+  const notesCount = Object.keys(myNotes).length;
+  showSyncStatus(`同期完了！ ブックマーク${bookmarks.length}件 / 復習${wrongList.length}件 / 統計${Object.keys(stats).length}問 / メモ${notesCount}件`, 'ok');
  } catch(e) {
   showSyncStatus('データが無効です。正しいエクスポートコードを貼り付けてください。', 'err');
  }
@@ -2883,9 +3217,9 @@ function showApiKeyScreen() {
 
 function saveApiKeys() {
   const raw = document.getElementById('apiKeyInput').value;
-  const keys = raw.split('\n').map(k => k.trim()).filter(k => k.length > 10);
+  const keys = raw.split('\n').map(k => k.trim()).filter(k => k.length > 10 && k.startsWith('AIza'));
   if (keys.length === 0) {
-    alert('有効なAPIキーを1つ以上入力してください。');
+    alert('有効なAPIキーが見つかりません。\n\n「AIzaSy...」で始まるGemini APIキーを1行に1つ入力してください。');
     return;
   }
   saveGeminiKeys(keys);
@@ -3227,7 +3561,8 @@ function doGlobalSearch() {
 
   const matchQ = allQuestions.filter(q =>
     q.text.toLowerCase().includes(query) ||
-    (q.why || '').toLowerCase().includes(query)
+    (q.why || '').toLowerCase().includes(query) ||
+    (q.mapTags || []).some(t => t.toLowerCase().includes(query))
   ).slice(0, 8);
 
   if (matchTerms.length === 0 && matchQ.length === 0) {
@@ -3359,6 +3694,509 @@ function copySelectedText() {
   if (!_lpTargetText) return;
   navigator.clipboard?.writeText(_lpTargetText).catch(() => {});
 }
+
+// === マップ画面からのリモート検索要求に対応 ===
+window.addEventListener('message', (event) => {
+    if (event.data && event.data.type === 'search_keyword') {
+        const keyword = event.data.keyword;
+        if(typeof showGlobalSearch === 'function') {
+            showGlobalSearch();
+            const input = document.getElementById('gsearchInput');
+            if(input) {
+                input.value = keyword;
+                doGlobalSearch();
+            }
+        }
+    }
+});
+
+// === Firebase Cloud Sync Handler ===
+window.updateLocalStatsFromCloud = function(data) {
+    try {
+        if(data.sme_bookmarks2) {
+            bookmarks = JSON.parse(data.sme_bookmarks2);
+            localStorage.setItem('sme_bookmarks2', data.sme_bookmarks2);
+        }
+        if(data.sme_wrong2) {
+            wrongList = JSON.parse(data.sme_wrong2);
+            localStorage.setItem('sme_wrong2', data.sme_wrong2);
+        }
+        if(data.sme_stats) {
+            stats = JSON.parse(data.sme_stats);
+            localStorage.setItem('sme_stats', data.sme_stats);
+        }
+        if(data.sme_daily) {
+            dailyActivity = JSON.parse(data.sme_daily);
+            localStorage.setItem('sme_daily', data.sme_daily);
+        }
+        if(data.sme_history) {
+            localStorage.setItem('sme_history', data.sme_history);
+        }
+        if(data.sme_kw_mastered) {
+            kwMastered = new Set(JSON.parse(data.sme_kw_mastered));
+            localStorage.setItem('sme_kw_mastered', data.sme_kw_mastered);
+        }
+        if(data.sme_custom_data) {
+            localStorage.setItem('sme_custom_data', data.sme_custom_data);
+        }
+        
+        if(typeof currentScreen !== 'undefined') {
+            if(currentScreen === 'analysis' && typeof showAnalysis === 'function') {
+                showAnalysis();
+            }
+        }
+    } catch(e) {
+        console.error("Firebase sync parse error:", e);
+    }
+};
+
+
+// ===== 学習モード =====
+const LEARN_CURRICULUM = [
+  { subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    chapters:[
+      { key:'01_mgmt_strategy.json',      title:'第1章 経営戦略論', sub:'競争優位・ドメイン・成長戦略' },
+      { key:'01_mgmt_organization.json',  title:'第2章 組織論',     sub:'構造設計・モチベーション・リーダーシップ' },
+      { key:'01_mgmt_hrm.json',           title:'第3章 人的資源管理', sub:'採用・評価・報酬・労務' },
+      { key:'01_mgmt_marketing.json',     title:'第4章 マーケティング基礎', sub:'STP・4P・CRM' },
+      { key:'01_mgmt_marketing_adv.json', title:'第5章 マーケティング応用', sub:'サービス・デジタル・価格' },
+      { key:'01_mgmt_innovation.json',    title:'第6章 イノベーション・DX', sub:'DX・技術管理・起業家精神' },
+      { key:'01_mgmt_governance.json',    title:'第7章 ガバナンス・CSR', sub:'コーポレートガバナンス・ESG' },
+    ]
+  },
+  { subject:'財務・会計', icon:'💰', color:'#00B894',
+    chapters:[
+      { key:'02_finance_basics.json', title:'第1章 財務会計基礎', sub:'財務諸表・収益性・安全性' },
+      { key:'02_finance_flow.json',   title:'第2章 管理会計・CF', sub:'CVP分析・キャッシュフロー・投資' },
+    ]
+  },
+  { subject:'運営管理', icon:'🏭', color:'#E17055',
+    chapters:[
+      { key:'03_ops_basics.json', title:'第1章 生産・店舗管理', sub:'生産方式・在庫・品質管理・小売' },
+    ]
+  },
+  { subject:'経済学', icon:'📈', color:'#FDCB6E',
+    chapters:[
+      { key:'04_econ_basics.json', title:'第1章 ミクロ・マクロ経済学', sub:'市場・余剰・IS-LM・GDP' },
+      { key:'04_econ_flow.json',   title:'第2章 経済政策・国際経済', sub:'金融政策・財政政策・為替' },
+    ]
+  },
+  { subject:'経営法務', icon:'⚖️', color:'#636E72',
+    chapters:[
+      { key:'05_legal_basics.json', title:'第1章 会社法・知財・民法', sub:'会社法・特許・商標・契約' },
+    ]
+  },
+  { subject:'情報システム', icon:'💻', color:'#0984E3',
+    chapters:[
+      { key:'06_it_basics.json', title:'第1章 ITシステム・DX', sub:'ネットワーク・セキュリティ・開発手法' },
+    ]
+  },
+  { subject:'中小企業政策', icon:'🏛️', color:'#6C5CE7',
+    chapters:[
+      { key:'07_policy_basics.json', title:'第1章 中小企業経営・政策', sub:'基本法・支援制度・白書' },
+    ]
+  },
+];
+// ===== ユニットカリキュラム（企業経営理論 U1→U15 順番通り） =====
+const UNIT_CURRICULUM = [
+  { id:'U1', rank:'S', days:3, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'経営理念・全社戦略', sub:'理念・ビジョン・ドメイン・PPM・成長戦略',
+    mapFile:'01_mgmt_strategy.json',
+    nodeIds:['rinen_purpose','rinen_core','rinen_vision','rinen_goal','rinen_ci','rinen_stakeholder','rinen_motivation','rinen_decision','domain','levitt','stp','corporate_strategy','ansoff','ppm','ge_screen','scope','diversification','synergy','plc','cannibalization','csr_esg','greiner'] },
+  { id:'U2', rank:'S', days:3, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'競争戦略', sub:'5フォース・ポーターの3戦略・競争地位・KPI',
+    mapFile:'01_mgmt_strategy.json',
+    nodeIds:['five','porter','status','blueocean','kpi_kgi','pdca'] },
+  { id:'U3', rank:'A', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'VRIO・ケイパビリティ', sub:'VRIO・バリューチェーン・コアコンピタンス・経験曲線',
+    mapFile:'01_mgmt_strategy.json',
+    nodeIds:['vrio','vc','core','scale','experience'] },
+  { id:'U4', rank:'A', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'M&A・企業間連携', sub:'M&A・戦略的提携・垂直水平統合・アウトソーシング',
+    mapFile:'01_mgmt_strategy.json',
+    nodeIds:['ma','alliance','vertical_horizontal','outsourcing'] },
+  { id:'U5', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'環境分析', sub:'PEST・SWOT・外部内部環境分析',
+    mapFile:'01_mgmt_strategy.json',
+    nodeIds:['pest','swot'] },
+  { id:'U6', rank:'A', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'イノベーション・MOT', sub:'破壊的イノベーション・キャズム・ジレンマ・デファクト',
+    mapFile:'01_mgmt_strategy.json',
+    nodeIds:['disruption','de_facto','dilemma','chasm'] },
+  { id:'U7', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'組織論の系譜・構造', sub:'テイラー・バーナード・組織形態・古典的原則',
+    mapFile:'01_mgmt_organization.json',
+    nodeIds:['taylor','fayol','mayo','barnard','simon','garbage_can','weber','what_is_org','division_of_labor','coordination','authority_resp','formal_informal','span_of_control','exception_principle','unity_of_command','specialization_principle','authority_responsibility','functional','divisional','matrix','project_org','burns_stalker','ambidex'] },
+  { id:'U8', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'モチベーション・リーダーシップ', sub:'マズロー・ハーズバーグ・PM理論・SL理論',
+    mapFile:'01_mgmt_organization.json',
+    nodeIds:['maslow','herzberg','mcgregor','erg_theory','equity_theory','achievement_motivation','vroom','locke','adams','job_char','grid','pm','contingency','sl','transformational','empowerment'] },
+  { id:'U9', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'組織文化・変革・学習', sub:'シャイン・レヴィン・コッター・SECIモデル',
+    mapFile:'01_mgmt_organization.json',
+    nodeIds:['org_culture','lewin','kotter','org_learning','seci','senge','open_inno','follett_conflict','seci_model'] },
+  { id:'U10', rank:'B', days:1, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'組織行動・HRM基礎', sub:'OJT・ジョブローテーション・評価制度・働き方改革',
+    mapFile:'01_mgmt_organization.json',
+    nodeIds:['ojt','job_rotation','eval_system','workstyle'] },
+  { id:'U11', rank:'A', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'HRM（採用・評価・報酬）', sub:'要員計画・CDP・MBO・職能給・成果給',
+    mapFile:'01_mgmt_hrm.json',
+    nodeIds:['node_workforce_plan','node_talent_portfolio','node_ojt','node_off_jt','node_sd','node_cdp','node_shokuno_system','node_job_grade','node_competency','node_mbo','node_360','node_eval_fairness','node_eval_error','node_abs_rel_eval','node_shokuno_pay','node_job_pay','node_performance_pay','node_cafeteria','node_total_reward','node_stock_option'] },
+  { id:'U12', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'労働法規・働き方改革', sub:'労働基準法・36協定・解雇規制・同一労働同一賃金',
+    mapFile:'01_mgmt_hrm.json',
+    nodeIds:['node_rodo_kijun','node_36_agreement','node_dismissal','node_flextime','node_discretionary','node_dispatch','node_equal_pay','node_telework','node_job_vs_member','node_kodopro','node_childcare_law','node_harassment'] },
+  { id:'U13', rank:'A', days:3, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'マーケティング基礎', sub:'STP・4P・CRM・プロモーション・AIDMA',
+    mapFile:'01_mgmt_marketing.json',
+    nodeIds:['def_need_want','concept_history','myopia','process','segmentation','psychographic_seg','targeting','targeting_types','positioning','product_layer','product_mix','plc','brand','service','price_approach','new_product_price','psych_price','place_channel','channel_policy','vms','sales_promotion','promo_mix','push_pull','aisas','crm','retention','ltv','rfm'] },
+  { id:'U14', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'消費者行動・ブランド', sub:'購買プロセス・関与度・ブランドエクイティ・PLC戦略',
+    mapFile:'01_mgmt_marketing_adv.json',
+    nodeIds:['buying_process','involvement','cognitive_dissonance','network_externality','reference_group','brand_equity','brand_extension','pb_nb','co_branding','plc_strategy'] },
+  { id:'U15', rank:'C', days:1, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
+    title:'デジタル・サービスマーケ', sub:'サービスの4特性・7P・オムニチャネル・グローバル',
+    mapFile:'01_mgmt_marketing_adv.json',
+    nodeIds:['service_4char','service_7p','service_recovery','critical_incident','service_gap','digital_tools','customer_journey','permission_mkt','omnichannel','global_mkt'] },
+];
+
+// ===== 学習モード State =====
+let learnProgress = JSON.parse(localStorage.getItem('sme_learn') || '{}');
+let _learnUnitIdx = 0;
+let _learnNodes = [];
+let _learnNodeIdx = 0;
+let _learnPhase = 'pre'; // 'pre' | 'nodes' | 'post'
+let _learnQuizQuestions = [];
+let _learnQuizIndex = 0;
+let _learnQuizCorrects = 0;
+
+function saveLearnProgress() { localStorage.setItem('sme_learn', JSON.stringify(learnProgress)); }
+function isUnitDone(uid) { return learnProgress[uid]?.done === true; }
+
+function _learnShowSub(id) {
+  ['learnSubjectView','learnChapterView','learnStudyView','learnQuizView','learnDoneView']
+    .forEach(v => document.getElementById(v)?.classList.toggle('hidden', v !== id));
+}
+
+function showLearnHome() {
+  currentScreen = 'learn';
+  ['homeScreen','quizScreen','analysisScreen'].forEach(id => document.getElementById(id)?.classList.add('hidden'));
+  document.getElementById('termListScreen')?.classList.add('hidden');
+  document.getElementById('keywordScreen')?.classList.add('hidden');
+  if (!document.getElementById('learnScreen')) return;
+  document.getElementById('learnScreen').classList.remove('hidden');
+  document.getElementById('progressWrap').style.display = 'none';
+  document.getElementById('headerTitle').textContent = '📚 学習モード';
+  document.getElementById('headerCounter').textContent = '';
+  setActiveNav('navLearn');
+  _startCurrentUnit();
+}
+
+async function _startCurrentUnit() {
+  _learnUnitIdx = UNIT_CURRICULUM.findIndex(u => !isUnitDone(u.id));
+  if (_learnUnitIdx === -1) {
+    _learnShowSub('learnDoneView');
+    document.getElementById('learnDoneView').innerHTML = `<div style="padding:48px 16px;text-align:center;">
+      <div style="font-size:56px;margin-bottom:16px;">🎉</div>
+      <div style="font-size:20px;font-weight:700;margin-bottom:8px;">企業経営理論 完走！</div>
+      <div style="font-size:14px;color:var(--text-secondary);line-height:1.7;">全15ユニットを修了しました。</div>
+    </div>`;
+    return;
+  }
+  const unit = UNIT_CURRICULUM[_learnUnitIdx];
+  document.getElementById('learnStudyView').innerHTML = '<div style="padding:60px;text-align:center;"><div class="spinner"></div></div>';
+  _learnShowSub('learnStudyView');
+  try {
+    const data = await fetch(`./data/maps/${unit.mapFile}?v=${Date.now()}`).then(r => r.json());
+    const allowed = new Set(unit.nodeIds);
+    _learnNodes = (data.nodes || [])
+      .filter(n => allowed.has(n.id) && n.detailHtml)
+      .sort((a, b) => unit.nodeIds.indexOf(a.id) - unit.nodeIds.indexOf(b.id));
+    const allKws = new Set();
+    _learnNodes.forEach(n => (n.searchKeywords||[]).forEach(k => allKws.add(k)));
+    // プレテスト：オリジナル問題
+    let prePool = allQuestions.filter(q =>
+      (q.mapTags||[]).some(t => allKws.has(t)) &&
+      (!q.year || q.year === '' || q.year.includes('オリジナル'))
+    );
+    _learnQuizQuestions = prePool.sort(() => Math.random() - 0.5).slice(0, 5);
+    _learnQuizIndex = 0;
+    _learnQuizCorrects = 0;
+    _learnPhase = 'pre';
+    if (_learnQuizQuestions.length > 0) {
+      _renderLearnQuiz();
+    } else {
+      _startNodeNavigation();
+    }
+  } catch(e) {
+    document.getElementById('learnStudyView').innerHTML = '<div style="padding:32px;text-align:center;color:var(--danger);">読み込みエラーが発生しました</div>';
+  }
+}
+
+function _renderLearnQuiz() {
+  const unit = UNIT_CURRICULUM[_learnUnitIdx];
+  const q = _learnQuizQuestions[_learnQuizIndex];
+  const total = _learnQuizQuestions.length;
+  const pct = Math.round((_learnQuizIndex / total) * 100);
+  const isPre = _learnPhase === 'pre';
+  const isMid = _learnPhase === 'mid';
+  const phaseLabel = isPre ? 'プレテスト' : (isMid ? '✅ 確認クイズ' : 'ポストテスト');
+  const phaseColor = isPre ? '#FDCB6E' : (isMid ? '#00B894' : '#6C5CE7');
+
+  let html = `<div style="padding:0 0 100px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <div style="font-size:13px;color:var(--text-muted);font-weight:500;">${unit.id} · ${unit.title}</div>
+      <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:${phaseColor}33;color:${phaseColor};">${phaseLabel}</span>
+    </div>
+    <div style="height:4px;background:var(--border);border-radius:2px;margin-bottom:4px;">
+      <div style="height:100%;width:${pct}%;background:${phaseColor};border-radius:2px;transition:width 0.3s;"></div>
+    </div>
+    <div style="font-size:12px;color:var(--text-muted);margin-bottom:20px;">${_learnQuizIndex + 1} / ${total}問</div>
+    <div style="font-size:15px;font-weight:600;line-height:1.8;margin-bottom:20px;color:var(--text);">${q.text}</div>`;
+  (q.choices||[]).forEach((c, i) => {
+    html += `<button onclick="_learnAnswer(${i})" style="display:block;width:100%;text-align:left;padding:14px 18px;margin-bottom:10px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;font-size:14px;cursor:pointer;line-height:1.5;">
+      <span style="font-weight:700;color:var(--primary);margin-right:8px;">${String.fromCharCode(65+i)}</span>${c}
+    </button>`;
+  });
+  html += '</div>';
+  document.getElementById('learnQuizView').innerHTML = html;
+  document.getElementById('learnQuizView').scrollTop = 0;
+  _learnShowSub('learnQuizView');
+}
+
+function _learnAnswer(choiceIndex) {
+  const q = _learnQuizQuestions[_learnQuizIndex];
+  const correct = q.correct;
+  const isCorrect = choiceIndex === correct;
+  if (isCorrect) _learnQuizCorrects++;
+  const btns = document.getElementById('learnQuizView').querySelectorAll('button');
+  btns.forEach((btn, i) => {
+    if (i === correct) { btn.style.background='var(--success-bg)'; btn.style.borderColor='var(--success)'; btn.style.color='var(--success)'; }
+    else if (i === choiceIndex && !isCorrect) { btn.style.background='var(--danger-bg)'; btn.style.borderColor='var(--danger)'; btn.style.color='var(--danger)'; }
+    btn.disabled = true; btn.onclick = null;
+  });
+  const el = document.getElementById('learnQuizView');
+  const div = document.createElement('div');
+  div.style.cssText = 'margin:16px 0;padding:14px 16px;border-radius:12px;font-size:13px;line-height:1.7;';
+  div.style.background = isCorrect ? 'var(--success-bg)' : 'var(--danger-bg)';
+  div.style.color = isCorrect ? 'var(--success)' : 'var(--danger)';
+  div.innerHTML = `<b>${isCorrect ? '✅ 正解！' : '❌ 不正解'}</b><br>${q.why||''}`;
+  const isLast = _learnQuizIndex + 1 >= _learnQuizQuestions.length;
+  const nextLabel = !isLast ? '次の問題 →' : (_learnPhase === 'pre' ? '解説を読む →' : (_learnPhase === 'mid' ? '学習を続ける →' : '結果を見る'));
+  const nextBtn = document.createElement('button');
+  nextBtn.textContent = nextLabel;
+  nextBtn.style.cssText = 'display:block;width:100%;padding:14px;background:var(--primary);color:#fff;font-size:15px;font-weight:700;border:none;border-radius:12px;cursor:pointer;margin-top:8px;';
+  nextBtn.onclick = _learnNextQuestion;
+  el.querySelector('div').appendChild(div);
+  el.querySelector('div').appendChild(nextBtn);
+}
+
+function _learnNextQuestion() {
+  _learnQuizIndex++;
+  if (_learnQuizIndex < _learnQuizQuestions.length) {
+    _renderLearnQuiz();
+  } else if (_learnPhase === 'pre') {
+    _startNodeNavigation();
+  } else if (_learnPhase === 'mid') {
+    // 中間クイズ完了 → ノード閲覧に戻る
+    _renderNodeView();
+  } else {
+    _learnShowResult();
+  }
+}
+
+function _startNodeNavigation() {
+  _learnNodeIdx = 0;
+  _renderNodeView();
+}
+
+function _renderNodeView() {
+  const unit = UNIT_CURRICULUM[_learnUnitIdx];
+  const node = _learnNodes[_learnNodeIdx];
+  const total = _learnNodes.length;
+  if (!node) { _startPostTest(); return; }
+  const isLast = _learnNodeIdx === total - 1;
+  const pct = Math.round(((_learnNodeIdx + 1) / total) * 100);
+
+  // 次の確認クイズまでの残りノード数を計算
+  const nextQuizAt = Math.ceil((_learnNodeIdx + 1) / 5) * 5;
+  const nodesUntilQuiz = Math.min(nextQuizAt, total) - _learnNodeIdx - 1;
+  let progressHint = '';
+  if (isLast) {
+    progressHint = '📝 これが最後の解説です。次はポストテストです！';
+  } else if (nodesUntilQuiz <= 0) {
+    progressHint = '📝 次は確認クイズです！';
+  } else if (nodesUntilQuiz <= 2) {
+    progressHint = `📝 あと${nodesUntilQuiz}個で確認クイズ`;
+  }
+
+  let html = `<div style="padding:0 0 100px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+      <div style="font-size:13px;color:var(--text-muted);font-weight:500;">${unit.id} · ${unit.title}</div>
+      <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:#00B89422;color:#00B894;">インプット</span>
+    </div>
+    <div style="height:4px;background:var(--border);border-radius:2px;margin-bottom:4px;">
+      <div style="height:100%;width:${pct}%;background:#00B894;border-radius:2px;transition:width 0.3s;"></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+      <div style="font-size:12px;color:var(--text-muted);">${_learnNodeIdx + 1} / ${total}</div>
+      ${progressHint ? `<div style="font-size:11px;color:#00B894;font-weight:600;">${progressHint}</div>` : ''}
+    </div>
+    <div class="learn-node-card">
+      <div class="learn-node-title">${node.detailTitle || node.label}</div>
+      <div class="learn-node-body">${node.detailHtml}</div>
+    </div>
+    <div style="display:flex;gap:12px;margin-top:20px;">
+      ${_learnNodeIdx > 0
+        ? `<button onclick="_learnNodePrev()" style="flex:1;padding:14px;background:var(--card);color:var(--text);border:1.5px solid var(--border);border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;">← 前へ</button>`
+        : '<div style="flex:1;"></div>'}
+      <button onclick="${isLast ? '_startPostTest()' : '_learnNodeNext()'}"
+        style="flex:2;padding:14px;background:${isLast ? '#6C5CE7' : 'var(--primary)'};color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;${isLast ? 'box-shadow:0 4px 16px rgba(108,92,231,0.4);' : ''}">
+        ${isLast ? '📝 ポストテストへ →' : '次へ →'}
+      </button>
+    </div>
+  </div>`;
+  document.getElementById('learnStudyView').innerHTML = html;
+  document.getElementById('learnStudyView').scrollTop = 0;
+  _learnShowSub('learnStudyView');
+}
+
+function _learnNodeNext() {
+  _learnNodeIdx++;
+  // 5ノードごとに中間確認クイズを挟む（最後のノードはポストテストがあるため除外）
+  if (_learnNodeIdx > 0 && _learnNodeIdx % 5 === 0 && _learnNodeIdx < _learnNodes.length) {
+    _startMidQuiz();
+  } else {
+    _renderNodeView();
+  }
+}
+function _learnNodePrev() { _learnNodeIdx--; _renderNodeView(); }
+
+function _startMidQuiz() {
+  // 直前5ノードのキーワードから問題を抽出
+  const recentNodes = _learnNodes.slice(Math.max(0, _learnNodeIdx - 5), _learnNodeIdx);
+  const kws = new Set();
+  recentNodes.forEach(n => (n.searchKeywords||[]).forEach(k => kws.add(k)));
+  let pool = allQuestions.filter(q => (q.mapTags||[]).some(t => kws.has(t)));
+  // 既にプレテストで出した問題は除外
+  const usedIds = new Set((_learnQuizQuestions||[]).map(q => q.id));
+  pool = pool.filter(q => !usedIds.has(q.id));
+  _learnQuizQuestions = pool.sort(() => Math.random() - 0.5).slice(0, 3);
+  _learnQuizIndex = 0;
+  _learnQuizCorrects = 0;
+  _learnPhase = 'mid';
+  if (_learnQuizQuestions.length > 0) {
+    _renderLearnQuiz();
+  } else {
+    // 問題がなければスキップしてノードを続ける
+    _renderNodeView();
+  }
+}
+
+function _startPostTest() {
+  const allKws = new Set();
+  _learnNodes.forEach(n => (n.searchKeywords||[]).forEach(k => allKws.add(k)));
+  let pool = allQuestions.filter(q => (q.mapTags||[]).some(t => allKws.has(t)));
+  const past = pool.filter(q => q.year && !q.year.includes('オリジナル') && q.year !== '');
+  if (past.length >= 3) pool = past;
+  _learnQuizQuestions = pool.sort(() => Math.random() - 0.5).slice(0, 8);
+  _learnQuizIndex = 0;
+  _learnQuizCorrects = 0;
+  _learnPhase = 'post';
+  if (_learnQuizQuestions.length === 0) {
+    alert('この章に対応する問題がまだありません。');
+    return;
+  }
+  _renderLearnQuiz();
+}
+
+function _learnShowResult() {
+  const unit = UNIT_CURRICULUM[_learnUnitIdx];
+  const total = _learnQuizQuestions.length;
+  const correct = _learnQuizCorrects;
+  const pct = Math.round(correct / total * 100);
+  const passed = pct >= 80;
+  const nextUnit = UNIT_CURRICULUM[_learnUnitIdx + 1];
+  if (passed) {
+    learnProgress[unit.id] = { done: true, score: pct, lastStudied: Date.now() };
+    saveLearnProgress();
+  }
+  document.getElementById('learnDoneView').innerHTML = `<div style="padding:16px 0;">
+    <div class="learn-done-card">
+      <div class="learn-done-emoji">${pct>=80?'🎉':pct>=60?'👍':'💪'}</div>
+      <div class="learn-done-title">${correct}/${total}問 正解（${pct}%）</div>
+      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">${unit.id} ${unit.title}</div>
+      <div class="learn-done-sub" style="margin:12px 0 20px;">
+        ${passed ? (nextUnit ? `ユニット完了！次は ${nextUnit.id} へ進みましょう。` : '全ユニット制覇！🎊') : '80%以上で次のユニットへ進めます。もう一度挑戦しましょう。'}
+      </div>
+      ${passed && nextUnit ? `<button class="learn-start-btn" onclick="showLearnHome()">次のユニットへ →</button>` : ''}
+      ${!passed ? `<button class="learn-start-btn" onclick="showLearnHome()">もう一度挑戦する</button>` : ''}
+      <button onclick="goHome()" style="display:block;width:100%;padding:14px;background:var(--card);color:var(--primary);font-size:14px;font-weight:600;border:1.5px solid var(--primary);border-radius:12px;cursor:pointer;margin-top:10px;">ホームに戻る</button>
+    </div>
+  </div>`;
+  _learnShowSub('learnDoneView');
+}
+
+</script>
+
+<!-- ============================
+   Firebase Sync Logic (ES Modules)
+============================ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+  import { getDatabase, ref, onValue, set } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCBK_KggSTsEya9vS_rxUGw9aYgds5a36w",
+    authDomain: "shindanshi-master.firebaseapp.com",
+    projectId: "shindanshi-master",
+    storageBucket: "shindanshi-master.firebasestorage.app",
+    messagingSenderId: "142736287008",
+    appId: "1:142736287008:web:18c6c9e1255e32c93d6345",
+    databaseURL: "https://shindanshi-master-default-rtdb.firebaseio.com/"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
+
+  let isSyncingFromCloud = false;
+  const syncKeys = ['sme_bookmarks2', 'sme_wrong2', 'sme_stats', 'sme_daily', 'sme_history', 'sme_kw_mastered', 'sme_custom_data'];
+
+  onValue(ref(db, 'users/user_5740331506f3c8de/learningStats'), (snapshot) => {
+      const data = snapshot.val();
+      if(!data) return;
+      
+      isSyncingFromCloud = true;
+      if(window.updateLocalStatsFromCloud) {
+          window.updateLocalStatsFromCloud(data);
+      }
+      isSyncingFromCloud = false;
+  });
+
+  let syncTimeout = null;
+
+  window.syncToFirebase = function() {
+      if(isSyncingFromCloud) return;
+      clearTimeout(syncTimeout);
+      syncTimeout = setTimeout(() => {
+          const payload = {};
+          syncKeys.forEach(k => {
+              const val = localStorage.getItem(k);
+              if(val) payload[k] = val;
+          });
+          set(ref(db, 'users/user_5740331506f3c8de/learningStats'), payload).catch(e => console.error(e));
+      }, 500); 
+  };
+
+  const originalSetItem = Storage.prototype.setItem;
+  Storage.prototype.setItem = function(key, value) {
+      originalSetItem.apply(this, arguments);
+      if(syncKeys.includes(key)) {
+          if(window.syncToFirebase) window.syncToFirebase();
+      }
+  };
+
 </script>
 </body>
 </html>
