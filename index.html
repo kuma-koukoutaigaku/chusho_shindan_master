@@ -669,84 +669,88 @@ body { font-family: var(--font); background: var(--bg); color: var(--text); min-
 .btm-nav-inner.seven .nav-label { font-size: 9px; }
 .btm-nav-inner.seven .nav-item svg { width: 20px; height: 20px; }
 
-/* ===== 学習モード ===== */
-.learn-subject-card {
-  background: var(--card); border-radius: var(--radius); padding: 18px 20px;
-  margin-bottom: 12px; box-shadow: var(--shadow); border: 1px solid var(--border);
-  cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 16px;
+/* ===== カレンダー計画 ===== */
+.cal-today-card {
+  background: linear-gradient(135deg, #6C5CE7, #A29BFE); border-radius: var(--radius);
+  padding: 20px; margin-bottom: 16px; color: #fff; position: relative; overflow: hidden;
 }
-.learn-subject-card:active { transform: scale(0.98); }
-.learn-subject-icon { font-size: 32px; width: 48px; text-align: center; flex-shrink: 0; }
-.learn-subject-info { flex: 1; }
-.learn-subject-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
-.learn-subject-meta { font-size: 12px; color: var(--text-secondary); margin-bottom: 6px; }
-.learn-progress-bar { height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
-.learn-progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--primary-light)); border-radius: 3px; transition: width 0.5s; }
+.cal-today-card::after {
+  content:''; position:absolute; top:-30px; right:-30px; width:120px; height:120px;
+  background:rgba(255,255,255,0.08); border-radius:50%;
+}
+.cal-today-label { font-size:12px; font-weight:600; opacity:0.8; margin-bottom:8px; }
+.cal-today-unit { font-size:18px; font-weight:700; margin-bottom:4px; }
+.cal-today-sub { font-size:12px; opacity:0.75; }
+.cal-phase-bar {
+  display:flex; gap:3px; margin:16px 0 6px;
+}
+.cal-phase-seg {
+  flex:1; height:6px; border-radius:3px; background:rgba(255,255,255,0.2); position:relative; overflow:hidden;
+}
+.cal-phase-seg.done { background:rgba(255,255,255,0.7); }
+.cal-phase-seg.active { background:rgba(255,255,255,0.4); }
+.cal-phase-labels { display:flex; justify-content:space-between; font-size:10px; opacity:0.6; }
 
-.learn-chapter-item {
-  background: var(--card); border-radius: var(--radius-sm); padding: 16px 18px;
-  margin-bottom: 10px; box-shadow: var(--shadow); border: 1px solid var(--border);
-  cursor: pointer; display: flex; align-items: center; gap: 12px; transition: all 0.2s;
+.cal-stats-row {
+  display:flex; gap:10px; margin-bottom:16px;
 }
-.learn-chapter-item:active { transform: scale(0.98); }
-.learn-chapter-item.locked { opacity: 0.5; cursor: default; }
-.learn-lv-badge {
-  padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700;
-  white-space: nowrap; flex-shrink: 0;
+.cal-stat-card {
+  flex:1; background:var(--card); border-radius:var(--radius-sm); padding:14px 12px;
+  text-align:center; box-shadow:var(--shadow); border:1px solid var(--border);
 }
-.lv-none { background: #F0F0F8; color: #999; }
-.lv-1 { background: #E8F5E9; color: #2E7D32; }
-.lv-2 { background: #FFF3E0; color: #E65100; }
-.lv-3 { background: #E3F2FD; color: #1565C0; }
-.lv-done { background: linear-gradient(135deg,#6C5CE7,#A29BFE); color: #fff; }
+.cal-stat-num { font-size:22px; font-weight:800; color:var(--primary); }
+.cal-stat-label { font-size:10px; color:var(--text-muted); margin-top:2px; }
 
-.learn-node-card {
-  background: var(--card); border-radius: var(--radius); padding: 20px;
-  margin-bottom: 14px; box-shadow: var(--shadow); border: 1px solid var(--border);
+.cal-month-header {
+  display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;
 }
-.learn-node-title {
-  font-size: 15px; font-weight: 700; color: var(--primary-dark);
-  margin-bottom: 12px; padding-bottom: 10px; border-bottom: 2px solid var(--primary-bg);
+.cal-month-title { font-size:15px; font-weight:700; color:var(--text); }
+.cal-month-btn {
+  background:var(--card); border:1px solid var(--border); border-radius:8px;
+  padding:6px 12px; font-size:13px; cursor:pointer; color:var(--text);
 }
-.learn-node-body { font-size: 13px; line-height: 1.8; color: var(--text); }
-.learn-node-body h3 { font-size: 13px; font-weight: 700; color: var(--primary); margin: 12px 0 6px; }
-.learn-node-body ul { padding-left: 16px; margin: 6px 0; }
-.learn-node-body li { margin-bottom: 4px; }
-.learn-node-body table { width: 100%; border-collapse: collapse; font-size: 12px; margin: 8px 0; }
-.learn-node-body td, .learn-node-body th { border: 1px solid var(--border); padding: 6px 8px; }
-.learn-node-body th { background: var(--primary-bg); font-weight: 600; }
+.cal-grid {
+  display:grid; grid-template-columns:repeat(7,1fr); gap:3px; margin-bottom:16px;
+}
+.cal-dow { text-align:center; font-size:10px; font-weight:600; color:var(--text-muted); padding:4px 0; }
+.cal-day {
+  aspect-ratio:1; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  border-radius:8px; font-size:12px; font-weight:500; cursor:pointer; position:relative;
+  background:var(--card); border:1px solid transparent; transition:all 0.15s;
+}
+.cal-day.empty { background:transparent; cursor:default; }
+.cal-day.today { border-color:var(--primary); font-weight:700; box-shadow:0 0 0 2px rgba(108,92,231,0.2); }
+.cal-day.done { background:#E8F5E9; color:#2E7D32; }
+.cal-day.missed { background:#FFEBEE; color:#C62828; }
+.cal-day.future { color:var(--text-muted); }
+.cal-day.review-only { background:#FFF8E1; }
+.cal-day-dot {
+  width:5px; height:5px; border-radius:50%; margin-top:2px;
+}
+.cal-day-dot.new { background:#6C5CE7; }
+.cal-day-dot.review { background:#FDCB6E; }
 
-.learn-start-btn {
-  display: block; width: 100%; padding: 16px; margin: 20px 0;
-  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-  color: #fff; font-size: 16px; font-weight: 700; border: none;
-  border-radius: var(--radius); cursor: pointer; text-align: center;
-  box-shadow: 0 4px 16px rgba(108,92,231,0.3); transition: all 0.2s;
+.cal-detail-card {
+  background:var(--card); border-radius:var(--radius); padding:16px;
+  margin-bottom:12px; box-shadow:var(--shadow); border:1px solid var(--border);
 }
-.learn-start-btn:active { transform: scale(0.98); }
-
-.learn-back-btn {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 14px; color: var(--primary); font-weight: 600;
-  background: none; border: none; cursor: pointer; padding: 0; margin-bottom: 16px;
+.cal-detail-title { font-size:14px; font-weight:700; color:var(--text); margin-bottom:8px; }
+.cal-task-item {
+  display:flex; align-items:center; gap:10px; padding:10px 0;
+  border-bottom:1px solid var(--border); font-size:13px;
 }
-
-.learn-quiz-header {
-  background: linear-gradient(135deg, #6C5CE7, #A29BFE);
-  padding: 16px 20px; margin: 0 -16px; margin-bottom: 16px;
-  display: flex; align-items: center; justify-content: space-between; color: #fff;
+.cal-task-item:last-child { border-bottom:none; }
+.cal-task-check {
+  width:22px; height:22px; border-radius:6px; border:2px solid var(--border);
+  display:flex; align-items:center; justify-content:center; cursor:pointer; flex-shrink:0;
+  transition:all 0.2s; font-size:12px;
 }
-.learn-lv-indicator {
-  font-size: 12px; font-weight: 700; padding: 4px 12px;
-  background: rgba(255,255,255,0.2); border-radius: 12px;
+.cal-task-check.checked { background:var(--success); border-color:var(--success); color:#fff; }
+.cal-task-type {
+  font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; flex-shrink:0;
 }
-.learn-done-card {
-  background: var(--card); border-radius: var(--radius); padding: 32px 24px;
-  text-align: center; box-shadow: var(--shadow); margin-top: 24px;
-}
-.learn-done-emoji { font-size: 48px; margin-bottom: 16px; }
-.learn-done-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
-.learn-done-sub { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.cal-task-type.new { background:#6C5CE722; color:#6C5CE7; }
+.cal-task-type.review { background:#FDCB6E33; color:#E17055; }
 </style><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
@@ -1065,16 +1069,10 @@ window.addEventListener("unhandledrejection", function(e) {
 
 <!-- 学習モード -->
 <div id="learnScreen" class="hidden" style="padding:0 0 100px;">
-  <!-- サブ画面1: 科目選択 -->
-  <div id="learnSubjectView"></div>
-  <!-- サブ画面2: チャプター選択 -->
-  <div id="learnChapterView" class="hidden"></div>
-  <!-- サブ画面3: 学習コンテンツ（解説を読む） -->
-  <div id="learnStudyView" class="hidden"></div>
-  <!-- サブ画面4: クイズ -->
-  <div id="learnQuizView" class="hidden"></div>
-  <!-- サブ画面5: 完了 -->
-  <div id="learnDoneView" class="hidden"></div>
+  <div id="calTodaySection"></div>
+  <div id="calStatsSection"></div>
+  <div id="calMonthSection"></div>
+  <div id="calDetailSection"></div>
 </div>
 
   <!-- Loading Screen -->
@@ -1114,10 +1112,9 @@ window.addEventListener("unhandledrejection", function(e) {
  </button>
  <button class="nav-item" id="navLearn" onclick="showLearnHome()">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-    <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/>
-    <path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
   </svg>
-  <span class="nav-label">学習</span>
+  <span class="nav-label">計画</span>
  </button>
 </div>
 </div>
@@ -3751,132 +3748,111 @@ window.updateLocalStatsFromCloud = function(data) {
 };
 
 
-// ===== 学習モード =====
-const LEARN_CURRICULUM = [
-  { subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    chapters:[
-      { key:'01_mgmt_strategy.json',      title:'第1章 経営戦略論', sub:'競争優位・ドメイン・成長戦略' },
-      { key:'01_mgmt_organization.json',  title:'第2章 組織論',     sub:'構造設計・モチベーション・リーダーシップ' },
-      { key:'01_mgmt_hrm.json',           title:'第3章 人的資源管理', sub:'採用・評価・報酬・労務' },
-      { key:'01_mgmt_marketing.json',     title:'第4章 マーケティング基礎', sub:'STP・4P・CRM' },
-      { key:'01_mgmt_marketing_adv.json', title:'第5章 マーケティング応用', sub:'サービス・デジタル・価格' },
-      { key:'01_mgmt_innovation.json',    title:'第6章 イノベーション・DX', sub:'DX・技術管理・起業家精神' },
-      { key:'01_mgmt_governance.json',    title:'第7章 ガバナンス・CSR', sub:'コーポレートガバナンス・ESG' },
-    ]
-  },
-  { subject:'財務・会計', icon:'💰', color:'#00B894',
-    chapters:[
-      { key:'02_finance_basics.json', title:'第1章 財務会計基礎', sub:'財務諸表・収益性・安全性' },
-      { key:'02_finance_flow.json',   title:'第2章 管理会計・CF', sub:'CVP分析・キャッシュフロー・投資' },
-    ]
-  },
-  { subject:'運営管理', icon:'🏭', color:'#E17055',
-    chapters:[
-      { key:'03_ops_basics.json', title:'第1章 生産・店舗管理', sub:'生産方式・在庫・品質管理・小売' },
-    ]
-  },
-  { subject:'経済学', icon:'📈', color:'#FDCB6E',
-    chapters:[
-      { key:'04_econ_basics.json', title:'第1章 ミクロ・マクロ経済学', sub:'市場・余剰・IS-LM・GDP' },
-      { key:'04_econ_flow.json',   title:'第2章 経済政策・国際経済', sub:'金融政策・財政政策・為替' },
-    ]
-  },
-  { subject:'経営法務', icon:'⚖️', color:'#636E72',
-    chapters:[
-      { key:'05_legal_basics.json', title:'第1章 会社法・知財・民法', sub:'会社法・特許・商標・契約' },
-    ]
-  },
-  { subject:'情報システム', icon:'💻', color:'#0984E3',
-    chapters:[
-      { key:'06_it_basics.json', title:'第1章 ITシステム・DX', sub:'ネットワーク・セキュリティ・開発手法' },
-    ]
-  },
-  { subject:'中小企業政策', icon:'🏛️', color:'#6C5CE7',
-    chapters:[
-      { key:'07_policy_basics.json', title:'第1章 中小企業経営・政策', sub:'基本法・支援制度・白書' },
-    ]
-  },
-];
-// ===== ユニットカリキュラム（企業経営理論 U1→U15 順番通り） =====
-const UNIT_CURRICULUM = [
-  { id:'U1', rank:'S', days:3, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'経営理念・全社戦略', sub:'理念・ビジョン・ドメイン・PPM・成長戦略',
-    mapFile:'01_mgmt_strategy.json',
-    nodeIds:['rinen_purpose','rinen_core','rinen_vision','rinen_goal','rinen_ci','rinen_stakeholder','rinen_motivation','rinen_decision','domain','levitt','stp','corporate_strategy','ansoff','ppm','ge_screen','scope','diversification','synergy','plc','cannibalization','csr_esg','greiner'] },
-  { id:'U2', rank:'S', days:3, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'競争戦略', sub:'5フォース・ポーターの3戦略・競争地位・KPI',
-    mapFile:'01_mgmt_strategy.json',
-    nodeIds:['five','porter','status','blueocean','kpi_kgi','pdca'] },
-  { id:'U3', rank:'A', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'VRIO・ケイパビリティ', sub:'VRIO・バリューチェーン・コアコンピタンス・経験曲線',
-    mapFile:'01_mgmt_strategy.json',
-    nodeIds:['vrio','vc','core','scale','experience'] },
-  { id:'U4', rank:'A', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'M&A・企業間連携', sub:'M&A・戦略的提携・垂直水平統合・アウトソーシング',
-    mapFile:'01_mgmt_strategy.json',
-    nodeIds:['ma','alliance','vertical_horizontal','outsourcing'] },
-  { id:'U5', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'環境分析', sub:'PEST・SWOT・外部内部環境分析',
-    mapFile:'01_mgmt_strategy.json',
-    nodeIds:['pest','swot'] },
-  { id:'U6', rank:'A', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'イノベーション・MOT', sub:'破壊的イノベーション・キャズム・ジレンマ・デファクト',
-    mapFile:'01_mgmt_strategy.json',
-    nodeIds:['disruption','de_facto','dilemma','chasm'] },
-  { id:'U7', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'組織論の系譜・構造', sub:'テイラー・バーナード・組織形態・古典的原則',
-    mapFile:'01_mgmt_organization.json',
-    nodeIds:['taylor','fayol','mayo','barnard','simon','garbage_can','weber','what_is_org','division_of_labor','coordination','authority_resp','formal_informal','span_of_control','exception_principle','unity_of_command','specialization_principle','authority_responsibility','functional','divisional','matrix','project_org','burns_stalker','ambidex'] },
-  { id:'U8', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'モチベーション・リーダーシップ', sub:'マズロー・ハーズバーグ・PM理論・SL理論',
-    mapFile:'01_mgmt_organization.json',
-    nodeIds:['maslow','herzberg','mcgregor','erg_theory','equity_theory','achievement_motivation','vroom','locke','adams','job_char','grid','pm','contingency','sl','transformational','empowerment'] },
-  { id:'U9', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'組織文化・変革・学習', sub:'シャイン・レヴィン・コッター・SECIモデル',
-    mapFile:'01_mgmt_organization.json',
-    nodeIds:['org_culture','lewin','kotter','org_learning','seci','senge','open_inno','follett_conflict','seci_model'] },
-  { id:'U10', rank:'B', days:1, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'組織行動・HRM基礎', sub:'OJT・ジョブローテーション・評価制度・働き方改革',
-    mapFile:'01_mgmt_organization.json',
-    nodeIds:['ojt','job_rotation','eval_system','workstyle'] },
-  { id:'U11', rank:'A', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'HRM（採用・評価・報酬）', sub:'要員計画・CDP・MBO・職能給・成果給',
-    mapFile:'01_mgmt_hrm.json',
-    nodeIds:['node_workforce_plan','node_talent_portfolio','node_ojt','node_off_jt','node_sd','node_cdp','node_shokuno_system','node_job_grade','node_competency','node_mbo','node_360','node_eval_fairness','node_eval_error','node_abs_rel_eval','node_shokuno_pay','node_job_pay','node_performance_pay','node_cafeteria','node_total_reward','node_stock_option'] },
-  { id:'U12', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'労働法規・働き方改革', sub:'労働基準法・36協定・解雇規制・同一労働同一賃金',
-    mapFile:'01_mgmt_hrm.json',
-    nodeIds:['node_rodo_kijun','node_36_agreement','node_dismissal','node_flextime','node_discretionary','node_dispatch','node_equal_pay','node_telework','node_job_vs_member','node_kodopro','node_childcare_law','node_harassment'] },
-  { id:'U13', rank:'A', days:3, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'マーケティング基礎', sub:'STP・4P・CRM・プロモーション・AIDMA',
-    mapFile:'01_mgmt_marketing.json',
-    nodeIds:['def_need_want','concept_history','myopia','process','segmentation','psychographic_seg','targeting','targeting_types','positioning','product_layer','product_mix','plc','brand','service','price_approach','new_product_price','psych_price','place_channel','channel_policy','vms','sales_promotion','promo_mix','push_pull','aisas','crm','retention','ltv','rfm'] },
-  { id:'U14', rank:'B', days:2, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'消費者行動・ブランド', sub:'購買プロセス・関与度・ブランドエクイティ・PLC戦略',
-    mapFile:'01_mgmt_marketing_adv.json',
-    nodeIds:['buying_process','involvement','cognitive_dissonance','network_externality','reference_group','brand_equity','brand_extension','pb_nb','co_branding','plc_strategy'] },
-  { id:'U15', rank:'C', days:1, subject:'企業経営理論', icon:'🏢', color:'#6C5CE7',
-    title:'デジタル・サービスマーケ', sub:'サービスの4特性・7P・オムニチャネル・グローバル',
-    mapFile:'01_mgmt_marketing_adv.json',
-    nodeIds:['service_4char','service_7p','service_recovery','critical_incident','service_gap','digital_tools','customer_journey','permission_mkt','omnichannel','global_mkt'] },
+// ===== カレンダー計画 =====
+const STUDY_UNITS = [
+  {id:'U1',rank:'S',days:3,title:'経営理念・全社戦略',sub:'理念・ビジョン・ドメイン・PPM',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U2',rank:'S',days:3,title:'競争戦略（ポーター）',sub:'5フォース・差別化・競争地位',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U3',rank:'A',days:2,title:'VRIO・ケイパビリティ',sub:'バリューチェーン・コアコンピタンス',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U4',rank:'A',days:2,title:'M&A・企業間連携',sub:'戦略的提携・垂直水平統合',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U5',rank:'B',days:2,title:'環境分析',sub:'PEST・SWOT',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U6',rank:'A',days:2,title:'イノベーション・MOT',sub:'破壊的イノベーション・キャズム',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U7',rank:'B',days:2,title:'組織論の系譜・構造',sub:'テイラー・バーナード・組織形態',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U8',rank:'B',days:2,title:'モチベーション・リーダーシップ',sub:'マズロー・PM理論・SL理論',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U9',rank:'B',days:2,title:'組織文化・意思決定',sub:'レヴィン・コッター・SECI',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U10',rank:'B',days:1,title:'組織行動・組織間関係',sub:'OJT・評価・働き方改革',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U11',rank:'A',days:2,title:'HRM（採用→評価→報酬）',sub:'要員計画・MBO・職能給',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U12',rank:'B',days:2,title:'労働法規',sub:'労基法・36協定・同一労働同一賃金',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U13',rank:'A',days:3,title:'マーケティング基礎',sub:'STP・4P・CRM',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U14',rank:'B',days:2,title:'消費者行動・ブランド',sub:'購買プロセス・ブランドエクイティ',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U15',rank:'C',days:1,title:'デジタル・サービスマーケ',sub:'7P・オムニチャネル',subject:'企業経営理論',icon:'🏢',color:'#6C5CE7'},
+  {id:'U16',rank:'B',days:2,title:'生産管理基礎',sub:'JIT・かんばん方式',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U17',rank:'A',days:2,title:'生産形態・レイアウト',sub:'SLP・セル生産',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U18',rank:'S',days:3,title:'QCD・工程管理①',sub:'リードタイム・PERT',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U19',rank:'S',days:2,title:'QCD・工程管理②',sub:'ラインバランス効率',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U20',rank:'C',days:1,title:'標準時間・IE',sub:'PTS法・ワークサンプリング',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U21',rank:'B',days:2,title:'品質管理',sub:'QC7つ道具・TQM',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U22',rank:'B',days:2,title:'設備管理・保全',sub:'MTBF・予防保全',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U23',rank:'S',days:3,title:'在庫管理',sub:'EOQ・ABC分析・安全在庫',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U24',rank:'A',days:2,title:'資材・購買・SCM',sub:'MRP・SCM',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U25',rank:'B',days:1,title:'物流',sub:'3PL・ユニットロード',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U26',rank:'S',days:3,title:'店舗管理・商圏',sub:'ハフモデル・売場構成',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U27',rank:'A',days:2,title:'MD・POS',sub:'クロスMD・POS分析',subject:'運営管理',icon:'🏭',color:'#E17055'},
+  {id:'U28',rank:'S',days:3,title:'需要・供給・均衡',sub:'価格弾力性・余剰分析',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U29',rank:'B',days:2,title:'消費者理論',sub:'無差別曲線・予算制約線',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U30',rank:'A',days:2,title:'生産者理論',sub:'限界費用・利潤最大化',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U31',rank:'B',days:2,title:'市場構造・ゲーム',sub:'独占・寡占・ナッシュ均衡',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U32',rank:'C',days:1,title:'市場の失敗',sub:'外部性・公共財',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U33',rank:'A',days:2,title:'GDP・国民所得',sub:'三面等価・乗数効果',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U34',rank:'B',days:2,title:'財政政策・IS-LM',sub:'IS-LM分析',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U35',rank:'B',days:2,title:'金融政策',sub:'マネーサプライ・金利',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U36',rank:'B',days:2,title:'AD-AS・労働市場',sub:'フィリップス曲線',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U37',rank:'C',days:1,title:'国際経済',sub:'比較優位・為替',subject:'経済学',icon:'📈',color:'#FDCB6E'},
+  {id:'U38',rank:'S',days:2,title:'ハードウェア基礎',sub:'CPU・メモリ・補助記憶',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
+  {id:'U39',rank:'A',days:2,title:'ソフトウェア・OS',sub:'OSS・ミドルウェア',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
+  {id:'U40',rank:'A',days:2,title:'プログラミング・アルゴリズム',sub:'スタック・キュー・ソート',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
+  {id:'U41',rank:'S',days:3,title:'ネットワーク',sub:'OSI参照モデル・TCP/IP',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
+  {id:'U42',rank:'A',days:2,title:'データベース',sub:'正規化・SQL',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
+  {id:'U43',rank:'B',days:2,title:'セキュリティ',sub:'公開鍵暗号・ファイアウォール',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
+  {id:'U44',rank:'B',days:2,title:'信頼性・ISMS',sub:'RAID・BCP・ISMS',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
+  {id:'U45',rank:'A',days:2,title:'システム開発',sub:'アジャイル・ウォーターフォール',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
+  {id:'U46',rank:'C',days:1,title:'PM・IT調達',sub:'RFP・SLA',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
+  {id:'U47',rank:'C',days:1,title:'経営システム・DX',sub:'ERP・AI・IoT',subject:'経営情報システム',icon:'💻',color:'#0984E3'},
 ];
 
-// ===== 学習モード State =====
-let learnProgress = JSON.parse(localStorage.getItem('sme_learn') || '{}');
-let _learnUnitIdx = 0;
-let _learnNodes = [];
-let _learnNodeIdx = 0;
-let _learnPhase = 'pre'; // 'pre' | 'nodes' | 'post'
-let _learnQuizQuestions = [];
-let _learnQuizIndex = 0;
-let _learnQuizCorrects = 0;
+// 6フェーズ順序（インターリーブ済み）
+const PHASE_ORDER = [
+  {phase:1,label:'基幹科目の土台',units:['U1','U2','U3','U4','U5','U6','U28','U38']},
+  {phase:2,label:'組織論+ミクロ経済',units:['U7','U8','U9','U10','U29','U30','U31','U32','U39','U40']},
+  {phase:3,label:'HRM+マーケ+運営導入',units:['U11','U12','U13','U14','U15','U16','U17','U41','U42']},
+  {phase:4,label:'運営管理集中+マクロ',units:['U18','U19','U20','U21','U22','U23','U33','U34']},
+  {phase:5,label:'仕上げ',units:['U24','U25','U26','U27','U35','U36','U37','U43','U44','U45','U46','U47']},
+  {phase:6,label:'直前総復習',units:[]},
+];
 
-function saveLearnProgress() { localStorage.setItem('sme_learn', JSON.stringify(learnProgress)); }
-function isUnitDone(uid) { return learnProgress[uid]?.done === true; }
+const EXAM_DATE = new Date('2026-08-02');
+const REVIEW_INTERVALS = [1, 3, 7, 14];
 
-function _learnShowSub(id) {
-  ['learnSubjectView','learnChapterView','learnStudyView','learnQuizView','learnDoneView']
-    .forEach(v => document.getElementById(v)?.classList.toggle('hidden', v !== id));
+// State
+let calPlan = JSON.parse(localStorage.getItem('sme_cal_plan') || 'null');
+let calViewMonth = new Date();
+
+function _toDateStr(d) { return d.toISOString().slice(0,10); }
+function _fromDateStr(s) { return new Date(s+'T00:00:00'); }
+function _addDays(d, n) { const r = new Date(d); r.setDate(r.getDate()+n); return r; }
+
+function generateCalPlan(startDate) {
+  const plan = { startDate: _toDateStr(startDate), days: {}, generated: Date.now() };
+  let cursor = new Date(startDate);
+  // フェーズ順にユニットを配置
+  const allUnits = [];
+  PHASE_ORDER.forEach(p => p.units.forEach(uid => allUnits.push(uid)));
+  
+  allUnits.forEach(uid => {
+    const unit = STUDY_UNITS.find(u => u.id === uid);
+    if (!unit) return;
+    for (let d = 0; d < unit.days; d++) {
+      const key = _toDateStr(cursor);
+      if (!plan.days[key]) plan.days[key] = { newUnits: [], reviews: [], done: false };
+      if (d === 0) plan.days[key].newUnits.push(uid);
+      cursor = _addDays(cursor, 1);
+    }
+    // 復習スケジュール
+    REVIEW_INTERVALS.forEach(interval => {
+      const revDate = _addDays(cursor, interval - 1);
+      const rk = _toDateStr(revDate);
+      if (!plan.days[rk]) plan.days[rk] = { newUnits: [], reviews: [], done: false };
+      plan.days[rk].reviews.push(uid);
+    });
+  });
+  // 直前3日は総復習
+  for (let i = 3; i >= 1; i--) {
+    const key = _toDateStr(_addDays(EXAM_DATE, -i));
+    if (!plan.days[key]) plan.days[key] = { newUnits: [], reviews: [], done: false };
+    plan.days[key].reviews.push('ALL');
+  }
+  calPlan = plan;
+  localStorage.setItem('sme_cal_plan', JSON.stringify(plan));
+  return plan;
 }
 
 function showLearnHome() {
@@ -3887,255 +3863,199 @@ function showLearnHome() {
   if (!document.getElementById('learnScreen')) return;
   document.getElementById('learnScreen').classList.remove('hidden');
   document.getElementById('progressWrap').style.display = 'none';
-  document.getElementById('headerTitle').textContent = '📚 学習モード';
+  document.getElementById('headerTitle').textContent = '📅 学習計画';
   document.getElementById('headerCounter').textContent = '';
   setActiveNav('navLearn');
-  _startCurrentUnit();
+  
+  if (!calPlan) generateCalPlan(new Date());
+  calViewMonth = new Date();
+  renderCalendar();
 }
 
-async function _startCurrentUnit() {
-  _learnUnitIdx = UNIT_CURRICULUM.findIndex(u => !isUnitDone(u.id));
-  if (_learnUnitIdx === -1) {
-    _learnShowSub('learnDoneView');
-    document.getElementById('learnDoneView').innerHTML = `<div style="padding:48px 16px;text-align:center;">
-      <div style="font-size:56px;margin-bottom:16px;">🎉</div>
-      <div style="font-size:20px;font-weight:700;margin-bottom:8px;">企業経営理論 完走！</div>
-      <div style="font-size:14px;color:var(--text-secondary);line-height:1.7;">全15ユニットを修了しました。</div>
-    </div>`;
-    return;
+function renderCalendar() {
+  renderCalToday();
+  renderCalStats();
+  renderCalMonth();
+  renderCalDetail(_toDateStr(new Date()));
+}
+
+function renderCalToday() {
+  const today = _toDateStr(new Date());
+  const dayData = calPlan?.days?.[today];
+  const daysLeft = Math.max(0, Math.ceil((EXAM_DATE - new Date()) / 86400000));
+  
+  // 現在のフェーズを判定
+  let currentPhase = 1;
+  const completedUnits = new Set();
+  if (calPlan) {
+    Object.entries(calPlan.days).forEach(([k, v]) => {
+      if (k <= today && v.done) v.newUnits.forEach(u => completedUnits.add(u));
+    });
   }
-  const unit = UNIT_CURRICULUM[_learnUnitIdx];
-  document.getElementById('learnStudyView').innerHTML = '<div style="padding:60px;text-align:center;"><div class="spinner"></div></div>';
-  _learnShowSub('learnStudyView');
-  try {
-    const data = await fetch(`./data/maps/${unit.mapFile}?v=${Date.now()}`).then(r => r.json());
-    const allowed = new Set(unit.nodeIds);
-    _learnNodes = (data.nodes || [])
-      .filter(n => allowed.has(n.id) && n.detailHtml)
-      .sort((a, b) => unit.nodeIds.indexOf(a.id) - unit.nodeIds.indexOf(b.id));
-    const allKws = new Set();
-    _learnNodes.forEach(n => (n.searchKeywords||[]).forEach(k => allKws.add(k)));
-    // プレテスト：オリジナル問題
-    let prePool = allQuestions.filter(q =>
-      (q.mapTags||[]).some(t => allKws.has(t)) &&
-      (!q.year || q.year === '' || q.year.includes('オリジナル'))
-    );
-    _learnQuizQuestions = prePool.sort(() => Math.random() - 0.5).slice(0, 5);
-    _learnQuizIndex = 0;
-    _learnQuizCorrects = 0;
-    _learnPhase = 'pre';
-    if (_learnQuizQuestions.length > 0) {
-      _renderLearnQuiz();
-    } else {
-      _startNodeNavigation();
-    }
-  } catch(e) {
-    document.getElementById('learnStudyView').innerHTML = '<div style="padding:32px;text-align:center;color:var(--danger);">読み込みエラーが発生しました</div>';
-  }
-}
-
-function _renderLearnQuiz() {
-  const unit = UNIT_CURRICULUM[_learnUnitIdx];
-  const q = _learnQuizQuestions[_learnQuizIndex];
-  const total = _learnQuizQuestions.length;
-  const pct = Math.round((_learnQuizIndex / total) * 100);
-  const isPre = _learnPhase === 'pre';
-  const isMid = _learnPhase === 'mid';
-  const phaseLabel = isPre ? 'プレテスト' : (isMid ? '✅ 確認クイズ' : 'ポストテスト');
-  const phaseColor = isPre ? '#FDCB6E' : (isMid ? '#00B894' : '#6C5CE7');
-
-  let html = `<div style="padding:0 0 100px;">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-      <div style="font-size:13px;color:var(--text-muted);font-weight:500;">${unit.id} · ${unit.title}</div>
-      <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:${phaseColor}33;color:${phaseColor};">${phaseLabel}</span>
-    </div>
-    <div style="height:4px;background:var(--border);border-radius:2px;margin-bottom:4px;">
-      <div style="height:100%;width:${pct}%;background:${phaseColor};border-radius:2px;transition:width 0.3s;"></div>
-    </div>
-    <div style="font-size:12px;color:var(--text-muted);margin-bottom:20px;">${_learnQuizIndex + 1} / ${total}問</div>
-    <div style="font-size:15px;font-weight:600;line-height:1.8;margin-bottom:20px;color:var(--text);">${q.text}</div>`;
-  (q.choices||[]).forEach((c, i) => {
-    html += `<button onclick="_learnAnswer(${i})" style="display:block;width:100%;text-align:left;padding:14px 18px;margin-bottom:10px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;font-size:14px;cursor:pointer;line-height:1.5;">
-      <span style="font-weight:700;color:var(--primary);margin-right:8px;">${String.fromCharCode(65+i)}</span>${c}
-    </button>`;
-  });
-  html += '</div>';
-  document.getElementById('learnQuizView').innerHTML = html;
-  document.getElementById('learnQuizView').scrollTop = 0;
-  _learnShowSub('learnQuizView');
-}
-
-function _learnAnswer(choiceIndex) {
-  const q = _learnQuizQuestions[_learnQuizIndex];
-  const correct = q.correct;
-  const isCorrect = choiceIndex === correct;
-  if (isCorrect) _learnQuizCorrects++;
-  const btns = document.getElementById('learnQuizView').querySelectorAll('button');
-  btns.forEach((btn, i) => {
-    if (i === correct) { btn.style.background='var(--success-bg)'; btn.style.borderColor='var(--success)'; btn.style.color='var(--success)'; }
-    else if (i === choiceIndex && !isCorrect) { btn.style.background='var(--danger-bg)'; btn.style.borderColor='var(--danger)'; btn.style.color='var(--danger)'; }
-    btn.disabled = true; btn.onclick = null;
-  });
-  const el = document.getElementById('learnQuizView');
-  const div = document.createElement('div');
-  div.style.cssText = 'margin:16px 0;padding:14px 16px;border-radius:12px;font-size:13px;line-height:1.7;';
-  div.style.background = isCorrect ? 'var(--success-bg)' : 'var(--danger-bg)';
-  div.style.color = isCorrect ? 'var(--success)' : 'var(--danger)';
-  div.innerHTML = `<b>${isCorrect ? '✅ 正解！' : '❌ 不正解'}</b><br>${q.why||''}`;
-  const isLast = _learnQuizIndex + 1 >= _learnQuizQuestions.length;
-  const nextLabel = !isLast ? '次の問題 →' : (_learnPhase === 'pre' ? '解説を読む →' : (_learnPhase === 'mid' ? '学習を続ける →' : '結果を見る'));
-  const nextBtn = document.createElement('button');
-  nextBtn.textContent = nextLabel;
-  nextBtn.style.cssText = 'display:block;width:100%;padding:14px;background:var(--primary);color:#fff;font-size:15px;font-weight:700;border:none;border-radius:12px;cursor:pointer;margin-top:8px;';
-  nextBtn.onclick = _learnNextQuestion;
-  el.querySelector('div').appendChild(div);
-  el.querySelector('div').appendChild(nextBtn);
-}
-
-function _learnNextQuestion() {
-  _learnQuizIndex++;
-  if (_learnQuizIndex < _learnQuizQuestions.length) {
-    _renderLearnQuiz();
-  } else if (_learnPhase === 'pre') {
-    _startNodeNavigation();
-  } else if (_learnPhase === 'mid') {
-    // 中間クイズ完了 → ノード閲覧に戻る
-    _renderNodeView();
-  } else {
-    _learnShowResult();
-  }
-}
-
-function _startNodeNavigation() {
-  _learnNodeIdx = 0;
-  _renderNodeView();
-}
-
-function _renderNodeView() {
-  const unit = UNIT_CURRICULUM[_learnUnitIdx];
-  const node = _learnNodes[_learnNodeIdx];
-  const total = _learnNodes.length;
-  if (!node) { _startPostTest(); return; }
-  const isLast = _learnNodeIdx === total - 1;
-  const pct = Math.round(((_learnNodeIdx + 1) / total) * 100);
-
-  // 次の確認クイズまでの残りノード数を計算
-  const nextQuizAt = Math.ceil((_learnNodeIdx + 1) / 5) * 5;
-  const nodesUntilQuiz = Math.min(nextQuizAt, total) - _learnNodeIdx - 1;
-  let progressHint = '';
-  if (isLast) {
-    progressHint = '📝 これが最後の解説です。次はポストテストです！';
-  } else if (nodesUntilQuiz <= 0) {
-    progressHint = '📝 次は確認クイズです！';
-  } else if (nodesUntilQuiz <= 2) {
-    progressHint = `📝 あと${nodesUntilQuiz}個で確認クイズ`;
+  for (const p of PHASE_ORDER) {
+    if (p.units.some(u => !completedUnits.has(u))) { currentPhase = p.phase; break; }
+    if (p.phase === 6) currentPhase = 6;
   }
 
-  let html = `<div style="padding:0 0 100px;">
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-      <div style="font-size:13px;color:var(--text-muted);font-weight:500;">${unit.id} · ${unit.title}</div>
-      <span style="font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;background:#00B89422;color:#00B894;">インプット</span>
-    </div>
-    <div style="height:4px;background:var(--border);border-radius:2px;margin-bottom:4px;">
-      <div style="height:100%;width:${pct}%;background:#00B894;border-radius:2px;transition:width 0.3s;"></div>
-    </div>
-    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
-      <div style="font-size:12px;color:var(--text-muted);">${_learnNodeIdx + 1} / ${total}</div>
-      ${progressHint ? `<div style="font-size:11px;color:#00B894;font-weight:600;">${progressHint}</div>` : ''}
-    </div>
-    <div class="learn-node-card">
-      <div class="learn-node-title">${node.detailTitle || node.label}</div>
-      <div class="learn-node-body">${node.detailHtml}</div>
-    </div>
-    <div style="display:flex;gap:12px;margin-top:20px;">
-      ${_learnNodeIdx > 0
-        ? `<button onclick="_learnNodePrev()" style="flex:1;padding:14px;background:var(--card);color:var(--text);border:1.5px solid var(--border);border-radius:12px;font-size:14px;font-weight:600;cursor:pointer;">← 前へ</button>`
-        : '<div style="flex:1;"></div>'}
-      <button onclick="${isLast ? '_startPostTest()' : '_learnNodeNext()'}"
-        style="flex:2;padding:14px;background:${isLast ? '#6C5CE7' : 'var(--primary)'};color:#fff;border:none;border-radius:12px;font-size:15px;font-weight:700;cursor:pointer;${isLast ? 'box-shadow:0 4px 16px rgba(108,92,231,0.4);' : ''}">
-        ${isLast ? '📝 ポストテストへ →' : '次へ →'}
-      </button>
-    </div>
-  </div>`;
-  document.getElementById('learnStudyView').innerHTML = html;
-  document.getElementById('learnStudyView').scrollTop = 0;
-  _learnShowSub('learnStudyView');
-}
-
-function _learnNodeNext() {
-  _learnNodeIdx++;
-  // 5ノードごとに中間確認クイズを挟む（最後のノードはポストテストがあるため除外）
-  if (_learnNodeIdx > 0 && _learnNodeIdx % 5 === 0 && _learnNodeIdx < _learnNodes.length) {
-    _startMidQuiz();
-  } else {
-    _renderNodeView();
+  let todayContent = '<div style="color:var(--text-muted);font-size:13px;padding:16px;text-align:center;">今日のタスクはありません</div>';
+  if (dayData) {
+    const tasks = [];
+    dayData.newUnits.forEach(uid => {
+      const u = STUDY_UNITS.find(x => x.id === uid);
+      if (u) tasks.push(`${u.icon} ${u.title}`);
+    });
+    dayData.reviews.forEach(uid => {
+      if (uid === 'ALL') { tasks.push('📝 全科目総復習'); return; }
+      const u = STUDY_UNITS.find(x => x.id === uid);
+      if (u) tasks.push(`🔄 復習: ${u.title}`);
+    });
+    todayContent = tasks.length > 0
+      ? `<div class="cal-today-unit">${tasks[0]}</div>${tasks.length > 1 ? `<div class="cal-today-sub">他 ${tasks.length-1} タスク</div>` : ''}`
+      : '<div class="cal-today-unit">休息日 🎉</div>';
   }
-}
-function _learnNodePrev() { _learnNodeIdx--; _renderNodeView(); }
 
-function _startMidQuiz() {
-  // 直前5ノードのキーワードから問題を抽出
-  const recentNodes = _learnNodes.slice(Math.max(0, _learnNodeIdx - 5), _learnNodeIdx);
-  const kws = new Set();
-  recentNodes.forEach(n => (n.searchKeywords||[]).forEach(k => kws.add(k)));
-  let pool = allQuestions.filter(q => (q.mapTags||[]).some(t => kws.has(t)));
-  // 既にプレテストで出した問題は除外
-  const usedIds = new Set((_learnQuizQuestions||[]).map(q => q.id));
-  pool = pool.filter(q => !usedIds.has(q.id));
-  _learnQuizQuestions = pool.sort(() => Math.random() - 0.5).slice(0, 3);
-  _learnQuizIndex = 0;
-  _learnQuizCorrects = 0;
-  _learnPhase = 'mid';
-  if (_learnQuizQuestions.length > 0) {
-    _renderLearnQuiz();
-  } else {
-    // 問題がなければスキップしてノードを続ける
-    _renderNodeView();
-  }
-}
-
-function _startPostTest() {
-  const allKws = new Set();
-  _learnNodes.forEach(n => (n.searchKeywords||[]).forEach(k => allKws.add(k)));
-  let pool = allQuestions.filter(q => (q.mapTags||[]).some(t => allKws.has(t)));
-  const past = pool.filter(q => q.year && !q.year.includes('オリジナル') && q.year !== '');
-  if (past.length >= 3) pool = past;
-  _learnQuizQuestions = pool.sort(() => Math.random() - 0.5).slice(0, 8);
-  _learnQuizIndex = 0;
-  _learnQuizCorrects = 0;
-  _learnPhase = 'post';
-  if (_learnQuizQuestions.length === 0) {
-    alert('この章に対応する問題がまだありません。');
-    return;
-  }
-  _renderLearnQuiz();
-}
-
-function _learnShowResult() {
-  const unit = UNIT_CURRICULUM[_learnUnitIdx];
-  const total = _learnQuizQuestions.length;
-  const correct = _learnQuizCorrects;
-  const pct = Math.round(correct / total * 100);
-  const passed = pct >= 80;
-  const nextUnit = UNIT_CURRICULUM[_learnUnitIdx + 1];
-  if (passed) {
-    learnProgress[unit.id] = { done: true, score: pct, lastStudied: Date.now() };
-    saveLearnProgress();
-  }
-  document.getElementById('learnDoneView').innerHTML = `<div style="padding:16px 0;">
-    <div class="learn-done-card">
-      <div class="learn-done-emoji">${pct>=80?'🎉':pct>=60?'👍':'💪'}</div>
-      <div class="learn-done-title">${correct}/${total}問 正解（${pct}%）</div>
-      <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">${unit.id} ${unit.title}</div>
-      <div class="learn-done-sub" style="margin:12px 0 20px;">
-        ${passed ? (nextUnit ? `ユニット完了！次は ${nextUnit.id} へ進みましょう。` : '全ユニット制覇！🎊') : '80%以上で次のユニットへ進めます。もう一度挑戦しましょう。'}
+  document.getElementById('calTodaySection').innerHTML = `
+    <div class="cal-today-card">
+      <div class="cal-today-label">📅 試験まであと ${daysLeft} 日</div>
+      ${todayContent}
+      <div class="cal-phase-bar">
+        ${PHASE_ORDER.map(p => `<div class="cal-phase-seg ${p.phase < currentPhase ? 'done' : p.phase === currentPhase ? 'active' : ''}"></div>`).join('')}
       </div>
-      ${passed && nextUnit ? `<button class="learn-start-btn" onclick="showLearnHome()">次のユニットへ →</button>` : ''}
-      ${!passed ? `<button class="learn-start-btn" onclick="showLearnHome()">もう一度挑戦する</button>` : ''}
-      <button onclick="goHome()" style="display:block;width:100%;padding:14px;background:var(--card);color:var(--primary);font-size:14px;font-weight:600;border:1.5px solid var(--primary);border-radius:12px;cursor:pointer;margin-top:10px;">ホームに戻る</button>
+      <div class="cal-phase-labels"><span>Phase1</span><span>Phase${currentPhase}</span><span>試験</span></div>
+    </div>`;
+}
+
+function renderCalStats() {
+  if (!calPlan) return;
+  const today = _toDateStr(new Date());
+  let doneDays = 0, totalDays = 0, doneUnits = 0;
+  Object.entries(calPlan.days).forEach(([k, v]) => {
+    if (k <= today) { totalDays++; if (v.done) doneDays++; }
+  });
+  const completedU = new Set();
+  Object.values(calPlan.days).forEach(v => { if (v.done) v.newUnits.forEach(u => completedU.add(u)); });
+  doneUnits = completedU.size;
+  const pct = totalDays > 0 ? Math.round(doneDays / totalDays * 100) : 0;
+
+  document.getElementById('calStatsSection').innerHTML = `
+    <div class="cal-stats-row">
+      <div class="cal-stat-card"><div class="cal-stat-num">${doneUnits}</div><div class="cal-stat-label">完了ユニット / 47</div></div>
+      <div class="cal-stat-card"><div class="cal-stat-num">${pct}%</div><div class="cal-stat-label">計画達成率</div></div>
+      <div class="cal-stat-card"><div class="cal-stat-num">${doneDays}</div><div class="cal-stat-label">学習日数</div></div>
+    </div>`;
+}
+
+function renderCalMonth() {
+  const y = calViewMonth.getFullYear(), m = calViewMonth.getMonth();
+  const firstDay = new Date(y, m, 1).getDay();
+  const daysInMonth = new Date(y, m+1, 0).getDate();
+  const today = _toDateStr(new Date());
+  const monthNames = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+
+  let grid = '<div class="cal-grid">';
+  ['日','月','火','水','木','金','土'].forEach(d => grid += `<div class="cal-dow">${d}</div>`);
+  for (let i = 0; i < firstDay; i++) grid += '<div class="cal-day empty"></div>';
+
+  for (let d = 1; d <= daysInMonth; d++) {
+    const dateStr = `${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+    const dayData = calPlan?.days?.[dateStr];
+    let cls = 'cal-day';
+    if (dateStr === today) cls += ' today';
+    else if (dateStr < today && dayData && !dayData.done) cls += ' missed';
+    else if (dateStr < today && dayData?.done) cls += ' done';
+    else if (dateStr > today) cls += ' future';
+    if (dayData && dayData.newUnits.length === 0 && dayData.reviews.length > 0) cls += ' review-only';
+
+    let dots = '';
+    if (dayData?.newUnits?.length) dots += '<div class="cal-day-dot new"></div>';
+    if (dayData?.reviews?.length) dots += '<div class="cal-day-dot review"></div>';
+
+    grid += `<div class="${cls}" onclick="renderCalDetail('${dateStr}')">${d}${dots ? `<div style="display:flex;gap:2px;">${dots}</div>` : ''}</div>`;
+  }
+  grid += '</div>';
+
+  document.getElementById('calMonthSection').innerHTML = `
+    <div class="cal-month-header">
+      <button class="cal-month-btn" onclick="calNavMonth(-1)">◀</button>
+      <div class="cal-month-title">${y}年 ${monthNames[m]}</div>
+      <button class="cal-month-btn" onclick="calNavMonth(1)">▶</button>
     </div>
-  </div>`;
-  _learnShowSub('learnDoneView');
+    ${grid}
+    <div style="display:flex;gap:12px;justify-content:center;margin-bottom:12px;">
+      <span style="font-size:10px;color:var(--text-muted);display:flex;align-items:center;gap:4px;"><span class="cal-day-dot new" style="display:inline-block;"></span>新規学習</span>
+      <span style="font-size:10px;color:var(--text-muted);display:flex;align-items:center;gap:4px;"><span class="cal-day-dot review" style="display:inline-block;"></span>復習</span>
+      <span style="font-size:10px;color:var(--text-muted);">✅完了 🔴未完了</span>
+    </div>`;
+}
+
+function renderCalDetail(dateStr) {
+  const dayData = calPlan?.days?.[dateStr];
+  const d = _fromDateStr(dateStr);
+  const label = `${d.getMonth()+1}/${d.getDate()}（${'日月火水木金土'[d.getDay()]}）`;
+
+  if (!dayData || (dayData.newUnits.length === 0 && dayData.reviews.length === 0)) {
+    document.getElementById('calDetailSection').innerHTML = `
+      <div class="cal-detail-card">
+        <div class="cal-detail-title">${label}</div>
+        <div style="font-size:13px;color:var(--text-muted);padding:8px 0;">予定なし</div>
+      </div>`;
+    return;
+  }
+
+  let tasks = '';
+  dayData.newUnits.forEach(uid => {
+    const u = STUDY_UNITS.find(x => x.id === uid);
+    if (!u) return;
+    const checked = dayData.done ? 'checked' : '';
+    tasks += `<div class="cal-task-item">
+      <div class="cal-task-check ${checked}" onclick="toggleCalDone('${dateStr}')">${checked ? '✓' : ''}</div>
+      <span class="cal-task-type new">新規</span>
+      <div style="flex:1;"><b>${u.icon} ${u.id}</b> ${u.title}<br><span style="font-size:11px;color:var(--text-muted);">${u.sub}</span></div>
+      <span style="font-size:10px;padding:2px 6px;border-radius:8px;background:${u.rank==='S'?'#E17055':u.rank==='A'?'#FDCB6E':u.rank==='B'?'#74B9FF':'#DFE6E9'}22;color:${u.rank==='S'?'#E17055':u.rank==='A'?'#E17055':u.rank==='B'?'#0984E3':'#636E72'};font-weight:700;">${u.rank}級</span>
+    </div>`;
+  });
+  dayData.reviews.forEach(uid => {
+    if (uid === 'ALL') {
+      tasks += `<div class="cal-task-item"><div class="cal-task-check ${dayData.done?'checked':''}" onclick="toggleCalDone('${dateStr}')">${dayData.done?'✓':''}</div><span class="cal-task-type review">総復習</span><div>📝 全科目横断テスト</div></div>`;
+      return;
+    }
+    const u = STUDY_UNITS.find(x => x.id === uid);
+    if (!u) return;
+    tasks += `<div class="cal-task-item">
+      <div class="cal-task-check ${dayData.done?'checked':''}" onclick="toggleCalDone('${dateStr}')">${dayData.done?'✓':''}</div>
+      <span class="cal-task-type review">復習</span>
+      <div style="flex:1;">${u.icon} ${u.id} ${u.title}</div>
+    </div>`;
+  });
+
+  document.getElementById('calDetailSection').innerHTML = `
+    <div class="cal-detail-card">
+      <div class="cal-detail-title">${label} のタスク</div>
+      ${tasks}
+    </div>
+    <button onclick="toggleCalDone('${dateStr}')" style="display:block;width:100%;padding:14px;background:${dayData.done?'var(--card)':'linear-gradient(135deg,var(--primary),var(--primary-dark))'};color:${dayData.done?'var(--primary)':'#fff'};font-size:14px;font-weight:700;border:${dayData.done?'1.5px solid var(--primary)':'none'};border-radius:var(--radius);cursor:pointer;">
+      ${dayData.done ? '✅ 完了済み（取消す）' : '✅ この日を完了にする'}
+    </button>`;
+}
+
+function toggleCalDone(dateStr) {
+  if (!calPlan?.days?.[dateStr]) return;
+  calPlan.days[dateStr].done = !calPlan.days[dateStr].done;
+  localStorage.setItem('sme_cal_plan', JSON.stringify(calPlan));
+  renderCalendar();
+}
+
+function calNavMonth(dir) {
+  calViewMonth.setMonth(calViewMonth.getMonth() + dir);
+  renderCalMonth();
+}
+
+function resetCalPlan() {
+  if (!confirm('学習計画をリセットしますか？進捗は全て失われます。')) return;
+  localStorage.removeItem('sme_cal_plan');
+  calPlan = null;
+  generateCalPlan(new Date());
+  renderCalendar();
 }
 
 </script>
