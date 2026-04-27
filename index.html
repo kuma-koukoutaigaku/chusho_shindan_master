@@ -797,9 +797,9 @@ window.addEventListener("unhandledrejection", function(e) {
   <div class="home-stat"><div class="home-stat-val" id="totalQ">0</div><div class="home-stat-label">収録問題数</div></div>
   <div class="home-stat" onclick="showLearnHome()" style="cursor:pointer;background:linear-gradient(135deg,#6C5CE7,#a29bfe);border:none;">
     <div style="display:flex;align-items:center;justify-content:center;margin-bottom:6px;">
-      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" width="28" height="28"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" width="28" height="28"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
     </div>
-    <div class="home-stat-label" style="color:rgba(255,255,255,0.9);font-weight:600;">学習モード</div>
+    <div class="home-stat-label" style="color:rgba(255,255,255,0.9);font-weight:600;">学習計画</div>
   </div>
  </div>
  <!-- AIおすすめ学習 -->
@@ -810,7 +810,13 @@ window.addEventListener("unhandledrejection", function(e) {
 
  <div class="subject-grid" id="subjectGrid"></div>
 
- <h2 style="font-size: 1.1rem; color: var(--pri); margin: 1.2rem 0 0.5rem; display: flex; align-items: center; gap: 8px;">
+ <h2 style="font-size: 1.1rem; color: var(--text); margin: 1.2rem 0 0.5rem; display: flex; align-items: center; gap: 8px;">
+   🏝️ テーマ別クイズ（島ごと）
+ </h2>
+ <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px;">マップの各島に対応する問題を解けます</div>
+ <div id="islandQuizSection"></div>
+
+ <h2 style="font-size: 1.1rem; color: var(--text); margin: 1.2rem 0 0.5rem; display: flex; align-items: center; gap: 8px;">
    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"></path></svg>
    年度別 過去問チャレンジ
  </h2>
@@ -1560,6 +1566,7 @@ function renderHome() {
  }
 
  showDailyRecommend();
+ renderIslandSection();
 }
 
 function createSubjectCard(icon, name, count, onClick) {
@@ -4057,6 +4064,115 @@ function resetCalPlan() {
   generateCalPlan(new Date());
   renderCalendar();
 }
+
+// ===== 島別クイズ =====
+const ISLAND_MAP_FILES = [
+  { mapFile:'01_mgmt_strategy.json', subject:'企業経営理論', chapter:'経営戦略論', color:'#6C5CE7' },
+  { mapFile:'01_mgmt_organization.json', subject:'企業経営理論', chapter:'組織論', color:'#6C5CE7' },
+  { mapFile:'01_mgmt_hrm.json', subject:'企業経営理論', chapter:'人的資源管理', color:'#6C5CE7' },
+  { mapFile:'01_mgmt_marketing.json', subject:'企業経営理論', chapter:'マーケティング基礎', color:'#6C5CE7' },
+  { mapFile:'01_mgmt_marketing_adv.json', subject:'企業経営理論', chapter:'マーケティング応用', color:'#6C5CE7' },
+];
+
+let _islandCache = null;
+
+async function loadIslandData() {
+  if (_islandCache) return _islandCache;
+  const islands = [];
+  for (const conf of ISLAND_MAP_FILES) {
+    try {
+      const data = await fetch(`./data/maps/${conf.mapFile}?v=${Date.now()}`).then(r => r.json());
+      const byParent = {};
+      for (const n of (data.nodes || [])) {
+        const p = n.parent || 'ROOT';
+        if (p === 'ROOT') continue;
+        if (!byParent[p]) byParent[p] = { id: p, nodes: [], label: '', keywords: new Set() };
+        byParent[p].nodes.push(n);
+        (n.searchKeywords || []).forEach(k => byParent[p].keywords.add(k));
+      }
+      // Get island labels from root nodes
+      for (const n of (data.nodes || [])) {
+        if (!n.parent && byParent[n.id]) {
+          byParent[n.id].label = (n.label || '').replace(/[\n\r]/g, ' ');
+        }
+      }
+      for (const [id, isl] of Object.entries(byParent)) {
+        const kws = [...isl.keywords];
+        const matchCount = allQuestions.filter(q => (q.mapTags||[]).some(t => isl.keywords.has(t))).length;
+        islands.push({
+          id, label: isl.label || id, nodeCount: isl.nodes.length,
+          keywords: kws, questionCount: matchCount,
+          chapter: conf.chapter, subject: conf.subject, color: conf.color
+        });
+      }
+    } catch(e) { console.error('Island load error:', conf.mapFile, e); }
+  }
+  _islandCache = islands;
+  return islands;
+}
+
+async function renderIslandSection() {
+  const el = document.getElementById('islandQuizSection');
+  if (!el) return;
+  el.innerHTML = '<div style="text-align:center;padding:12px;"><div class="spinner"></div></div>';
+  
+  const islands = await loadIslandData();
+  // Group by chapter
+  const byChapter = {};
+  islands.forEach(isl => {
+    if (!byChapter[isl.chapter]) byChapter[isl.chapter] = [];
+    byChapter[isl.chapter].push(isl);
+  });
+
+  let html = '';
+  for (const [chapter, isls] of Object.entries(byChapter)) {
+    html += `<div style="margin-bottom:12px;">
+      <div onclick="this.nextElementSibling.classList.toggle('hidden');this.querySelector('span').textContent=this.nextElementSibling.classList.contains('hidden')?'▶':'▼'" 
+           style="display:flex;align-items:center;gap:8px;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:10px;cursor:pointer;font-size:13px;font-weight:700;color:var(--text);">
+        <span>▼</span> ${chapter}
+        <span style="margin-left:auto;font-size:11px;color:var(--text-muted);font-weight:400;">${isls.length}島</span>
+      </div>
+      <div style="padding:6px 0 0;">`;
+    
+    isls.forEach(isl => {
+      const hasQ = isl.questionCount > 0;
+      html += `<button onclick="${hasQ ? `startIslandQuiz('${isl.id}')` : ''}" 
+        style="display:flex;align-items:center;gap:10px;width:100%;text-align:left;padding:11px 14px;margin-bottom:4px;
+        background:${hasQ ? 'var(--card)' : '#f8f8fc'};border:1px solid var(--border);border-radius:8px;
+        cursor:${hasQ ? 'pointer' : 'default'};font-size:13px;opacity:${hasQ ? '1' : '0.5'};">
+        <span style="font-size:16px;">🏝️</span>
+        <span style="flex:1;font-weight:600;color:var(--text);">${isl.label}</span>
+        <span style="font-size:11px;color:var(--text-muted);">${isl.nodeCount}概念</span>
+        <span style="font-size:11px;font-weight:700;padding:2px 8px;border-radius:10px;
+          background:${isl.questionCount >= 5 ? '#00B89422' : isl.questionCount > 0 ? '#FDCB6E33' : '#DFE6E922'};
+          color:${isl.questionCount >= 5 ? '#00B894' : isl.questionCount > 0 ? '#E17055' : '#999'};">${isl.questionCount}問</span>
+      </button>`;
+    });
+    html += '</div></div>';
+  }
+  el.innerHTML = html;
+}
+
+function startIslandQuiz(islandId) {
+  if (!_islandCache) return;
+  const island = _islandCache.find(i => i.id === islandId);
+  if (!island) return;
+  
+  const kwSet = new Set(island.keywords);
+  const pool = allQuestions.filter(q => (q.mapTags||[]).some(t => kwSet.has(t)));
+  if (pool.length === 0) { alert('この島に対応する問題がまだありません。'); return; }
+  
+  mode3500 = false;
+  currentSubject = `🏝️ ${island.label}`;
+  currentPool = smartSort(pool);
+  filteredQ = currentPool.slice(0, Math.min(SESSION_SIZE, pool.length));
+  idx = 0; score = 0;
+  showQuizScreen();
+  showQuestion();
+}
+
+// ホーム表示時に島セクションをレンダリング
+const _origGoHome = typeof goHome === 'function' ? goHome : null;
 
 </script>
 
